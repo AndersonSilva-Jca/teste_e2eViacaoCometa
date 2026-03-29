@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-if'
 require('cypress-xpath')
 Cypress.ElementSelector.defaults({
     selectorPriority: ['data-*', 'id', 'class', 'attributes', 'tag', 'data-js', 'data-qa', 'nth-child', 'data-pagetype', 'name' ]

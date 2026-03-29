@@ -12,7 +12,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@faker-js/faker": "^10.3.0",
-    "cypress": "^15.12.0",
+    "cypress": "^15.13.0",
+    "cypress-if": "^1.13.2",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
