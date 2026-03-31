@@ -9,7 +9,7 @@ describe('Fazer busca de destinos', () => {
     cy.visit('https://www.viacaocometa.com.br');
   });
 
-  it('Fazer busca de destinos IDA com 1 passageiro', () => {
+  it.only('Fazer busca de destinos IDA com 1 passageiro', () => {
     cy.login(login.email, login.senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
@@ -92,7 +92,7 @@ describe('Fazer busca de destinos', () => {
   //   // Não finalizar a compra para evitar transações reais
   //   // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
   // })
-  it.only('Fazer busca de destinos IDA e Volta com 2 passageiro', () => {
+  it('Fazer busca de destinos IDA e Volta com 2 passageiro', () => {
     cy.login(login.email, login.senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()

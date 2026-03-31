@@ -403,3 +403,19 @@ Cypress.Commands.add('selecionarPassagemVolta', () => {
     });
   });
 });
+
+Cypress.Commands.add('selecionarDataCompra', (range = 1) => {
+  cy.get('#input-date-buy').then(($days) => {
+    const proximosDias = $days.slice(0, range);
+    const randomIndex = Math.floor(Math.random() * proximosDias.length);
+    cy.wrap(proximosDias[randomIndex]).click({ force: true });
+  });
+});
+
+Cypress.Commands.add('selecionarDataViagem', (range = 5) => {
+  cy.get('#input-date-trip').then(($days) => {
+    const proximosDias = $days.slice(0, range);
+    const randomIndex = Math.floor(Math.random() * proximosDias.length);
+    cy.wrap(proximosDias[randomIndex]).click({ force: true });
+  });
+});

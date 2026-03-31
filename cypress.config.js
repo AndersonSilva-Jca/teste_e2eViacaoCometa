@@ -6,6 +6,8 @@ module.exports = defineConfig({
   viewportHeight: 1080,
 
   e2e: {
+    // Evita que o Cypress role a página automaticamente durante os testes
+    scrollBehavior: false,
     // Tempo padrão em milissegundos (ex: 10000ms = 10 segundos)
     defaultCommandTimeout: 10000, 
     

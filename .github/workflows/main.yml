@@ -1,0 +1,44 @@
+name: Monitoramento Contínuo Cypress
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Roda a cada 5 minutos
+  workflow_dispatch:      # Permite rodar manualmente clicando num botão no GitHub
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Rodar Testes Cypress
+        id: cypress
+        continue-on-error: true # Importante para enviar o e-mail mesmo se falhar
+        run: npx cypress run --browser chrome
+        env:
+          # Passamos as credenciais via Secret do GitHub para o Cypress
+          CYPRESS_LOGIN_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
+          CYPRESS_LOGIN_SENHA: ${{ secrets.CYPRESS_PASSWORD }}
+
+      - name: Enviar Alerta por E-mail (Se falhar)
+        if: steps.cypress.outcome == 'failure'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "🚨 FALHA DETECTADA: Monitoramento Cypress"
+          to: seu-email@exemplo.com
+          from: "Cypress Monitor <${{ secrets.MAIL_USERNAME }}>"
+          body: |
+            Um ou mais testes falharam no site da Viação Cometa (ou outros implementados).
+            
+            Repositório: ${{ github.repository }}
+            Link do Erro: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            Verifique os vídeos e prints anexados no link acima.

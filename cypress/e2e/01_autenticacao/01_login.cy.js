@@ -5,7 +5,8 @@ const login = require('../../fixtures/login.json')
 
 describe('Login', () => {
  beforeEach(() => {
-cy.visit('https://www.viacaocometa.com.br');
+  cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+  cy.visit('https://www.viacaocometa.com.br');
 });
  it('Deve fazer login com sucesso', () => {
       cy.get('#header-login-button').click()
@@ -35,7 +36,7 @@ cy.visit('https://www.viacaocometa.com.br');
     cy.get('.next-trips > :nth-child(1) > :nth-child(1) > .account-info > p').should('contain', 'Não encontramos nenhuma viagem futura em sua conta.')  
   });
   
-  it.only('Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.', () => {
+  it('Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.', () => {
     cy.login(login.email, login.senha)
     cy.get('.logged-message').click()
     cy.get('a[href="https://www.viacaocometa.com.br/minhas-compras"]:visible').click()
