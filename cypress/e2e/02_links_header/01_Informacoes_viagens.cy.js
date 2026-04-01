@@ -1,6 +1,6 @@
 /// <reference types='cypress' />
 
-describe('Validar links headers', () => {
+describe('Validar link informações de viagens', () => {
   beforeEach(() => {
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     cy.visit('https://www.viacaocometa.com.br');

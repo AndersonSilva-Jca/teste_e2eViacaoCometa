@@ -6,7 +6,12 @@ const login = require('../../fixtures/login.json')
 describe('Login', () => {
  beforeEach(() => {
   cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-  cy.visit('https://www.viacaocometa.com.br');
+  cy.visit('https://www.viacaocometa.com.br', {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+      }
+  });
+  
 });
  it('Deve fazer login com sucesso', () => {
       cy.get('#header-login-button').click()
@@ -25,7 +30,7 @@ describe('Login', () => {
     cy.get('#input-address').clear().type(faker.location.streetAddress())
     cy.get('#input-number').clear().type(faker.number.int({ min: 1, max: 1000 }))
     cy.get('#input-city').clear().type(faker.location.city())
-    cy.get('#button-register').click()
+    cy.get('#button-register').click({force: true})
     cy.get(':nth-child(3) > .xf-content-height > :nth-child(1) > .confirmation-alert > .container-confirmation > .message-confirmation-container > .content-message-confirmation > .confirmation-alert-body-par > .aem-Grid > :nth-child(1) > .cmp-text > p').should('contain', 'Tudo certo!')
   });;
 

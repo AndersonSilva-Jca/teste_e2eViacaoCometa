@@ -6,12 +6,12 @@ module.exports = defineConfig({
   viewportHeight: 1080,
 
   e2e: {
-    // Evita que o Cypress role a página automaticamente durante os testes
-    scrollBehavior: false,
-    // Tempo padrão em milissegundos (ex: 10000ms = 10 segundos)
-    defaultCommandTimeout: 10000, 
-    
-    // Outros timeouts úteis para sites pesados:
+    viewportWidth: 1280,
+    viewportHeight: 720,
+    video: true, // Importante para ver o que aconteceu na falha no CI
+    screenshotOnRunFailure: true,  
+    scrollBehavior: false, // Evita que o Cypress role a página automaticamente durante os testes
+    defaultCommandTimeout: 10000, // Aumenta o tempo padrão de espera por elementos
     pageLoadTimeout: 120000, // Espera até 60s para a página carregar totalmente
     requestTimeout: 15000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
