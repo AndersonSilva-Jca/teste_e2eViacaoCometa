@@ -5,7 +5,8 @@ const login = require('../../fixtures/login.json')
 
 describe('Conta GIRO', () => {
  beforeEach(() => {
-cy.visit('https://www.viacaocometa.com.br');
+  cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+  cy.visit('https://www.viacaocometa.com.br');
 });
   it('Fazer compra de passagem com conta GIRO ', () => {
     cy.login(login.email, login.senha, { timeout: 2000 })
@@ -18,7 +19,6 @@ cy.visit('https://www.viacaocometa.com.br');
     cy.get('#search-button', { timeout: 1000 }).click()
     cy.contains('IDA').should('be.visible');
     cy.selecionarPassagemAleatoria({ timeout: 2000 })
-    // cy.aceitarTermosSeExistirem()
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 5000 }).should('be.visible');
