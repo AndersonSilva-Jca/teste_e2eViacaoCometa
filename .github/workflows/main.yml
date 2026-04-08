@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: '*/5 * * * *' # Roda a cada 5 minutos
   workflow_dispatch:      # Permite rodar manualmente clicando num botão no GitHub
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -12,22 +11,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Define a versão do Node explicitamente para evitar o warning de depreciação
+      # Força o uso de uma versão estável do Node para evitar avisos
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Ou 22 para já ficar atualizado
+          node-version: 20 
 
-      - name: Instalar Dependências
-        run: npm ci # Usa o package-lock.json para instalar exatamente o que você tem local
+      # Instala dependências do sistema Linux que o Cypress exige para abrir o navegador
+      - name: Install Cypress Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+
+      - name: Instalar Dependências do Projeto
+        run: npm install
 
       - name: Rodar Testes Cypress
         id: cypress
-        continue-on-error: true
-        # O comando que você confirmou, com aspas para garantir o caminho
+        continue-on-error: true 
+        # Comando conforme sua pasta específica
         run: npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
         env:
-          # Garanta que esses segredos existam no GitHub Settings > Secrets
           CYPRESS_LOGIN_EMAIL: ${{ secrets.CYPRESS_LOGIN }}
           CYPRESS_LOGIN_SENHA: ${{ secrets.CYPRESS_SENHA }}
 
@@ -43,9 +47,51 @@ jobs:
           to: anderson.ssantos@jcatml.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
-            Um ou mais testes falharam no site da Viação Cometa (ou outros implementados).
+            Os testes na pasta 01_busca_passagens falharam.
             
             Repositório: ${{ github.repository }}
             Link do Erro: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+
+#       # Define a versão do Node explicitamente para evitar o warning de depreciação
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20 # Ou 22 para já ficar atualizado
+
+#       - name: Instalar Dependências
+#         run: npm ci # Usa o package-lock.json para instalar exatamente o que você tem local
+
+#       - name: Rodar Testes Cypress
+#         id: cypress
+#         continue-on-error: true
+#         # O comando que você confirmou, com aspas para garantir o caminho
+#         run: npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
+#         env:
+#           # Garanta que esses segredos existam no GitHub Settings > Secrets
+#           CYPRESS_LOGIN_EMAIL: ${{ secrets.CYPRESS_LOGIN }}
+#           CYPRESS_LOGIN_SENHA: ${{ secrets.CYPRESS_SENHA }}
+
+#       - name: Enviar Alerta por E-mail (Se falhar)
+#         if: steps.cypress.outcome == 'failure'
+#         uses: dawidd6/action-send-mail@v3
+#         with:
+#           server_address: smtp.gmail.com
+#           server_port: 465
+#           username: ${{ secrets.MAIL_USERNAME }}
+#           password: ${{ secrets.MAIL_PASSWORD }}
+#           subject: "🚨 FALHA DETECTADA: Monitoramento Cypress - Viação Cometa"
+#           to: anderson.ssantos@jcatml.com.br
+#           from: "Monitoramento Contínuo Cypress"
+#           body: |
+#             Um ou mais testes falharam no site da Viação Cometa (ou outros implementados).
             
-            Verifique os vídeos e prints anexados no link acima.
+#             Repositório: ${{ github.repository }}
+#             Link do Erro: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+#             Verifique os vídeos e prints anexados no link acima.
