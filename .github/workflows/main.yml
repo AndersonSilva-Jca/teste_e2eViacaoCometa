@@ -12,15 +12,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Define a versão do Node explicitamente para evitar o warning de depreciação
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Ou 22 para já ficar atualizado
+
       - name: Instalar Dependências
-        run: npm install
+        run: npm ci # Usa o package-lock.json para instalar exatamente o que você tem local
 
       - name: Rodar Testes Cypress
         id: cypress
-        continue-on-error: true # Importante para enviar o e-mail mesmo se falhar
+        continue-on-error: true
+        # O comando que você confirmou, com aspas para garantir o caminho
         run: npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
         env:
-          # Passamos as credenciais via Secret do GitHub para o Cypress
+          # Garanta que esses segredos existam no GitHub Settings > Secrets
           CYPRESS_LOGIN_EMAIL: ${{ secrets.CYPRESS_LOGIN }}
           CYPRESS_LOGIN_SENHA: ${{ secrets.CYPRESS_SENHA }}
 
