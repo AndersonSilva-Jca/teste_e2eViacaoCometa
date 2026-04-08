@@ -47,7 +47,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "🚨 FALHA DETECTADA: Monitoramento Cypress - Viação Cometa"
+          subject: "🚨 (TESTES) FALHA DETECTADA: Monitoramento Cypress - Viação Cometa"
           to: anderson.ssantos@jcatml.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
