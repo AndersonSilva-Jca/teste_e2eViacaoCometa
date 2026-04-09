@@ -26,10 +26,10 @@ describe('Fazer busca de destinos', () => {
     cy.wait(1500)
     cy.selecionarPassagemIda({ timeout: 60000 })
     cy.contains('ESCOLHER PASSAGENS', { timeout: 60000 }).should('be.visible');
-    cy.wait(5000)
+    // cy.wait(5000)
     cy.contains('ESCOLHER PASSAGENS', { timeout: 60000 }).should('be.visible');
     cy.selecionarPassagemVolta({ timeout: 60000 })
-    cy.wait(5000)
+    cy.wait(15000)
     cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({timeout: 60000}).should('include', '/poltrona')
