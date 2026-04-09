@@ -8,12 +8,12 @@ describe('Fazer busca de destinos', () => {
   before(() => {
     // cy.clearCookies();
     // cy.clearLocalStorage();
-    cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('/');
-  });
+  cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+  cy.visit('/');
+});
 
-  it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
-       const login = Cypress.env('LOGIN'); 
+it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
+    const login = Cypress.env('LOGIN'); 
     const senha = Cypress.env('SENHA');
     cy.login(login, senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')

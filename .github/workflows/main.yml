@@ -49,7 +49,6 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "🚨 (TESTES) FALHA DETECTADA: Monitoramento Cypress - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          cc: andynho1987@gmail.com
           from: "Monitoramento Contínuo Cypress"
           body: |
             Os testes falharam. Verifique aqui: 
