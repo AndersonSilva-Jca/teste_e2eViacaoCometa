@@ -1,6 +1,6 @@
 /// <reference types='cypress' />
 
-// const login = require('../../fixtures/login.json')
+const login = require('../../fixtures/login.json')
 
 describe('Fazer busca de destinos', () => {
   before(() => {
@@ -11,8 +11,8 @@ describe('Fazer busca de destinos', () => {
   });
 
   it('Fazer busca de destinos IDA e Volta com 1 passageiro', () => {
-      const login = Cypress.env('LOGIN'); 
-    const senha = Cypress.env('SENHA');
+    //   const login = Cypress.env('LOGIN'); 
+    // const senha = Cypress.env('SENHA');
     cy.login(login, senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()

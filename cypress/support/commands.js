@@ -126,25 +126,25 @@
 //   });
 // });
 
-Cypress.Commands.add('login', (login, senha) => {
-  if (!login || !senha) {
-    throw new Error('Comando cy.login falhou: Login ou Senha não foram fornecidos.');
-  }
-  cy.get('#header-login-button').click()
-  cy.get('#input-login').type(login)
-  cy.get('#input-password').type(senha, { log: false })
-  cy.get('#button-login').click()
-  cy.get('.logged-message', { timeout: 10000 }).should('contain', 'Olá')
-})
-
 // Cypress.Commands.add('login', (login, senha) => {
-//   // cy.visit('https://www.viacaocometa.com.br')
+//   if (!login || !senha) {
+//     throw new Error('Comando cy.login falhou: Login ou Senha não foram fornecidos.');
+//   }
 //   cy.get('#header-login-button').click()
 //   cy.get('#input-login').type(login)
 //   cy.get('#input-password').type(senha, { log: false })
 //   cy.get('#button-login').click()
-//   cy.get('.logged-message').should('contain', 'Olá')
+//   cy.get('.logged-message', { timeout: 10000 }).should('contain', 'Olá')
 // })
+
+Cypress.Commands.add('login', (login, senha) => {
+  // cy.visit('https://www.viacaocometa.com.br')
+  cy.get('#header-login-button').click()
+  cy.get('#input-login').type(login)
+  cy.get('#input-password').type(senha, { log: false })
+  cy.get('#button-login').click()
+  cy.get('.logged-message').should('contain', 'Olá')
+})
 
 Cypress.Commands.add('selecionarDataIda', (range = 3) => {
   cy.get('td[data-handler="selectDay"] a').then(($days) => {
