@@ -36,8 +36,8 @@ jobs:
         # Adicionamos o xvfb-run para garantir que o navegador abra no Linux sem monitor
         run: xvfb-run npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
         env:
-          CYPRESS_LOGIN_EMAIL: ${{ secrets.CYPRESS_login }}
-          CYPRESS_LOGIN_SENHA: ${{ secrets.CYPRESS_senha }}
+          CYPRESS_LOGIN: ${{ secrets.CYPRESS_LOGIN }}
+          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
 
       - name: Enviar Alerta por E-mail (Se falhar)
         if: steps.cypress.outcome == 'failure'
