@@ -13,8 +13,8 @@ describe('Fazer busca de destinos', () => {
   });
 
   it('Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento', () => {
-    const login = Cypress.env('login');
-    const senha = Cypress.env('senha');
+    const login = cy.env('login');
+    const senha = cy.env('senha');
     cy.login(login, senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
