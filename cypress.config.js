@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
 module.exports = defineConfig({
-  allowCypressEnv: false,
+  allowCypressEnv: true,
   viewportWidth: 1920,
   viewportHeight: 1080,
 //npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
