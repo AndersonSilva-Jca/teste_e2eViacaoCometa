@@ -13,7 +13,7 @@ describe('Fazer busca de destinos', () => {
   it('Fazer busca de destinos IDA e Volta com 1 passageiro', () => {
     //   const login = Cypress.env('LOGIN'); 
     // const senha = Cypress.env('SENHA');
-    cy.login(login, senha, { timeout: 2000 })
+    cy.login(login.email, login.senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get('#input-destination').click().type('Rio de Janeiro')
