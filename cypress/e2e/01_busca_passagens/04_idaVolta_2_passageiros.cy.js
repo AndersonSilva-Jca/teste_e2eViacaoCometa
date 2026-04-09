@@ -2,16 +2,20 @@
 
 //TESTES OK
 
-const login = require('../../fixtures/login.json')
+// const login = require('../../fixtures/login.json')
 
 describe('Fazer busca de destinos', () => {
-  beforeEach(() => {
+  before(() => {
+    // cy.clearCookies();
+    // cy.clearLocalStorage();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('https://www.viacaocometa.com.br');
+    cy.visit('/');
   });
 
   it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
-    cy.login(login.email, login.senha, { timeout: 2000 })
+    const login = Cypress.env('login');
+    const senha = Cypress.env('senha');
+    cy.login(login, senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get('#input-destination').click().type('Rio de Janeiro')
@@ -24,9 +28,11 @@ describe('Fazer busca de destinos', () => {
     cy.get('#passenger-quantity-plus-one > .plusone').click()
     cy.get('#close-person-quantity').click()
     cy.get('#search-button', { timeout: 2000 }).click()
+    cy.wait(5000)
     cy.selecionarPassagemIda({ timeout: 20000 })
     cy.wait(15000)
     cy.selecionarPassagemVolta({ timeout: 20000 })
+    cy.wait(20000)
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
@@ -34,17 +40,17 @@ describe('Fazer busca de destinos', () => {
     cy.get('.passenger-footer').click()
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-      cy.wait(8000) 
+    cy.wait(8000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click()
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-      cy.wait(8000)
-    cy.selecionarDoisAssentosAleatorios({timeout: 5000});
-    cy.get('#btn-proceed',{timeout: 10000}).should('be.visible').click();
+    cy.wait(8000)
+    cy.selecionarDoisAssentosAleatorios({ timeout: 5000 });
+    cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click();
     cy.wait(8000)
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     //  Não finalizar a compra para evitar transações reais
     // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
-  })  
+  })
 })  

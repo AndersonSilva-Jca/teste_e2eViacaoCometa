@@ -49,7 +49,7 @@
 //       if (response.body.token) {
 //         window.localStorage.setItem('token', response.body.token);
 //       }
-      
+
 //       // Se a API setar cookies automaticamente, o cy.session já os captura.
 //       cy.log('✅ Sessão via API criada com sucesso');
 //     });
@@ -74,7 +74,7 @@
 //       if (response.body.token) {
 //         window.localStorage.setItem('token', response.body.token);
 //       }
-      
+
 //       // Se a API setar cookies automaticamente, o cy.session já os captura.
 //       cy.log('✅ Sessão via API criada com sucesso');
 //     });
@@ -95,12 +95,12 @@
 
 //     // O erro aconteceu aqui porque 'senha' estava undefined
 //     cy.get('#input-login').should('be.visible').type(email);
-    
+
 //     // Verificação de segurança: só digita se a senha existir
 //     if (!senha) {
 //       throw new Error("A variável PASSWORD não foi encontrada no ambiente do Cypress!");
 //     }
-    
+
 //     cy.get('#input-password').type(senha, { log: false });
 //     cy.get('#button-login').click();
 //     cy.get('.logged-message', { timeout: 20000 }).should('contain', 'Olá');
@@ -109,31 +109,42 @@
 
 // Cypress.Commands.add('loginUI', (email, senha) => {
 //   cy.session([email, senha], () => {
-//     cy.visit('https://www.viacaocometa.com.br/');
-    
+// cy.visit('https://www.viacaocometa.com.br/');
+
 //     // Clica no botão de login do cabeçalho
 //     cy.get('#header-login-button').click(); // Substitua pelo ID real do botão
-    
+
 //     // Preenche os campos
 //     cy.get('#input-login').type(email)
 //     cy.get('#input-password').type(senha, { log: false })
-    
+
 //     // Clica para entrar
 //     cy.get('#button-login').click()
-    
+
 //     // Valida se o login ocorreu (ex: espera aparecer "Olá, Anderson")
 //     cy.get('.logged-message').should('contain', 'Olá')
 //   });
 // });
 
-Cypress.Commands.add('login', (email, senha) => {
-  // cy.visit('https://www.viacaocometa.com.br')
+Cypress.Commands.add('login', (login, senha) => {
+  if (!login || !senha) {
+    throw new Error('Comando cy.login falhou: Login ou Senha não foram fornecidos.');
+  }
   cy.get('#header-login-button').click()
-  cy.get('#input-login').type(email)
+  cy.get('#input-login').type(login)
   cy.get('#input-password').type(senha, { log: false })
   cy.get('#button-login').click()
-  cy.get('.logged-message').should('contain', 'Olá')
+  cy.get('.logged-message', { timeout: 10000 }).should('contain', 'Olá')
 })
+
+// Cypress.Commands.add('login', (login, senha) => {
+//   // cy.visit('https://www.viacaocometa.com.br')
+//   cy.get('#header-login-button').click()
+//   cy.get('#input-login').type(login)
+//   cy.get('#input-password').type(senha, { log: false })
+//   cy.get('#button-login').click()
+//   cy.get('.logged-message').should('contain', 'Olá')
+// })
 
 Cypress.Commands.add('selecionarDataIda', (range = 3) => {
   cy.get('td[data-handler="selectDay"] a').then(($days) => {
@@ -156,7 +167,7 @@ Cypress.Commands.add('selecionarCidadeAleatoria', (campo) => {
   const selector = campo === 'origem' ? '#input-departure' : '#input-destination'
 
   // 1. Abre o campo desejado
-  cy.get(selector).click({force: true})
+  cy.get(selector).click({ force: true })
 
   // 2. Localiza as opções no dropdown (usando os seletores do seu HTML)
   cy.get('.ui-autocomplete .ui-menu-item .location-title')
@@ -202,7 +213,7 @@ Cypress.Commands.add('selecionarAssentoAleatorio', () => {
 Cypress.Commands.add('selecionarAssentoAleatorio1', () => {
   const tentarSelecao = () => {
     cy.log('🔎 Buscando assentos livres...');
-    
+
     // 1. Busca assentos disponíveis (não ocupados e não selecionados)
     return cy.get('button.outer-seat[id^="seat-"]:not(:has(.occupied-seat)):not(.selected-seat)', { timeout: 20000 })
       .should('be.visible')
@@ -211,28 +222,28 @@ Cypress.Commands.add('selecionarAssentoAleatorio1', () => {
         const randomId = ids[Math.floor(Math.random() * ids.length)];
 
         cy.log(`🎯 Tentando assento: ${randomId}`);
-        
+
         // 2. Tenta o clique
         cy.get(`#${randomId}`)
           .scrollIntoView({ offset: { top: -150 } })
           .click({ force: true });
 
         // 3. Checagem de erro do servidor (espera a resposta)
-        cy.wait(2500); 
+        cy.wait(2500);
 
         return cy.get('body').then(($body) => {
           // Identifica se o alerta de indisponível apareceu
           const alerta = $body.find('#alert-overlay:visible, article:contains("indisponível"):visible');
-          
+
           if (alerta.length > 0) {
             cy.log('❌ Assento indisponível, tentando outro...');
-            
+
             // Clica no fechar (usando o ID que vimos no seu print)
             cy.get('#close-alert-overlay').click({ force: true });
-            
+
             cy.wait(1500);
             // RECURSÃO: Tenta novamente a função interna
-            return tentarSelecao(); 
+            return tentarSelecao();
           } else {
             cy.log('✔️ Assento OK.');
             // AQUI ESTÁ O AJUSTE: Não clicamos no #btn-proceed aqui dentro.
@@ -247,7 +258,7 @@ Cypress.Commands.add('selecionarAssentoAleatorio1', () => {
 
 // Cypress.Commands.add('selecionarAssentoAleatorio1', () => {
 //   cy.log('🔎 Buscando assentos livres...');
-  
+
 //   // 1. Espera o mapa carregar e pega os assentos
 //   cy.get('button.outer-seat[id^="seat-"]:not(:has(.occupied-seat)):not(.selected-seat)', { timeout: 20000 })
 //     .should('be.visible')
@@ -263,7 +274,7 @@ Cypress.Commands.add('selecionarAssentoAleatorio1', () => {
 //   cy.wait(1500); // Respiro para o site processar
 //   cy.get('body').then(($body) => {
 //     const alerta = $body.find('#alert-overlay:visible, article:contains("indisponível"):visible');
-    
+
 //     if (alerta.length > 0) {
 //       cy.log('❌ Assento indisponível, tentando outro...');
 //       cy.get('#close-alert-overlay').click();
@@ -287,7 +298,7 @@ Cypress.Commands.add('selecionarAssentoAleatorio1', () => {
 //   }
 // }).then((response) => {
 //   expect(response.status).to.eq(200);
-  
+
 //   // Aqui você pode salvar o token se precisar
 // });
 //   });
@@ -311,10 +322,10 @@ Cypress.Commands.add('selecionarAssentoAleatorio2', () => {
         cy.get('body').then(($body) => {
           if ($body.find('#alert-overlay[style*="display: block"]').length > 0) {
             cy.log('Assento indisponível no servidor! Tentando outro...');
-            
+
             // Clica no botão "Fechar" do alerta (baseado no seu HTML)
-            cy.get('#close-alert-overlay').contains('Fechar').click({force: true});
-            
+            cy.get('#close-alert-overlay').contains('Fechar').click({ force: true });
+
             // Recursividade: Chama a função novamente para tentar outro assento
             tentarSelecionar();
           } else {
@@ -338,7 +349,7 @@ Cypress.Commands.add('selecionarDoisAssentosAleatorios', () => {
     if (tentativas > 3) throw new Error("Falha após 3 tentativas.");
 
     cy.log('⏳ Aguardando mapa...');
-    cy.wait(2000); 
+    cy.wait(2000);
 
     cy.get('button.outer-seat[id^="seat-"]:not(:has(.occupied-seat))', { timeout: 5000 })
       .should('be.visible')
@@ -349,7 +360,7 @@ Cypress.Commands.add('selecionarDoisAssentosAleatorios', () => {
 
         escolhidos.forEach((id) => {
           cy.get(`#${id}`).scrollIntoView({ offset: { top: -150 } }).click().trigger('change');
-          cy.wait(1000); 
+          cy.wait(1000);
         });
 
         // Apenas validamos que os assentos foram marcados (ex: mudaram de cor ou classe)
@@ -424,13 +435,13 @@ Cypress.Commands.add('aceitarTermosSeExistirem', () => {
 Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
   cy.contains('ESCOLHER PASSAGENS', { timeout: 60000 }).should('be.visible')
   cy.log('⏳ Aguardando estabilização da página de ofertas...');
-  
+
   // 1. Validação de carregamento: Espera o esqueleto da página sumir 
   // ou a lista de ofertas ter pelo menos um item disponível REAL
   cy.get('li[data-js^="offer-element-"]', { timeout: 30000 }).should('be.visible');
-  
+
   // O "pulo do gato": Esperar um pequeno respiro para o JS da Cometa atachar os eventos nos botões
-  cy.wait(3000); 
+  cy.wait(3000);
 
   // 2. Buscamos as ofertas disponíveis
   cy.get('li[data-js^="offer-element-"]:has(.available)', { timeout: 20000 })
@@ -461,13 +472,13 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
 
       // --- LÓGICA DO MODAL "FIQUE ATENTO" ---
       // Aumentamos para 3s para garantir que o erro de 'servicesList' não ocorra
-      cy.wait(3000); 
-      
+      cy.wait(3000);
+
       cy.get('body').then(($body) => {
         if ($body.find('[data-js="button-agree"]').is(':visible')) {
           cy.log('⚠️ Confirmando modal de madrugada...');
           cy.get('[data-js="button-agree"]').click({ force: true });
-          
+
           cy.wait(3000);
           cy.url().then((urlAtual) => {
             if (urlAtual.includes('/disponibilidade')) {
@@ -483,13 +494,13 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
 Cypress.Commands.add('selecionarPassagemAleatoriaVolta', () => {
   cy.contains('ESCOLHER PASSAGENS', { timeout: 60000 }).should('be.visible')
   cy.log('⏳ Aguardando estabilização da página de ofertas...');
-  
+
   // 1. Validação de carregamento: Espera o esqueleto da página sumir 
   // ou a lista de ofertas ter pelo menos um item disponível REAL
   cy.get('li[data-js^="offer-element-"]', { timeout: 30000 }).should('be.visible');
-  
+
   // O "pulo do gato": Esperar um pequeno respiro para o JS da Cometa atachar os eventos nos botões
-  cy.wait(3000); 
+  cy.wait(3000);
 
   // 2. Buscamos as ofertas disponíveis
   cy.get('li[data-js^="offer-element-"]:has(.available)', { timeout: 20000 })
@@ -520,13 +531,13 @@ Cypress.Commands.add('selecionarPassagemAleatoriaVolta', () => {
 
       // --- LÓGICA DO MODAL "FIQUE ATENTO" ---
       // Aumentamos para 3s para garantir que o erro de 'servicesList' não ocorra
-      cy.wait(3000); 
-      
+      cy.wait(3000);
+
       cy.get('body').then(($body) => {
         if ($body.find('[data-js="button-agree"]').is(':visible')) {
           cy.log('⚠️ Confirmando modal de madrugada...');
           cy.get('[data-js="button-agree"]').click({ force: true });
-          
+
           cy.wait(3000);
           cy.url().then((urlAtual) => {
             if (urlAtual.includes('/disponibilidade')) {
@@ -570,10 +581,10 @@ Cypress.Commands.add('selecionarAssentoComValidacao', (numAssentos = 1) => {
         // 4. VERIFICAÇÃO DO MODAL DE ERRO
         cy.get('body').then(($body) => {
           const modalErro = $body.find('article:contains("Este assento está indisponível")');
-          
+
           if (modalErro.length > 0 && modalErro.is(':visible')) {
             cy.log('⚠️ Assento indisponível no servidor! Fechando e tentando outro...');
-            
+
             // Clica no botão "Fechar" do modal (ID no seu print: close-alert-overlay)
             cy.get('#close-alert-overlay').click();
             cy.wait(1000);
@@ -601,7 +612,7 @@ Cypress.Commands.add('selecionarAssentoComValidacao', (numAssentos = 1) => {
 
 Cypress.Commands.add('selecionarPassagemAleatoria3', (tipoParaIgnorar) => {
   const seletorCard = 'li[data-js^="offer-element"]';
-  
+
   cy.get(seletorCard, { timeout: 20000 })
     .should('be.visible')
     .then(($offers) => {
@@ -636,11 +647,11 @@ Cypress.Commands.add('selecionarPassagemAleatoria3', (tipoParaIgnorar) => {
          o código abaixo faz sentido:
       */
       cy.get('.button-agree').if().then(() => {
-         cy.log('Popup detectado, clicando novamente no botão de compra...');
-         cy.wrap($filtered)
-           .eq(randomIndex)
-           .find('button[data-js="buy-ticket"]')
-           .click({ force: true });
+        cy.log('Popup detectado, clicando novamente no botão de compra...');
+        cy.wrap($filtered)
+          .eq(randomIndex)
+          .find('button[data-js="buy-ticket"]')
+          .click({ force: true });
       });
 
       cy.log(`✅ Comando Finalizado. Opção ${randomIndex + 1} tratada.`);
@@ -654,30 +665,30 @@ Cypress.Commands.add('selecionarPassagemIda', () => {
 
   // 1. Verificamos o que apareceu na tela primeiro
   cy.get('body').then(($body) => {
-    
+
     // CASO A: Apareceu a mensagem de "Não encontramos resultado"
     if ($body.find(msgSemResultado).length > 0 && $body.find(msgSemResultado).is(':visible')) {
       cy.log('⚠️ Trecho sem resultados. Clicando em data posterior...');
       cy.get(cardDataPosterior).should('be.visible').click();
-      
+
       // Após clicar na nova data, chamamos o comando novamente (recursão) 
       // para ele tentar selecionar a passagem na nova tela carregada
-      cy.wait(3000); 
+      cy.wait(3000);
       cy.selecionarPassagemIda();
-    } 
-    
+    }
+
     // CASO B: Encontrou passagens normalmente
     else {
       cy.get(seletorCard, { timeout: 20000 })
         .should('be.visible')
         .then(($offers) => {
           // Filtra apenas os que têm botão de compra habilitado
-          const $filtered = $offers.filter((i, el) => 
+          const $filtered = $offers.filter((i, el) =>
             Cypress.$(el).find('button[data-js="buy-ticket"]:not([disabled])').length > 0
           );
 
           if ($filtered.length === 0) {
-             throw new Error("Nenhum card com botão de compra ativo encontrado.");
+            throw new Error("Nenhum card com botão de compra ativo encontrado.");
           }
 
           const randomIndex = Math.floor(Math.random() * $filtered.length);
@@ -711,29 +722,29 @@ Cypress.Commands.add('selecionarPassagemVolta', () => {
 
   // 1. Verificamos se há resultados para a volta
   cy.get('body').then(($body) => {
-    
+
     // CASO A: Mensagem de "Não encontramos resultado" na volta
     if ($body.find(msgSemResultado).is(':visible')) {
       cy.log('⚠️ Volta sem resultados. Clicando em data posterior...');
       cy.get(cardDataPosterior).should('be.visible').click();
-      
+
       // Aguarda carregar e tenta novamente (recursão)
-      cy.wait(4000); 
+      cy.wait(4000);
       cy.selecionarPassagemVolta();
-    } 
-    
+    }
+
     // CASO B: Existem passagens disponíveis
     else {
       cy.get(seletorCard, { timeout: 20000 })
         .should('be.visible')
         .then(($offers) => {
           // Filtra apenas ofertas com botão de compra ativo
-          const $filtered = $offers.filter((i, el) => 
+          const $filtered = $offers.filter((i, el) =>
             Cypress.$(el).find('button[data-js="buy-ticket"]:not([disabled])').length > 0
           );
 
           if ($filtered.length === 0) {
-             throw new Error("Nenhuma passagem de VOLTA disponível encontrada.");
+            throw new Error("Nenhuma passagem de VOLTA disponível encontrada.");
           }
 
           const randomIndex = Math.floor(Math.random() * $filtered.length);
@@ -747,11 +758,11 @@ Cypress.Commands.add('selecionarPassagemVolta', () => {
           cy.wait(2500); // Tempo para o modal renderizar
           cy.get('body').then(($modalBody) => {
             const $btnAgree = $modalBody.find('[data-js="button-agree"]:visible');
-            
+
             if ($btnAgree.length > 0) {
               cy.log('⚠️ Modal detectado na volta. Confirmando...');
               cy.wrap($btnAgree).click();
-              
+
               // Verifica se precisa clicar no botão de compra novamente após o modal
               cy.wait(1500);
               cy.url().then((currentUrl) => {

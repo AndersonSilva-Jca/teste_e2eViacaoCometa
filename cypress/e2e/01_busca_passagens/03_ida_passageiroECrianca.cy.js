@@ -2,16 +2,20 @@
 
 //TESTES OK
 
-const login = require('../../fixtures/login.json')
+// const login = require('../../fixtures/login.json')
 
 describe('Fazer busca de destinos', () => {
-  beforeEach(() => {
+  before(() => {
+    // cy.clearCookies();
+    // cy.clearLocalStorage();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('https://www.viacaocometa.com.br');
+    cy.visit('/');
   });
 
   it('Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento', () => {
-    cy.login(login.email, login.senha, { timeout: 2000 })
+    const login = Cypress.env('login');
+    const senha = Cypress.env('senha');
+    cy.login(login, senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get('#input-destination').click().type('Rio de Janeiro')
