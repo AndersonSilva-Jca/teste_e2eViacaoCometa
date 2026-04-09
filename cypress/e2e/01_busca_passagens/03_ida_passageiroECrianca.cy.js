@@ -26,8 +26,8 @@ describe('Fazer busca de destinos', () => {
     cy.get('[data-js="infant-quantity-plus-one"] > .plusone').click()
     cy.get('#close-person-quantity').click()
     cy.get('#search-button', { timeout: 1000 }).click()
-    cy.contains('IDA').should('be.visible');
-    cy.selecionarPassagemAleatoria1({ timeout: 2000 })
+    cy.contains('IDA', {timeout: 20000}).should('be.visible');
+    cy.selecionarPassagemAleatoria1({ timeout: 20000 })
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Menor de Idade ODP').should('be.visible').click()
