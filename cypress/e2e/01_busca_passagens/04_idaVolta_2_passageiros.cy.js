@@ -40,14 +40,14 @@ it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
     cy.get('.passenger-footer').click()
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-    cy.wait(5000)
+    cy.wait(10000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click()
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-    cy.wait(5000)
+    cy.wait(10000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click();
-    cy.wait(5000)
+    // cy.wait(5000)
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     //  Não finalizar a compra para evitar transações reais

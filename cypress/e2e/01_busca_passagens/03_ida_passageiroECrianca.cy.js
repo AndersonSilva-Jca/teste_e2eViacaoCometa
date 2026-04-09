@@ -27,7 +27,9 @@ describe('Fazer busca de destinos', () => {
     cy.get('#close-person-quantity').click()
     cy.get('#search-button', { timeout: 1000 }).click()
     cy.contains('IDA', {timeout: 20000}).should('be.visible');
+      cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 20000 })
+    cy.wait(10000)
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Menor de Idade ODP').should('be.visible').click()
@@ -35,6 +37,7 @@ describe('Fazer busca de destinos', () => {
     cy.get('.passenger-footer').click()
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 5000 }).should('be.visible');
+    cy.wait(5000)
     cy.selecionarAssentoAleatorio('IDA', { timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 5000 }).should('be.visible').click()
     cy.url().should('include', '/pagamento')

@@ -23,10 +23,10 @@ describe('Fazer busca de destinos', () => {
     cy.get('#input-date-return').click()
     cy.selecionarDataVolta(6)
     cy.get('#search-button', {timeout: 20000}).should('be.visible').click()
-    cy.wait(1500)
+    cy.wait(5000)
     cy.selecionarPassagemIda({ timeout: 60000 })
     cy.contains('ESCOLHER PASSAGENS', { timeout: 60000 }).should('be.visible');
-    cy.wait(5000)
+    cy.wait(8000)
     cy.contains('ESCOLHER PASSAGENS', { timeout: 60000 }).should('be.visible');
     cy.selecionarPassagemVolta({ timeout: 60000 })
     cy.wait(10000)
