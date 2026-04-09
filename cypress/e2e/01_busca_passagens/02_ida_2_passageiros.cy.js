@@ -28,9 +28,9 @@ describe('Fazer busca de destinos', () => {
     cy.get('#passenger-quantity-plus-one > .plusone').click()
     cy.get('#close-person-quantity').click()
     cy.get('#search-button', { timeout: 2000 }).click()
-    cy.wait(10000)
+    cy.wait(5000)
     cy.selecionarPassagemIda()
-    cy.wait(10000)
+    cy.wait(5000)
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
@@ -38,10 +38,9 @@ describe('Fazer busca de destinos', () => {
     cy.get('.passenger-footer').click()
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-    cy.wait(10000)
+    cy.wait(5000)
     cy.selecionarDoisAssentosAleatorios('IDA', { timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click()
-    cy.wait(2000)
     // cy.contains('Cartões de crédito').should('be.visible')
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
