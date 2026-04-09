@@ -15,8 +15,8 @@ describe('Fazer busca de destinos', () => {
   });
   
   it('Fazer busca de destinos IDA com 2 passageiros', () => {
-    const login = cy.env('login'); 
-    const senha = cy.env('senha');
+    const login = Cypress.env('login'); 
+    const senha = Cypress.env('senha');
     cy.login(login, senha, { timeout: 10000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
