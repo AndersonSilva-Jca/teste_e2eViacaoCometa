@@ -30,7 +30,7 @@ describe('Fazer busca de destinos', () => {
     cy.get('#search-button', { timeout: 2000 }).click()
     cy.wait(10000)
     cy.selecionarPassagemIda()
-    cy.wait(10000)
+    cy.wait(15000)
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
