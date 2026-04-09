@@ -1,10 +1,9 @@
 const { defineConfig } = require("cypress");
 module.exports = defineConfig({
-  allowCypressEnv: true,
   viewportWidth: 1920,
   viewportHeight: 1080,
-//npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
-
+  //npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
+  
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
     video: true, // Importante para ver o que aconteceu na falha no CI
@@ -17,5 +16,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    allowCypressEnv: true
   },
 });
