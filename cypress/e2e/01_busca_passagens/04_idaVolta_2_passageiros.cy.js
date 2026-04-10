@@ -30,9 +30,9 @@ it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
     cy.get('#search-button', { timeout: 20000 }).click()
     cy.wait(5000)
     cy.selecionarPassagemIda({ timeout: 20000 })
-    cy.wait(10000)
+    cy.wait(20000)
     cy.selecionarPassagemVolta({ timeout: 20000 })
-    cy.wait(15000)
+    cy.wait(2000)
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
@@ -40,11 +40,11 @@ it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
     cy.get('.passenger-footer').click()
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-    cy.wait(10000)
+    cy.wait(2000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click()
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-    cy.wait(10000)
+    cy.wait(2000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 10000 }).should('be.visible').click();
     // cy.wait(5000)
