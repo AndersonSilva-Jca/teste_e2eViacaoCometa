@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: 24
 
-      # Instalando apenas o necessário para o Ubuntu 24.04
-      - name: Install Cypress System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libnss3 libnspr4 libgbm1 libasound2t64 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 mesa-utils
+      # # Instalando apenas o necessário para o Ubuntu 24.04
+      # - name: Install Cypress System Dependencies
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y libnss3 libnspr4 libgbm1 libasound2t64 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 mesa-utils
 
       - name: Instalar Dependências
         run: npm install
@@ -30,37 +30,14 @@ jobs:
         # Isso resolve o erro "Permission denied"
         run: chmod +x ./node_modules/.bin/cypress
 
-      # - name: Rodar Testes Cypress
-      #   id: cypress
-      #   continue-on-error: true
-      #   # Adicionamos o xvfb-run para garantir que o navegador abra no Linux sem monitor
-      #   run: xvfb-run npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
-      #   env:
-      #     CYPRESS_LOGIN: ${{ secrets.CYPRESS_LOGIN }}
-      #     CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
-
-      # - name: Enviar Alerta por E-mail (Se falhar)
-      #   if: steps.cypress.outcome == 'failure'
-      #   uses: dawidd6/action-send-mail@v3
-      #   with:
-      #     server_address: smtp.gmail.com
-      #     server_port: 465
-      #     username: ${{ secrets.MAIL_USERNAME }}
-      #     password: ${{ secrets.MAIL_PASSWORD }}
-      #     subject: "🚨 (TESTES) FALHA DETECTADA: Monitoramento Cypress - Viação Cometa"
-      #     to: anderson.ssantos@jcatlm.com.br
-      #     from: "Monitoramento Contínuo Cypress"
-      #     body: |
-      #       Os testes falharam. Verifique aqui: 
-      #       https://github.com/${{ github.repository }}
-
       - name: Rodar Testes Cypress
         id: cypress
         continue-on-error: true
-        run: xvfb-run npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
+        run: xvfb-run npx cypress run 
+        # --spec "cypress/e2e/01_busca_passagens/**/*"
         env:
           CYPRESS_LOGIN: ${{ secrets.CYPRESS_LOGIN }}
-          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
+          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }} 
 
       - name: Enviar E-mail de SUCESSO ✅
         # Roda apenas se o passo 'cypress' terminou com sucesso
@@ -75,8 +52,11 @@ jobs:
           to: anderson.ssantos@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
+            ✅ (TESTES OK) Monitoramento Cypress - Viação Cometa
+
             Todos os testes passaram com sucesso! 🚀
-            O site da Viação Cometa está a funcionar corretamente.
+
+            O site da Viação Cometa está funcionando corretamente.
             
             Verifique os detalhes aqui: https://github.com/${{ github.repository }}/actions
 
@@ -93,7 +73,10 @@ jobs:
           to: anderson.ssantos@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
-            Atenção! Foram detetadas falhas nos testes automatizados.
+            🚨 (TESTES FALHOU) Monitoramento Cypress - Viação Cometa
+
+            Atenção! Foram detectadas falhas nos testes automatizados.
+            
             O site pode estar com problemas ou houve erro no login.
             
             Verifique o erro aqui: https://github.com/${{ github.repository }}/actions
