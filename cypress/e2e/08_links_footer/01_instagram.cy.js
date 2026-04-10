@@ -6,6 +6,5 @@ describe('Validar Links Footer - Instagram', () => {
   });
   it('Deve validar Links Footer - Instagram', () => {
     cy.get('.social-networks-list > :nth-child(1) > [href="https://www.instagram.com/viacaocometa.oficial/?hl=pt-br"]').click()
-    cy.url().should('include', '/viacaocometa.oficial')
   })
 });

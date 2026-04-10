@@ -1,8 +1,10 @@
 name: Monitoramento Contínuo Cypress
-
 on:
+  push:
+    branches: [ main, master ]
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *'
+    - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,51 +19,60 @@ jobs:
         with:
           node-version: 24
 
-      # # Instalando apenas o necessário para o Ubuntu 24.04
-      # - name: Install Cypress System Dependencies
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y libnss3 libnspr4 libgbm1 libasound2t64 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 mesa-utils
-
       - name: Instalar Dependências
         run: npm install
 
       - name: Dar permissão ao Cypress
-        # Isso resolve o erro "Permission denied"
         run: chmod +x ./node_modules/.bin/cypress
 
       - name: Rodar Testes Cypress
         id: cypress
         continue-on-error: true
-        run: xvfb-run npx cypress run 
-        # --spec "cypress/e2e/01_busca_passagens/**/*"
+        run: xvfb-run npx cypress run
         env:
           CYPRESS_LOGIN: ${{ secrets.CYPRESS_LOGIN }}
-          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }} 
+          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
+          
+          # NOVO PASSO: Salvar o Relatório Mochawesome
+      - name: Salvar Relatório HTML
+        if: always() # Garante que o relatório seja salvo mesmo se o teste falhar
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-cypress
+          path: cypress/reports/
+          retention-days: 7 # O link expira em 7 dias para não ocupar seu espaço
 
       - name: Enviar E-mail de SUCESSO ✅
-        # Roda apenas se o passo 'cypress' terminou com sucesso
-        if: steps.cypress.outcome == 'success'
+        if: |
+          steps.cypress.outcome == 'success' && 
+          (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.schedule == '0 20 * * *')
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "✅ (TESTES OK) Monitoramento Cypress - Viação Cometa"
+          subject: "✅ (EM TESTE) Monitoramento Cypress - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
-            ✅ (TESTES OK) Monitoramento Cypress - Viação Cometa
+            RELATÓRIO DE SUCESSO 🚀 Monitoramento Cypress - Viação Cometa
+
+            📊 O relatório detalhado (Mochawesome) está disponível na aba "Artifacts" do link abaixo.
+            🔗 LINK: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
             Todos os testes passaram com sucesso! 🚀
+            Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
 
-            O site da Viação Cometa está funcionando corretamente.
-            
-            Verifique os detalhes aqui: https://github.com/${{ github.repository }}/actions
+            ---
+            🔹 GATILHO: ${{ github.event_name == 'schedule' && 'Agendamento Automático' || github.event_name == 'push' && 'Novo Código (Push)' || 'Execução Manual' }}
+            🔹 STATUS: Todos os testes passaram!
+            🔹 REPOSITÓRIO: ${{ github.repository }}
+            🔹 BRANCH: ${{ github.ref_name }}
+            ---
+            Detalhes da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Enviar E-mail de FALHA 🚨
-        # Roda apenas se o passo 'cypress' falhou
         if: steps.cypress.outcome == 'failure'
         uses: dawidd6/action-send-mail@v3
         with:
@@ -69,14 +80,28 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "🚨 (TESTES FALHOU) Monitoramento Cypress - Viação Cometa"
+          subject: "🚨 (EM TESTE) (FALHA) Relatório Cypress - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
-            🚨 (TESTES FALHOU) Monitoramento Cypress - Viação Cometa
+            RELATÓRIO DE FALHA DETECTADA 🚨
 
-            Atenção! Foram detectadas falhas nos testes automatizados.
+             📊 O relatório detalhado (Mochawesome) está disponível na aba "Artifacts" do link abaixo.
+            🔗 LINK: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
             
-            O site pode estar com problemas ou houve erro no login.
+            ---
+            ❌ GATILHO DO ERRO: ${{ github.event_name == 'schedule' && 'Agendamento Automático' || github.event_name == 'push' && 'Novo Código (Push)' || 'Execução Manual' }}
+            ❌ EXECUTADO POR: ${{ github.actor }}
+            ❌ DATA/HORA: ${{ github.event.head_commit.timestamp || 'Horário agendado' }}
+            ---
             
-            Verifique o erro aqui: https://github.com/${{ github.repository }}/actions
+            RESUMO DOS TESTES:
+            O Cypress encontrou um erro durante a execução das specs. 
+            Isso pode indicar que o site da Viação Cometa está instável ou houve uma falha no processo de login.
+            
+            COMO ANALISAR:
+            1. Acesse o link abaixo.
+            2. Vá na aba "Artifacts" para baixar o Vídeo ou Screenshot do erro.
+            3. Verifique o log do passo "Rodar Testes Cypress".
+            
+            🔗 LINK DO RELATÓRIO: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

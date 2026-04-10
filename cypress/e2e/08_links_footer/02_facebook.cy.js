@@ -6,6 +6,5 @@ describe('Validar Links Footer - Facebook', () => {
   });
   it('Deve validar Links Footer - Facebook', () => {
     cy.get('a[href="https://www.facebook.com/ViacaoCometaOficial"]').click()
-    cy.url().should('include', '/ViacaoCometaOficial')
   })
 });

@@ -2,6 +2,15 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   viewportWidth: 1920,
   viewportHeight: 1080,
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: true,
+    json: true,
+    timestamp: "mmddyyyy_HHMMss"
+  },
+  
   //npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
   
   e2e: {
