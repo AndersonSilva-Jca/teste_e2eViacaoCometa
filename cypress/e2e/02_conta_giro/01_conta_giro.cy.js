@@ -4,12 +4,20 @@ const { faker } = require('@faker-js/faker');
 const login = require('../../fixtures/login.json')
 
 describe('Conta GIRO', () => {
- beforeEach(() => {
-  cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-  cy.visit('https://www.viacaocometa.com.br');
-});
+  beforeEach(() => {
+    cy.clearCookies();
+    cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+    cy.visit('/');
+    cy.env(['login', 'senha']).then((env) => {
+      cy.visit('/');
+      cy.get('#header-login-button').click()
+      cy.get('#input-login').type(env.login)
+      cy.get('#input-password').type(env.senha, { log: false })
+      cy.get('#button-login').click()
+      cy.get('.logged-message').should('contain', 'Olá')
+    })
+  });
   it('Fazer compra de passagem com conta GIRO ', () => {
-    cy.login(login.email, login.senha, { timeout: 2000 })
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get('#input-destination').click().type('Rio de Janeiro')
@@ -38,5 +46,5 @@ describe('Conta GIRO', () => {
     //  Não finalizar a compra para evitar transações reais
     // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
   })
-  
+
 });

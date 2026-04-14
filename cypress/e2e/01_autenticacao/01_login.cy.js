@@ -1,25 +1,27 @@
 /// <reference types='cypress' />
 
 const { faker } = require('@faker-js/faker');
-const login = require('../../fixtures/login.json')
 
 
 describe('Login', () => {
   beforeEach(() => {
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('https://www.viacaocometa.com.br');
+    cy.env(['login', 'senha']).then((env) => {
+      cy.visit('/');
+      cy.get('#header-login-button').click()
+      cy.get('#input-login').type(env.login)
+      cy.get('#input-password').type(env.senha, { log: false })
+      cy.get('#button-login').click()
+      cy.get('.logged-message').should('contain', 'Olá')
+
+    })
 
   });
   it('Deve fazer login com sucesso', () => {
-    cy.get('#header-login-button').click()
-    cy.get('#input-login').type(login.email)
-    cy.get('#input-password').type(login.senha, { log: false })
-    cy.get('#button-login').click()
-    cy.get('.logged-message').should('contain', 'Olá')
+    cy.get('.logged-message').should('be.visible')
   });
 
   it('Deve preencher endereço do perfil', () => {
-    cy.login(login.email, login.senha)
     cy.get('.logged-message').click()
     cy.get('a[data-pagetype="edit-profile-page"]:visible').click()
     cy.get('.title-address-info > p').should('contain', 'Informações opcionais')
@@ -32,14 +34,12 @@ describe('Login', () => {
   });;
 
   it('Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.', () => {
-    cy.login(login.email, login.senha)
     cy.get('.logged-message').click()
     cy.get('a[href="https://www.viacaocometa.com.br/minhas-compras"]:visible').click()
     cy.get('.next-trips > :nth-child(1) > :nth-child(1) > .account-info > p').should('contain', 'Não encontramos nenhuma viagem futura em sua conta.')
   });
 
   it('Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.', () => {
-    cy.login(login.email, login.senha)
     cy.get('.logged-message').click()
     cy.get('a[href="https://www.viacaocometa.com.br/minhas-compras"]:visible').click()
     cy.get('#button-tab-trip-edit > .cmp-text > p > [style="color: rgb(255,0,150);"]').click()

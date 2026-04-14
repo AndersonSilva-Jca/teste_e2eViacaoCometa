@@ -1,21 +1,20 @@
 const { defineConfig } = require("cypress");
+require('dotenv').config();
 module.exports = defineConfig({
   viewportWidth: 1920,
   viewportHeight: 1080,
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/reports',
-    overwrite: false,
-    html: true,
-    json: true,
-    timestamp: "mmddyyyy_HHMMss"
+  env: {
+      login : process.env.LOGIN,
+      senha : process.env.SENHA,
+      mailUsername : process.env.MAIL_USERNAME,
+      mailPassword : process.env.MAIL_PASSWORD
   },
   
   //npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
   
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
-    video: true, // Importante para ver o que aconteceu na falha no CI
+    video: false, // Importante para ver o que aconteceu na falha no CI
     screenshotOnRunFailure: true,
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
     defaultCommandTimeout: 10000, // Aumenta o tempo padrão de espera por elementos
@@ -25,6 +24,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    allowCypressEnv: false
+    // experimentalRunAllSpecs: true,
+    // testIsolation: false, // Isso mantém a página carregada entre os 'it's
+    allowCypressEnv: false,
+      trashAssetsBeforeRuns: false, // Evita deletar vídeos e screenshots antigos, útil para análise pós-falha
   },
 });

@@ -2,7 +2,8 @@
 
 describe('Validar Links Footer - Whatsapp', () => {
   beforeEach(() => {
-    cy.visit('https://www.viacaocometa.com.br');
+    cy.clearCookies();
+    cy.visit('/');
   });
   it('Deve validar Links Footer - Atendimento virtual whatsapp', () => {
     cy.get('[href="https://api.whatsapp.com/send?phone=5511972645808"] > b').click()

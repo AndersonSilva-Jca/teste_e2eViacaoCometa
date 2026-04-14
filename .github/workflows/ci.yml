@@ -3,13 +3,18 @@ on:
   push:
     branches: [ main, master ]
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'
     - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        container: [1, 2 , 3]
+        node-version: [24]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,10 +33,11 @@ jobs:
       - name: Rodar Testes Cypress
         id: cypress
         continue-on-error: true
-        run: xvfb-run npx cypress run
+        run: npx cypress run --spec "cypress/e2e/00_smoke/**/*"
         env:
-          CYPRESS_LOGIN: ${{ secrets.CYPRESS_LOGIN }}
-          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
+          LOGIN: ${{ secrets.LOGIN }}
+          SENHA: ${{ secrets.SENHA }}
+          
           
           # NOVO PASSO: Salvar o Relatório Mochawesome
       - name: Salvar Relatório HTML

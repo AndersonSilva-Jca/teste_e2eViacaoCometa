@@ -2,8 +2,9 @@
 
 describe('Validar link de conexão com o Porto de Santos', () => {
   beforeEach(() => {
+    cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('https://www.viacaocometa.com.br');
+    cy.visit('/');
   });
   it('Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos', () => {
     cy.get('[data-tab="slick_tabs-content-carousel-2"]').click({ force: true });

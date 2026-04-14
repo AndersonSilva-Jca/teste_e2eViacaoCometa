@@ -2,8 +2,9 @@
 
 describe('Validar link fale conosco', () => {
  beforeEach(() => {
+    cy.clearCookies();  
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('https://www.viacaocometa.com.br');});
+    cy.visit('/');});
 
 it('Deve preencher o formulário de contato', () => {
   cy.get('.header-nav-container > :nth-child(1) > :nth-child(2)').click()

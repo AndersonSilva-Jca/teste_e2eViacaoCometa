@@ -2,4 +2,5 @@ cypress.env.json
 node_modules
 cypress/videos
 cypress/screenshots
-# cypress/fixtures/login.json
+cypress/fixtures/login.json
+.env

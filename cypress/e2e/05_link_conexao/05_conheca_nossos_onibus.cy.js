@@ -3,8 +3,9 @@
 
 describe('Validar link de conexão com os ônibus', () => {
   beforeEach(() => {
+    cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('https://www.viacaocometa.com.br');
+    cy.visit('/');
 
   });
   it('Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato', () => {
