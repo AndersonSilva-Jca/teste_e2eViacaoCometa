@@ -2,16 +2,10 @@ name: Monitoramento Contínuo Cypress
 on:
   push:
     branches: [ main, master ]
-<<<<<<< HEAD
+
   schedule:
     - cron: '*/59 * * * *'
     - cron: '0 20 * * *'
-=======
- # schedule:
-    # - cron: '*/30 * * * *'
-   # - cron: '0 20 * * *'
->>>>>>> 70fd6df7f39c41be84bba7e891644eee59545e4c
-  workflow_dispatch:
 
 jobs:
   cypress-run:
