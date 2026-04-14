@@ -38,7 +38,6 @@ jobs:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
           
-          
           # NOVO PASSO: Salvar o Relatório Mochawesome
       - name: Salvar Relatório HTML
         if: always() # Garante que o relatório seja salvo mesmo se o teste falhar
@@ -47,6 +46,18 @@ jobs:
           name: relatorio-cypress
           path: cypress/reports/
           retention-days: 7 # O link expira em 7 dias para não ocupar seu espaço
+
+      - name: Link do Relatório
+        if: always()
+        run: echo "O relatório pode ser visualizado em https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+
+      - name: Deploy do Relatório para o GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports
+          force_orphan: true # Mantém apenas o relatório da última execução
 
       - name: Enviar E-mail de SUCESSO ✅
         if: |
@@ -58,24 +69,15 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "✅ (EM TESTE) Monitoramento Cypress - Viação Cometa"
+          subject: "✅ Monitoramento Cypress - Site Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
-            RELATÓRIO DE SUCESSO 🚀 Monitoramento Cypress - Viação Cometa
-
-            📊 O relatório detalhado (Mochawesome) está disponível na aba "Artifacts" do link abaixo.
-            🔗 LINK: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Monitoramento Cypress - Viação Cometa
 
             Todos os testes passaram com sucesso! 🚀
             Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
 
-            ---
-            🔹 GATILHO: ${{ github.event_name == 'schedule' && 'Agendamento Automático' || github.event_name == 'push' && 'Novo Código (Push)' || 'Execução Manual' }}
-            🔹 STATUS: Todos os testes passaram!
-            🔹 REPOSITÓRIO: ${{ github.repository }}
-            🔹 BRANCH: ${{ github.ref_name }}
-            ---
             Detalhes da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Enviar E-mail de FALHA 🚨
@@ -105,9 +107,4 @@ jobs:
             O Cypress encontrou um erro durante a execução das specs. 
             Isso pode indicar que o site da Viação Cometa está instável ou houve uma falha no processo de login.
             
-            COMO ANALISAR:
-            1. Acesse o link abaixo.
-            2. Vá na aba "Artifacts" para baixar o Vídeo ou Screenshot do erro.
-            3. Verifique o log do passo "Rodar Testes Cypress".
-            
-            🔗 LINK DO RELATÓRIO: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            🔗 LINK DO RELATÓRIO: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
