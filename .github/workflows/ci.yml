@@ -4,7 +4,7 @@ on:
     branches: [ main, master ]
 
   schedule:
-    - cron: '*/40 * * * *'
+    - cron: '*/10 * * * *'
     - cron: '0 20 * * *'
 
 jobs:
@@ -37,6 +37,14 @@ jobs:
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
+
+      - name: Deploy do Relatório para o GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports
+          force_orphan: true # Mantém apenas o relatório da última execução
           
           # NOVO PASSO: Salvar o Relatório Mochawesome
       - name: Salvar Relatório HTML
@@ -50,14 +58,6 @@ jobs:
       - name: Link do Relatório
         if: always()
         run: echo "O relatório pode ser visualizado em https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-
-      - name: Deploy do Relatório para o GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports
-          force_orphan: true # Mantém apenas o relatório da última execução
 
       - name: Enviar E-mail de SUCESSO ✅
         if: |
