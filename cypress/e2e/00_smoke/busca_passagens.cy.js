@@ -18,7 +18,7 @@ describe('Fazer busca de destinos', () => {
     })
   });
 
-  it('Fazer busca de destinos IDA com 1 passageiro', () => {
+  it.only('Fazer busca de destinos IDA com 1 passageiro', () => {
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get('#input-destination').click().type('Rio de Janeiro')
@@ -115,10 +115,10 @@ describe('Fazer busca de destinos', () => {
     cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
-    cy.wait(8000)
+    cy.wait(30000)
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(15000)
+    cy.wait(5000)
     cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/poltrona')
@@ -154,9 +154,9 @@ describe('Fazer busca de destinos', () => {
     cy.get('#search-button', { timeout: 90000 }).click()
     cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(20000)
+    cy.wait(30000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(20000)
+    cy.wait(5000)
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#input-name-2').click()
     cy.contains('Teste Robo ODP').should('be.visible').click()

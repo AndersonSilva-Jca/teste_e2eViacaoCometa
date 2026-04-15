@@ -1,21 +1,16 @@
 name: Monitoramento Contínuo Cypress
+
 on:
   push:
     branches: [ main, master ]
-
   schedule:
     - cron: '*/10 * * * *'
-    - cron: '0 20 * * *'
   workflow_dispatch:
-    
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     container: [1, 2 , 3]
-    #     node-version: [24]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,13 +26,15 @@ jobs:
       - name: Dar permissão ao Cypress
         run: chmod +x ./node_modules/.bin/cypress
 
-      - name: Rodar Testes Cypress
+      - name: Rodar Testes Viação Cometa
         id: cypress
         continue-on-error: true
-        run: npx cypress run --spec "cypress/e2e/00_smoke/**/*"
+        # Adicionado o prefixo xvfb-run para evitar erros em servidores Linux (Ubuntu)
+        run: xvfb-run npx cypress run --spec "cypress/e2e/00_smoke/**/*"
         env:
-          LOGIN: ${{ secrets.LOGIN }}
-          SENHA: ${{ secrets.SENHA }}
+          # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
+          CYPRESS_LOGIN: ${{ secrets.LOGIN }}
+          CYPRESS_SENHA: ${{ secrets.SENHA }}
 
       - name: Deploy do Relatório para o GitHub Pages
         if: always()
@@ -45,20 +42,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./cypress/reports
-          force_orphan: true # Mantém apenas o relatório da última execução
-          
-          # NOVO PASSO: Salvar o Relatório Mochawesome
-      - name: Salvar Relatório HTML
-        if: always() # Garante que o relatório seja salvo mesmo se o teste falhar
-        uses: actions/upload-artifact@v4
-        with:
-          name: relatorio-cypress
-          path: cypress/reports/
-          retention-days: 7 # O link expira em 7 dias para não ocupar seu espaço
-
-      - name: Link do Relatório
-        if: always()
-        run: echo "O relatório pode ser visualizado em https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          force_orphan: true
 
       - name: Enviar E-mail de SUCESSO ✅
         if: |
@@ -77,8 +61,8 @@ jobs:
             Monitoramento Cypress - Viação Cometa
 
             Todos os testes passaram com sucesso! 🚀
-            Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
-
+            
+            Visualizar Relatório: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
             Detalhes da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Enviar E-mail de FALHA 🚨
@@ -89,23 +73,19 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "🚨 (EM TESTE) (FALHA) Relatório Cypress - Viação Cometa"
+          subject: "🚨 Falha Detectada - Monitoramento Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             RELATÓRIO DE FALHA DETECTADA 🚨
 
-             📊 O relatório detalhado (Mochawesome) está disponível na aba "Artifacts" do link abaixo.
-            🔗 LINK: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
+            📊 O relatório detalhado está disponível em:
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+
             ---
-            ❌ GATILHO DO ERRO: ${{ github.event_name == 'schedule' && 'Agendamento Automático' || github.event_name == 'push' && 'Novo Código (Push)' || 'Execução Manual' }}
+            ❌ GATILHO: ${{ github.event_name }}
             ❌ EXECUTADO POR: ${{ github.actor }}
-            ❌ DATA/HORA: ${{ github.event.head_commit.timestamp || 'Horário agendado' }}
             ---
-            
-            RESUMO DOS TESTES:
-            O Cypress encontrou um erro durante a execução das specs. 
-            Isso pode indicar que o site da Viação Cometa está instável ou houve uma falha no processo de login.
-            
-            🔗 LINK DO RELATÓRIO: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+
+            Detalhes técnicos e Artifacts:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
