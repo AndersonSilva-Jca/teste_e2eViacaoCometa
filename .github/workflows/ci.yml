@@ -28,7 +28,7 @@ jobs:
         id: cypress
         continue-on-error: true
         # Adicionado o prefixo xvfb-run para evitar erros em servidores Linux (Ubuntu)
-        run: xvfb-run npx cypress run "cypress/e2e/00_smoke/**/*" 
+        run: xvfb-run npx cypress run --spec "cypress/e2e/00_smoke/**/*"
         env:
           # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
           LOGIN: ${{ secrets.LOGIN }}
