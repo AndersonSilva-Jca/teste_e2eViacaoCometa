@@ -33,8 +33,8 @@ jobs:
         run: xvfb-run npx cypress run --spec "cypress/e2e/00_smoke/**/*"
         env:
           # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
-          CYPRESS_LOGIN: ${{ secrets.LOGIN }}
-          CYPRESS_SENHA: ${{ secrets.SENHA }}
+          LOGIN: ${{ secrets.LOGIN }}
+          SENHA: ${{ secrets.SENHA }}
 
       - name: Deploy do Relatório para o GitHub Pages
         if: always()
