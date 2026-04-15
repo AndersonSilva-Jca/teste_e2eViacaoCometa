@@ -18,7 +18,7 @@ describe('Fazer busca de destinos', () => {
     })
   });
 
-  it.only('Fazer busca de destinos IDA com 1 passageiro', () => {
+  it('Fazer busca de destinos IDA com 1 passageiro', () => {
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get('#input-destination').click().type('Rio de Janeiro')

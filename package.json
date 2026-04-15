@@ -22,5 +22,11 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "faker": "^5.5.3"
-  }
+  },
+  "scripts": {
+  "delete:reports": "rm -rf cypress/reports/*",
+  "mochawesome:merge": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json",
+  "mochawesome:generate": "npx marg cypress/reports/report.json --reportDir cypress/reports --reportFilename index.html",
+  "test:regression": "npm run delete:reports && npx cypress run && npm run mochawesome:merge && npm run mochawesome:generate"
+}
 }

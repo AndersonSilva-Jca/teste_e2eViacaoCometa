@@ -3,12 +3,13 @@ require('dotenv').config();
 module.exports = defineConfig({
   viewportWidth: 1920,
   viewportHeight: 1080,
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/reports',
-    overwrite: true, // Para o Pages, é melhor sobrescrever e manter sempre o último
-    html: true,
-    json: false,
+reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports', // Pasta onde o relatório será salvo
+      overwrite: false,
+      html: false, // Deixamos false aqui para gerar o JSON primeiro e depois o HTML único
+      json: true,
+      timestamp: "mmddyyyy_HHMMss"
   },  
   env: {
       login : process.env.LOGIN,

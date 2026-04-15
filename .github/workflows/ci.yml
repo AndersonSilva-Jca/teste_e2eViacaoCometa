@@ -30,7 +30,11 @@ jobs:
         id: cypress
         continue-on-error: true
         # Adicionado o prefixo xvfb-run para evitar erros em servidores Linux (Ubuntu)
-        run: xvfb-run npx cypress run --spec "cypress/e2e/00_smoke/**/*"
+        run: >
+          xvfb-run npx cypress run 
+          --spec "cypress/e2e/00_smoke/**/*" 
+          --reporter mochawesome 
+          --reporter-options reportDir="cypress/reports",overwrite=true,html=true,json=false,reportFilename="index"
         env:
           # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
           LOGIN: ${{ secrets.LOGIN }}
@@ -41,7 +45,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports
+          publish_dir: ./cypress/reports # Pasta onde o Cypress gera o index.html
+          publish_branch: gh-pages      # Branch que o GitHub Pages vai ler
           force_orphan: true
 
       - name: Enviar E-mail de SUCESSO ✅
