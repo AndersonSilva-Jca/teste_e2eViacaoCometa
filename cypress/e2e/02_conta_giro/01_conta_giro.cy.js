@@ -1,7 +1,7 @@
 /// <reference types='cypress' />
 
 const { faker } = require('@faker-js/faker');
-const login = require('../../fixtures/login.json')
+
 
 describe('Conta GIRO', () => {
   beforeEach(() => {

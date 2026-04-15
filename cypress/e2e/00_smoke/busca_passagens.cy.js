@@ -118,7 +118,7 @@ describe('Fazer busca de destinos', () => {
     cy.wait(30000)
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(5000)
+    cy.wait(15000)
     cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/poltrona')

@@ -67,8 +67,6 @@ jobs:
 
             Todos os testes passaram com sucesso! 🚀
             
-            Visualizar Relatório: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-            Detalhes da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Enviar E-mail de FALHA 🚨
         if: steps.cypress.outcome == 'failure'
@@ -85,12 +83,9 @@ jobs:
             RELATÓRIO DE FALHA DETECTADA 🚨
 
             📊 O relatório detalhado está disponível em:
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
             ---
-            ❌ GATILHO: ${{ github.event_name }}
+            ❌ GATILHO: ${{ github.event_name }} agendado
             ❌ EXECUTADO POR: ${{ github.actor }}
             ---
-
-            Detalhes técnicos e Artifacts:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
