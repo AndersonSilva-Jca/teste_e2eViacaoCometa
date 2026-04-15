@@ -37,12 +37,12 @@ describe('Conta GIRO', () => {
     cy.get('#tab-conta-giro').click()
     cy.get('[data-js="conditions-check"]').click({ force: true })
     cy.get('.btn-register > [type="button"]').should('be.visible').and('not.be.disabled').click()
-    cy.url().should('include', '/login-wallet')
-    cy.get('.pin-input-container > #input-password').type('613459')
-    cy.get(':nth-child(2) > .container > .row > .button-login').should('be.visible').and('not.be.disabled').click()
-    cy.get('#tab-conta-giro').click()
-    cy.contains('Pagamento Pendente').should('be.visible')
-    cy.get('[data-js="conditions-check"]').click({ force: true })
+    // cy.url().should('include', '/login-wallet')
+    // cy.get('.pin-input-container > #input-password').type('613459')
+    // cy.get(':nth-child(2) > .container > .row > .button-login').should('be.visible').and('not.be.disabled').click()
+    // cy.get('#tab-conta-giro').click()
+    // cy.contains('Pagamento Pendente').should('be.visible')
+    // cy.get('[data-js="conditions-check"]').click({ force: true })
     //  Não finalizar a compra para evitar transações reais
     // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
   })

@@ -1,53 +1,41 @@
 name: Monitoramento Contínuo Cypress
 
 on:
-  push:
-    branches: [ main, master ]
   schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: 
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout do código
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
 
       - name: Instalar Dependências
         run: npm install
 
-      - name: Dar permissão ao Cypress
-        run: chmod +x ./node_modules/.bin/cypress
+      # - name: Dar permissão ao Cypress
+      #   run: chmod +x ./node_modules/.bin/cypress
 
       - name: Rodar Testes Viação Cometa
         id: cypress
         continue-on-error: true
         # Adicionado o prefixo xvfb-run para evitar erros em servidores Linux (Ubuntu)
         run: >
-          xvfb-run npx cypress run 
-          --spec "cypress/e2e/00_smoke/**/*" 
+          xvfb-run npx cypress run "cypress/e2e/00_smoke/**/*" 
           --reporter mochawesome 
           --reporter-options reportDir="cypress/reports",overwrite=true,html=true,json=false,reportFilename="index"
         env:
           # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
-
-      - name: Deploy do Relatório para o GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports # Pasta onde o Cypress gera o index.html
-          publish_branch: gh-pages      # Branch que o GitHub Pages vai ler
-          force_orphan: true
 
       - name: Enviar E-mail de SUCESSO ✅
         if: |

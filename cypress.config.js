@@ -1,8 +1,8 @@
 const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
-  viewportWidth: 1920,
-  viewportHeight: 1080,
+  viewportWidth: 1280,
+  viewportHeight: 720,
 reporter: 'mochawesome',
     reporterOptions: {
       reportDir: 'cypress/reports', // Pasta onde o relatório será salvo
