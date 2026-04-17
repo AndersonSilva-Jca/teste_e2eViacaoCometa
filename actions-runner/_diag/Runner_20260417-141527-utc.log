@@ -1,0 +1,210 @@
+[2026-04-17 14:15:27Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'Credentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'Runner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner'
+[2026-04-17 14:15:27Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-04-17 14:15:27Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-04-17 14:15:27Z INFO Listener] Version: 2.333.1
+[2026-04-17 14:15:27Z INFO Listener] Commit: 6792966801e8925346735b68c03bf9f347af4646
+[2026-04-17 14:15:27Z INFO Listener] Culture: pt-BR
+[2026-04-17 14:15:27Z INFO Listener] UI Culture: pt-BR
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO Listener] Validating directory permissions for: 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO CommandLineParser] Parse
+[2026-04-17 14:15:27Z INFO CommandLineParser] Parsing 1 args
+[2026-04-17 14:15:27Z INFO CommandLineParser] parsing argument
+[2026-04-17 14:15:27Z INFO CommandLineParser] HasArgs: False
+[2026-04-17 14:15:27Z INFO CommandLineParser] Adding Command: run
+[2026-04-17 14:15:27Z INFO Listener] Arguments parsed
+[2026-04-17 14:15:27Z INFO Runner] ExecuteCommand
+[2026-04-17 14:15:27Z INFO ConfigurationStore] currentAssemblyLocation: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin\Runner.Listener.dll
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] binPath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] RootFolder: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'Runner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] ConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner_migrated'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner_migrated
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'Credentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] CredFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_migrated'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] MigratedCredFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_migrated
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'Service': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.service'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.service
+[2026-04-17 14:15:27Z INFO CommandSettings] Flag 'help': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Flag 'version': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Flag 'check': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Command 'configure': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Command 'remove': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-04-17 14:15:27Z INFO ConfigurationManager] LoadSettings
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsConfigured()
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsConfigured: True
+[2026-04-17 14:15:27Z INFO ConfigurationManager] Is configured: True
+[2026-04-17 14:15:27Z INFO ConfigurationStore] Read setting file: 417 chars
+[2026-04-17 14:15:27Z INFO ConfigurationManager] Settings Loaded
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-04-17 14:15:27Z INFO CommandSettings] Command 'run': 'True'
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsConfigured()
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsConfigured: True
+[2026-04-17 14:15:27Z INFO ConfigurationManager] Is configured: True
+[2026-04-17 14:15:27Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-04-17 14:15:27Z INFO Runner] Set runner startup type - Manual
+[2026-04-17 14:15:27Z INFO CommandSettings] Flag 'once': 'False'
+[2026-04-17 14:15:27Z INFO CommandSettings] Flag 'once': 'False'
+[2026-04-17 14:15:27Z INFO Runner] RunAsync
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Work': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\_work'
+[2026-04-17 14:15:27Z INFO Runner] Validating directory permissions for: 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\_work'
+[2026-04-17 14:15:27Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-04-17 14:15:27Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2026-04-17 14:15:27Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2026-04-17 14:15:27Z INFO Runner] Falling back to original .runner settings
+[2026-04-17 14:15:27Z INFO Runner] Using BrokerMessageListener
+[2026-04-17 14:15:27Z INFO BrokerMessageListener] Using provided settings
+[2026-04-17 14:15:27Z INFO BrokerMessageListener] {
+  "AgentId": 22,
+  "AgentName": "POSSPCOMN251Y",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus10.actions.githubusercontent.com/4oBWS9qQR2fZGTQWueNTYNICltkenD8tIs5SYasopdrJwFqz4P/",
+  "GitHubUrl": "https://github.com/AndersonSilva-Jca/teste_e2eViacaoCometa",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-04-17 14:15:27Z INFO BrokerMessageListener] Loading Credentials
+[2026-04-17 14:15:27Z INFO ConfigurationStore] HasCredentials()
+[2026-04-17 14:15:27Z INFO ConfigurationStore] stored True
+[2026-04-17 14:15:27Z INFO CredentialManager] GetCredentialProvider
+[2026-04-17 14:15:27Z INFO CredentialManager] Creating type OAuth
+[2026-04-17 14:15:27Z INFO CredentialManager] Creating credential type: OAuth
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 14:15:27Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 14:15:27Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams'
+[2026-04-17 14:15:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams
+[2026-04-17 14:15:28Z INFO BrokerMessageListener] Attempt to create session.
+[2026-04-17 14:15:28Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-04-17 14:15:28Z INFO ConfigurationStore] HasCredentials()
+[2026-04-17 14:15:28Z INFO ConfigurationStore] stored True
+[2026-04-17 14:15:28Z INFO CredentialManager] GetCredentialProvider
+[2026-04-17 14:15:28Z INFO CredentialManager] Creating type OAuth
+[2026-04-17 14:15:28Z INFO CredentialManager] Creating credential type: OAuth
+[2026-04-17 14:15:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams
+[2026-04-17 14:15:28Z INFO BrokerMessageListener] VssConnection created
+[2026-04-17 14:15:28Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-04-17 14:15:28Z INFO RunnerServer] EstablishVssConnection
+[2026-04-17 14:15:28Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-04-17 14:15:28Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-17 14:15:28Z INFO RunnerServer] EstablishVssConnection
+[2026-04-17 14:15:28Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-04-17 14:15:28Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-17 14:15:28Z INFO RunnerServer] EstablishVssConnection
+[2026-04-17 14:15:28Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-04-17 14:15:28Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-17 14:15:28Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-17 14:15:28Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-17 14:15:28Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-17 14:15:28Z INFO BrokerMessageListener] VssConnection created
+[2026-04-17 14:15:28Z INFO Terminal] WRITE LINE: 
+[2026-04-17 14:15:28Z INFO Terminal] WRITE LINE: 
+[2026-04-17 14:15:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams
+[2026-04-17 14:15:28Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams
+[2026-04-17 14:15:29Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-04-17 14:15:30Z INFO BrokerMessageListener] Session created.
+[2026-04-17 14:15:30Z INFO Terminal] WRITE LINE: Current runner version: '2.333.1'
+[2026-04-17 14:15:30Z INFO Terminal] WRITE LINE: 2026-04-17 14:15:30Z: Listening for Jobs
+[2026-04-17 14:15:30Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2026-04-17 14:16:04Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2026-04-17 14:16:04Z WARN GitHubActionsService] GET request to https://broker.actions.githubusercontent.com/message?sessionId=bb030d60-d4da-4737-9f22-17e0f5621538&status=Online&runnerVersion=2.333.1&os=Windows&architecture=X64&disableUpdate=false has been cancelled.
+[2026-04-17 14:16:04Z ERR  BrokerServer] Catch exception during request
+[2026-04-17 14:16:04Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo..
+ ---> System.Net.Sockets.SocketException (995): A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithNtAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean isProxyAuth, HttpConnection connection, HttpConnectionPool connectionPool, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxAttempts, Func`2 shouldRetry)
+[2026-04-17 14:16:04Z ERR  BrokerServer] #####################################################
+[2026-04-17 14:16:04Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo..
+ ---> System.Net.Sockets.SocketException (995): A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithNtAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean isProxyAuth, HttpConnection connection, HttpConnectionPool connectionPool, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2026-04-17 14:16:04Z ERR  BrokerServer] #####################################################
+[2026-04-17 14:16:04Z ERR  BrokerServer] System.IO.IOException: Unable to read data from the transport connection: A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo..
+ ---> System.Net.Sockets.SocketException (995): A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2026-04-17 14:16:04Z ERR  BrokerServer] #####################################################
+[2026-04-17 14:16:04Z ERR  BrokerServer] System.Net.Sockets.SocketException (995): A operação de E/S foi anulada devido a uma saída de thread ou a uma requisição de aplicativo.
+[2026-04-17 14:16:04Z WARN BrokerServer] Back off 12,974 seconds before next retry. 4 attempt left.
+[2026-04-17 14:16:04Z INFO BrokerMessageListener] Get next message has been cancelled.
+[2026-04-17 14:16:04Z INFO JobDispatcher] Shutting down JobDispatcher. Make sure all WorkerDispatcher has finished.
+[2026-04-17 14:16:04Z INFO Runner] Deleting Runner Session...
+[2026-04-17 14:16:04Z INFO Listener] Runner execution been cancelled.
