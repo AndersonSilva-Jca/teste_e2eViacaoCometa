@@ -1,0 +1,22 @@
+{
+  "configMigration": true,
+  "extends": [
+    "config:recommended"
+  ],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "labels": [
+    "type: dependencies",
+    "renovate"
+  ],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 1,
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "AndersonSilva-Jca/teste_e2eViacaoCometa",
+  "pipelineDirectory": "teste_e2eViacaoCometa",
+  "workspaceDirectory": "teste_e2eViacaoCometa\\teste_e2eViacaoCometa",
+  "repositories": {
+    "AndersonSilva-Jca/teste_e2eViacaoCometa": {
+      "repositoryPath": "teste_e2eViacaoCometa\\teste_e2eViacaoCometa",
+      "lastRunOn": "04/17/2026 10:59:41 -03:00"
+    }
+  },
+  "lastRunOn": "04/17/2026 11:01:22 -03:00"
+}

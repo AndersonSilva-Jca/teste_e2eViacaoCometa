@@ -1,0 +1,81 @@
+[2026-04-17 13:51:00Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'Credentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'Runner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner'
+[2026-04-17 13:51:00Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-04-17 13:51:00Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-04-17 13:51:00Z INFO Listener] Version: 2.333.1
+[2026-04-17 13:51:00Z INFO Listener] Commit: 6792966801e8925346735b68c03bf9f347af4646
+[2026-04-17 13:51:00Z INFO Listener] Culture: pt-BR
+[2026-04-17 13:51:00Z INFO Listener] UI Culture: pt-BR
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO Listener] Validating directory permissions for: 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO CommandLineParser] Parse
+[2026-04-17 13:51:00Z INFO CommandLineParser] Parsing 3 args
+[2026-04-17 13:51:00Z INFO CommandLineParser] parsing argument
+[2026-04-17 13:51:00Z INFO CommandLineParser] HasArgs: False
+[2026-04-17 13:51:00Z INFO CommandLineParser] Adding Command: remove
+[2026-04-17 13:51:00Z INFO CommandLineParser] parsing argument
+[2026-04-17 13:51:00Z INFO CommandLineParser] HasArgs: True
+[2026-04-17 13:51:00Z INFO CommandLineParser] arg: token
+[2026-04-17 13:51:00Z INFO CommandLineParser] parsing argument
+[2026-04-17 13:51:00Z INFO CommandLineParser] HasArgs: True
+[2026-04-17 13:51:00Z INFO CommandLineParser] Adding option 'token': '***'
+[2026-04-17 13:51:00Z INFO Listener] Arguments parsed
+[2026-04-17 13:51:00Z INFO Runner] ExecuteCommand
+[2026-04-17 13:51:00Z INFO ConfigurationStore] currentAssemblyLocation: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin\Runner.Listener.dll
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] binPath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] RootFolder: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'Runner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] ConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner_migrated'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner_migrated
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'Credentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] CredFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_migrated'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] MigratedCredFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_migrated
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:51:00Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:51:00Z INFO HostContext] Well known config file 'Service': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.service'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.service
+[2026-04-17 13:51:00Z INFO CommandSettings] Flag 'help': 'False'
+[2026-04-17 13:51:00Z INFO CommandSettings] Flag 'version': 'False'
+[2026-04-17 13:51:00Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-04-17 13:51:00Z INFO CommandSettings] Flag 'check': 'False'
+[2026-04-17 13:51:00Z INFO CommandSettings] Command 'configure': 'False'
+[2026-04-17 13:51:00Z INFO CommandSettings] Command 'remove': 'True'
+[2026-04-17 13:51:00Z INFO CommandSettings] Flag 'local': 'False'
+[2026-04-17 13:51:00Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-04-17 13:51:00Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-04-17 13:51:00Z INFO ConfigurationStore] IsConfigured()
+[2026-04-17 13:51:00Z INFO ConfigurationStore] IsConfigured: True
+[2026-04-17 13:51:00Z INFO ConfigurationStore] HasCredentials()
+[2026-04-17 13:51:00Z INFO ConfigurationStore] stored True
+[2026-04-17 13:51:00Z INFO ConfigurationStore] Read setting file: 421 chars
+[2026-04-17 13:51:00Z INFO CommandSettings] Arg 'token': '***'
+[2026-04-17 13:51:00Z INFO CommandSettings] Remove token from Arg dictionary.
+[2026-04-17 13:51:00Z ERR  Terminal] WRITE ERROR: Http response code: NotFound from 'POST https://api.github.com/actions/runner-registration' (Request Id: 8F45:57A64:195450:1B9F10:69E23AC5)
+[2026-04-17 13:51:00Z ERR  Terminal] WRITE ERROR: {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[2026-04-17 13:51:00Z ERR  Terminal] WRITE ERROR: Failed: Removing runner from the server
+[2026-04-17 13:51:00Z ERR  Runner] System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at GitHub.Runner.Listener.Configuration.ConfigurationManager.GetTenantCredential(String githubUrl, String githubToken, String runnerEvent)
+   at GitHub.Runner.Listener.Configuration.ConfigurationManager.UnconfigureAsync(CommandSettings command)
+   at GitHub.Runner.Listener.Runner.ExecuteCommand(CommandSettings command)
+[2026-04-17 13:51:00Z ERR  Terminal] WRITE ERROR: Response status code does not indicate success: 404 (Not Found).
+[2026-04-17 13:51:00Z INFO Listener] Runner execution has finished with return code 1

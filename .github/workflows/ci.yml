@@ -2,7 +2,7 @@ name: Monitoramento Contínuo Cypress
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/6 * * * *'
   workflow_dispatch: 
 
 jobs:
@@ -19,14 +19,14 @@ jobs:
         uses: cypress-io/github-action@v6
         id: cypress
         continue-on-error: true
-        with:
+        with: 
           spec: cypress/e2e/00_smoke/**/*
           browser: chrome
         env:
           # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
-
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
       - name: Enviar E-mail de SUCESSO ✅
         if: |
           steps.cypress.outcome == 'success' && 

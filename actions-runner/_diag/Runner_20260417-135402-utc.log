@@ -1,0 +1,96 @@
+[2026-04-17 13:54:02Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'Credentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'Runner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner'
+[2026-04-17 13:54:02Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-04-17 13:54:02Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-04-17 13:54:02Z INFO Listener] Version: 2.333.1
+[2026-04-17 13:54:02Z INFO Listener] Commit: 6792966801e8925346735b68c03bf9f347af4646
+[2026-04-17 13:54:02Z INFO Listener] Culture: pt-BR
+[2026-04-17 13:54:02Z INFO Listener] UI Culture: pt-BR
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO Listener] Validating directory permissions for: 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO CommandLineParser] Parse
+[2026-04-17 13:54:02Z INFO CommandLineParser] Parsing 3 args
+[2026-04-17 13:54:02Z INFO CommandLineParser] parsing argument
+[2026-04-17 13:54:02Z INFO CommandLineParser] HasArgs: False
+[2026-04-17 13:54:02Z INFO CommandLineParser] Adding Command: remove
+[2026-04-17 13:54:02Z INFO CommandLineParser] parsing argument
+[2026-04-17 13:54:02Z INFO CommandLineParser] HasArgs: True
+[2026-04-17 13:54:02Z INFO CommandLineParser] arg: token
+[2026-04-17 13:54:02Z INFO CommandLineParser] parsing argument
+[2026-04-17 13:54:02Z INFO CommandLineParser] HasArgs: True
+[2026-04-17 13:54:02Z INFO CommandLineParser] Adding option 'token': '***'
+[2026-04-17 13:54:02Z INFO Listener] Arguments parsed
+[2026-04-17 13:54:02Z INFO Runner] ExecuteCommand
+[2026-04-17 13:54:02Z INFO ConfigurationStore] currentAssemblyLocation: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin\Runner.Listener.dll
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] binPath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] RootFolder: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'Runner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] ConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner_migrated'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.runner_migrated
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'Credentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] CredFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_migrated'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] MigratedCredFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_migrated
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:02Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:02Z INFO HostContext] Well known config file 'Service': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.service'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.service
+[2026-04-17 13:54:02Z INFO CommandSettings] Flag 'help': 'False'
+[2026-04-17 13:54:02Z INFO CommandSettings] Flag 'version': 'False'
+[2026-04-17 13:54:02Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-04-17 13:54:02Z INFO CommandSettings] Flag 'check': 'False'
+[2026-04-17 13:54:02Z INFO CommandSettings] Command 'configure': 'False'
+[2026-04-17 13:54:02Z INFO CommandSettings] Command 'remove': 'True'
+[2026-04-17 13:54:02Z INFO CommandSettings] Flag 'local': 'False'
+[2026-04-17 13:54:02Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-04-17 13:54:02Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-04-17 13:54:02Z INFO ConfigurationStore] IsConfigured()
+[2026-04-17 13:54:02Z INFO ConfigurationStore] IsConfigured: True
+[2026-04-17 13:54:02Z INFO ConfigurationStore] HasCredentials()
+[2026-04-17 13:54:02Z INFO ConfigurationStore] stored True
+[2026-04-17 13:54:02Z INFO ConfigurationStore] Read setting file: 421 chars
+[2026-04-17 13:54:02Z INFO CommandSettings] Arg 'token': '***'
+[2026-04-17 13:54:02Z INFO CommandSettings] Remove token from Arg dictionary.
+[2026-04-17 13:54:03Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (8FE4:28E177:1ACB23:1D2BB6:69E23B7C)
+[2026-04-17 13:54:03Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2026-04-17 13:54:03Z INFO RunnerServer] EstablishVssConnection
+[2026-04-17 13:54:03Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-04-17 13:54:03Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-17 13:54:03Z INFO RunnerServer] EstablishVssConnection
+[2026-04-17 13:54:03Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-04-17 13:54:03Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-17 13:54:03Z INFO RunnerServer] EstablishVssConnection
+[2026-04-17 13:54:03Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-04-17 13:54:03Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-17 13:54:03Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-17 13:54:04Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-17 13:54:04Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-17 13:54:04Z INFO Terminal] WRITE LINE: 
+[2026-04-17 13:54:04Z INFO ConfigurationStore] IsConfigured()
+[2026-04-17 13:54:04Z INFO ConfigurationStore] IsConfigured: True
+[2026-04-17 13:54:04Z INFO ConfigurationStore] HasCredentials()
+[2026-04-17 13:54:04Z INFO ConfigurationStore] stored True
+[2026-04-17 13:54:04Z INFO HostContext] Well known directory 'Bin': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\bin'
+[2026-04-17 13:54:04Z INFO HostContext] Well known directory 'Root': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner'
+[2026-04-17 13:54:04Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams'
+[2026-04-17 13:54:04Z INFO RSAEncryptedFileKeyManager] Deleting RSA key parameters file C:\Testes_Automação\teste_e2eViacaoCometa\actions-runner\.credentials_rsaparams
+[2026-04-17 13:54:04Z INFO Terminal] WRITE LINE: 
+[2026-04-17 13:54:04Z INFO Listener] Runner execution has finished with return code 0

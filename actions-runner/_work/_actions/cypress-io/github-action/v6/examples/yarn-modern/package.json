@@ -1,0 +1,13 @@
+{
+  "name": "example-yarn-modern",
+  "version": "1.0.0",
+  "description": "Install Yarn dependencies using custom command",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "private": true,
+  "packageManager": "yarn@4.12.0",
+  "devDependencies": {
+    "cypress": "15.9.0"
+  }
+}
