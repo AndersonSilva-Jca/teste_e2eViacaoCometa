@@ -13,24 +13,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # O action oficial do Cypress já faz Setup do Node, Instala e faz Cache automático
-      # Isso economiza cerca de 1 a 2 minutos de execução
-      - name: Testes Viação Cometa - Cypress
+      - name: Cypress Run
         uses: cypress-io/github-action@v6
         id: cypress
         continue-on-error: true
-        with: 
-          spec: cypress/e2e/00_smoke/**/*
+        with:
           browser: chrome
+          # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
+          install: false 
+          spec: cypress/e2e/00_smoke/**/*
         env:
-          # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
+          
       - name: Enviar E-mail de SUCESSO ✅
-        if: |
-          steps.cypress.outcome == 'success' && 
-          (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.schedule == '0 20 * * *')
+        if: steps.cypress.outcome == 'success'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com

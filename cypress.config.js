@@ -2,15 +2,7 @@ const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
   viewportWidth: 1920,
-  viewportHeight: 1080,
-reporter: 'mochawesome',
-    reporterOptions: {
-      reportDir: 'cypress/reports', // Pasta onde o relatório será salvo
-      overwrite: false,
-      html: true, // Deixamos false aqui para gerar o JSON primeiro e depois o HTML único
-      json: false,
-      timestamp: "mmddyyyy_HHMMss"
-  },  
+  viewportHeight: 1080,  
   env: {
       login : process.env.LOGIN,
       senha : process.env.SENHA,
