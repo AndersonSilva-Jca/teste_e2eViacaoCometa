@@ -7,7 +7,7 @@ describe('Validar link fale conosco', () => {
     cy.visit('/');});
 
 it('Deve preencher o formulário de contato', () => {
-  cy.get('.header-nav-container > :nth-child(1) > :nth-child(2)').click()
+  cy.get('.header-nav-container > :nth-child(1) > :nth-child(2) > .focusable').click()
   cy.url({timeout: 2000}).should('include', '/fale-conosco')
   cy.get('#input-name').type('Teste ROBO ODP')
   cy.get('#input-doc').type('38485984854', { log: false })

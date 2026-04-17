@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2026-04-17T10:27:49.725Z",
+    "end": "2026-04-17T10:29:52.334Z",
+    "duration": 122609,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "33291d92-9140-4702-94ea-9b7e4c18fa39",
+      "title": "",
+      "fullFile": "cypress\\e2e\\00_smoke\\busca_passagens.cy.js",
+      "file": "cypress\\e2e\\00_smoke\\busca_passagens.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "09c04576-83dd-4a04-80c9-645c0bb08a78",
+          "title": "Fazer busca de destinos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fazer busca de destinos IDA com 1 passageiro",
+              "fullTitle": "Fazer busca de destinos Fazer busca de destinos IDA com 1 passageiro",
+              "timedOut": null,
+              "duration": 20988,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(2);\ncy.get('#search-button', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.get('#buyer-check-1', {\n  timeout: 90000\n}).click({\n  force: true\n});\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.selecionarAssentoAleatorio({\n  timeout: 90000\n});\ncy.get('#btn-proceed').should('be.visible').click();\ncy.url({\n  timeout: 90000\n}).should('include', '/pagamento');\n// Não finalizar a compra para evitar transações reais\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: ' São Paulo (Todos) (SP) ' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: ' São Paulo (Todos) (SP) ' but never did.\n    at Context.eval (webpack://cypress-treino/./cypress/e2e/00_smoke/busca_passagens.cy.js:23:7)",
+                "diff": null
+              },
+              "uuid": "55b8ab8f-29bf-4b5e-90f7-3fcbb28cc140",
+              "parentUUID": "09c04576-83dd-4a04-80c9-645c0bb08a78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fazer busca de destinos IDA com 2 passageiros",
+              "fullTitle": "Fazer busca de destinos Fazer busca de destinos IDA com 2 passageiros",
+              "timedOut": null,
+              "duration": 33286,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('#input-passengers').click();\ncy.get('#passenger-quantity-plus-one > .plusone').click();\ncy.get('#close-person-quantity').click();\ncy.get('#search-button', {\n  timeout: 90000\n}).click();\ncy.wait(15000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(2000);\ncy.get('#buyer-check-1', {\n  timeout: 15000\n}).click({\n  force: true\n});\ncy.get('#input-name-2').click();\ncy.contains('Teste Robo ODP').should('be.visible').click();\ncy.get('#input-birth-2').type('01011990');\ncy.get('.passenger-footer').click();\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(10000);\ncy.selecionarDoisAssentosAleatorios('IDA', {\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\n// cy.contains('Cartões de crédito').should('be.visible')\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n//  Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: ' São Paulo (Todos) (SP) ' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: ' São Paulo (Todos) (SP) ' but never did.\n    at Context.eval (webpack://cypress-treino/./cypress/e2e/00_smoke/busca_passagens.cy.js:44:7)",
+                "diff": null
+              },
+              "uuid": "af67699e-1a6f-45ca-96fe-4fa16064edc8",
+              "parentUUID": "09c04576-83dd-4a04-80c9-645c0bb08a78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento",
+              "fullTitle": "Fazer busca de destinos Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento",
+              "timedOut": null,
+              "duration": 17141,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('.jca-ico-angle-down').click();\ncy.get('[data-js=\"infant-quantity-plus-one\"] > .plusone').click();\ncy.get('#close-person-quantity').click();\ncy.get('#search-button', {\n  timeout: 90000\n}).click();\ncy.contains('IDA', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(10000);\ncy.get('#buyer-check-1', {\n  timeout: 90000\n}).click({\n  force: true\n});\ncy.get('#input-name-2').click();\ncy.contains('Teste Menor de Idade ODP').should('be.visible').click();\ncy.get('#input-birth-child-2').type('23032023');\ncy.get('.passenger-footer').click();\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(5000);\ncy.selecionarAssentoAleatorio('IDA', {\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.url().should('include', '/pagamento');\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n//  Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 10050ms: `cy.click()` failed because this element:\n\n`<input class=\"input-location ui-autocomplete-input\" id=\"input-departure\" type=\"text\" name=\"qypxyproer\" placeholder=\"Origem\" data-value=\"\" data-js=\"input-departure\" autocomplete=\"off\" title=\"Cidade de origem\" required=\"\" style=\"background: ; border-color: #BFBFBF \">`\n\nis being covered by another element:\n\n`<div class=\"login-modaloverlay active\" data-js=\"header-login-modal-overlay\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 10050ms: `cy.click()` failed because this element:\n\n`<input class=\"input-location ui-autocomplete-input\" id=\"input-departure\" type=\"text\" name=\"qypxyproer\" placeholder=\"Origem\" data-value=\"\" data-js=\"input-departure\" autocomplete=\"off\" title=\"Cidade de origem\" required=\"\" style=\"background: ; border-color: #BFBFBF \">`\n\nis being covered by another element:\n\n`<div class=\"login-modaloverlay active\" data-js=\"header-login-modal-overlay\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at ensureIsDescendent (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115148:68)\n    at ensureDescendents (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115199:5)\n    at ensureDescendentsAndScroll (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115205:14)\n    at ensureElIsNotCovered (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115336:5)\n    at runAllChecks (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115535:52)\n    at retryActionability (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115572:16)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:152009:70)\n    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:151924:14)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "bec8faa7-4245-45a9-89f2-2c13350bc3c1",
+              "parentUUID": "09c04576-83dd-4a04-80c9-645c0bb08a78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fazer busca de destinos IDA e Volta com 1 passageiro",
+              "fullTitle": "Fazer busca de destinos Fazer busca de destinos IDA e Volta com 1 passageiro",
+              "timedOut": null,
+              "duration": 17253,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('#input-date-return').click();\ncy.selecionarDataVolta(6);\ncy.get('#search-button', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.contains('ESCOLHER PASSAGENS', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(30000);\ncy.contains('ESCOLHER PASSAGENS', {\n  timeout: 90000\n}).should('be.visible');\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(15000);\ncy.get('#buyer-check-1', {\n  timeout: 60000\n}).click({\n  force: true\n});\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({\n  force: true\n});\ncy.url({\n  timeout: 60000\n}).should('include', '/poltrona');\ncy.wait(8000);\ncy.contains('Escolha o seu assento', {\n  timeout: 20000\n}).should('be.visible');\ncy.selecionarAssentoAleatorio1({\n  timeout: 15000\n});\ncy.wait(8000);\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({\n  force: true\n});\ncy.url({\n  timeout: 60000\n}).should('include', '/poltrona');\ncy.wait(8000);\ncy.selecionarAssentoAleatorio1({\n  timeout: 15000\n});\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({\n  force: true\n});\ncy.url({\n  timeout: 60000\n}).should('include', '/pagamento');\n//   cy.get('#tab-pix').click() \n//   cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n// Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 10050ms: `cy.click()` failed because this element:\n\n`<input class=\"input-location ui-autocomplete-input\" id=\"input-departure\" type=\"text\" name=\"iqigbmag\" placeholder=\"Origem\" data-value=\"\" data-js=\"input-departure\" autocomplete=\"off\" title=\"Cidade de origem\" required=\"\" style=\"background: ; border-color: #BFBFBF \">`\n\nis being covered by another element:\n\n`<div class=\"login-modaloverlay active\" data-js=\"header-login-modal-overlay\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 10050ms: `cy.click()` failed because this element:\n\n`<input class=\"input-location ui-autocomplete-input\" id=\"input-departure\" type=\"text\" name=\"iqigbmag\" placeholder=\"Origem\" data-value=\"\" data-js=\"input-departure\" autocomplete=\"off\" title=\"Cidade de origem\" required=\"\" style=\"background: ; border-color: #BFBFBF \">`\n\nis being covered by another element:\n\n`<div class=\"login-modaloverlay active\" data-js=\"header-login-modal-overlay\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at ensureIsDescendent (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115148:68)\n    at ensureDescendents (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115199:5)\n    at ensureDescendentsAndScroll (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115205:14)\n    at ensureElIsNotCovered (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115336:5)\n    at runAllChecks (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115535:52)\n    at retryActionability (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115572:16)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:152009:70)\n    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:151924:14)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "113be62e-ec05-4bc1-be57-66523cf15380",
+              "parentUUID": "09c04576-83dd-4a04-80c9-645c0bb08a78",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fazer busca de destinos IDA e Volta com 2 passageiros",
+              "fullTitle": "Fazer busca de destinos Fazer busca de destinos IDA e Volta com 2 passageiros",
+              "timedOut": null,
+              "duration": 33339,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.clearCookies();\ncy.get('#input-departure').click().type('São Paulo');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('#input-date-return').click();\ncy.selecionarDataVolta(6);\ncy.get('#input-passengers').click();\ncy.get('#passenger-quantity-plus-one > .plusone').click();\ncy.get('#close-person-quantity').click();\ncy.get('#search-button', {\n  timeout: 90000\n}).click();\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(30000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(5000);\ncy.get('#buyer-check-1', {\n  timeout: 20000\n}).click({\n  force: true\n});\ncy.get('#input-name-2').click();\ncy.contains('Teste Robo ODP').should('be.visible').click();\ncy.get('#input-birth-2').type('01011990');\ncy.get('.passenger-footer').click();\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 20000\n}).should('be.visible');\ncy.wait(2000);\ncy.selecionarDoisAssentosAleatorios({\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(2000);\ncy.selecionarDoisAssentosAleatorios({\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\n// cy.wait(5000)\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n//  Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: ' São Paulo (Todos) (SP) ' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: ' São Paulo (Todos) (SP) ' but never did.\n    at Context.eval (webpack://cypress-treino/./cypress/e2e/00_smoke/busca_passagens.cy.js:144:7)",
+                "diff": null
+              },
+              "uuid": "cc9b5df7-fdff-400d-9ffa-e89ec1facec2",
+              "parentUUID": "09c04576-83dd-4a04-80c9-645c0bb08a78",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "55b8ab8f-29bf-4b5e-90f7-3fcbb28cc140",
+            "af67699e-1a6f-45ca-96fe-4fa16064edc8",
+            "bec8faa7-4245-45a9-89f2-2c13350bc3c1",
+            "113be62e-ec05-4bc1-be57-66523cf15380",
+            "cc9b5df7-fdff-400d-9ffa-e89ec1facec2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 122007,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

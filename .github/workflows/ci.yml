@@ -10,25 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Instalar Dependências
-        run: npm install
-
-      # - name: Dar permissão ao Cypress
-      #   run: chmod +x ./node_modules/.bin/cypress
-
-      - name: Rodar Testes Viação Cometa
+      # O action oficial do Cypress já faz Setup do Node, Instala e faz Cache automático
+      # Isso economiza cerca de 1 a 2 minutos de execução
+      - name: Testes Viação Cometa - Cypress
+        uses: cypress-io/github-action@v6
         id: cypress
         continue-on-error: true
-        # Adicionado o prefixo xvfb-run para evitar erros em servidores Linux (Ubuntu)
-        run: xvfb-run npx cypress run --spec "cypress/e2e/00_smoke/**/*"
+        with:
+          spec: cypress/e2e/00_smoke/**/*
+          browser: chrome
         env:
           # Verifique se no GitHub Secrets os nomes são exatamente LOGIN e SENHA
           LOGIN: ${{ secrets.LOGIN }}
@@ -71,6 +64,6 @@ jobs:
             https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
             ---
-            ❌ GATILHO: ${{ github.event_name }} agendado
+            ❌ GATILHO: ${{ github.event_name }} agendado para rodar os testes de 5 em 5 minutos.
             ❌ EXECUTADO POR: ${{ github.actor }}
             ---

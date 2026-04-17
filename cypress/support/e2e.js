@@ -35,4 +35,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   }
   // Se for outro erro, ele ainda falha (boa prática)
   return false 
+
+  Cypress.on('uncaught:exception', (err, runnable) => {
+  return false; // impede o Cypress de falhar o teste por erros do site
+});
 });

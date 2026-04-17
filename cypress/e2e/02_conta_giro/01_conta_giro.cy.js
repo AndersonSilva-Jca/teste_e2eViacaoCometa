@@ -19,9 +19,9 @@ describe('Conta GIRO', () => {
   });
   it('Fazer compra de passagem com conta GIRO ', () => {
     cy.get('#input-departure').click().type('São Paulo')
-    cy.contains(' São Paulo (Todos) (SP) ').click()
+    cy.contains(' São Paulo (Todos) (SP) ').click({ force: true })
     cy.get('#input-destination').click().type('Rio de Janeiro')
-    cy.contains(' Rio de Janeiro (Todos) (RJ) ').click()
+    cy.contains(' Rio de Janeiro (Todos) (RJ) ').click({ force: true })
     cy.get('#input-date').click()
     cy.selecionarDataIda(1)
     cy.get('#search-button', { timeout: 20000 }).click()

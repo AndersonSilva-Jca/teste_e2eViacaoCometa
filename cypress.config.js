@@ -1,14 +1,14 @@
 const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
-  viewportWidth: 1280,
-  viewportHeight: 720,
+  viewportWidth: 1920,
+  viewportHeight: 1080,
 reporter: 'mochawesome',
     reporterOptions: {
       reportDir: 'cypress/reports', // Pasta onde o relatório será salvo
       overwrite: false,
-      html: false, // Deixamos false aqui para gerar o JSON primeiro e depois o HTML único
-      json: true,
+      html: true, // Deixamos false aqui para gerar o JSON primeiro e depois o HTML único
+      json: false,
       timestamp: "mmddyyyy_HHMMss"
   },  
   env: {
@@ -22,7 +22,7 @@ reporter: 'mochawesome',
   
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
-    video: false, // Importante para ver o que aconteceu na falha no CI
+    video: true, // Importante para ver o que aconteceu na falha no CI
     screenshotOnRunFailure: true,
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
     defaultCommandTimeout: 10000, // Aumenta o tempo padrão de espera por elementos
