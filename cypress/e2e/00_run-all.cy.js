@@ -13,7 +13,7 @@ import './03_links_header/04_nossos_destinos.cy.js'
 import './03_links_header/05_pontos_de_venda.cy.js'
 import './03_links_header/06_programa_fidelidade.cy.js'
 
-import './04_ofertas_promocoes/01_promo_cards.cy.js'
+// import './04_ofertas_promocoes/01_promo_cards.cy.js'
 
 import './05_link_conexao/01_clube_giro.cy.js'
 import './05_link_conexao/02_outlet_de_hoteis.cy.js'

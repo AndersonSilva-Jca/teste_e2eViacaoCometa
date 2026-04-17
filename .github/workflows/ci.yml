@@ -7,7 +7,8 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest 
+    # self-hosted
 
     steps:
       - name: Checkout
@@ -20,7 +21,7 @@ jobs:
         with:
           browser: chrome
           # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
-          install: false 
+          # install: false 
           spec: cypress/e2e/00_smoke/**/*
         env:
           LOGIN: ${{ secrets.LOGIN }}

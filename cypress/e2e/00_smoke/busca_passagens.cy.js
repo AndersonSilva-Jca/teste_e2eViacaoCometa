@@ -26,7 +26,9 @@ describe('Fazer busca de destinos', () => {
     cy.get('#input-date').click()
     cy.selecionarDataIda(2)
     cy.get('#search-button', { timeout: 90000 }).should('be.visible').click()
+    cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
+    cy.wait(2000)
     cy.get('#buyer-check-1', { timeout: 90000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');

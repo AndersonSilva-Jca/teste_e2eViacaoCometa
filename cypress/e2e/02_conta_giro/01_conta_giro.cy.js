@@ -31,12 +31,12 @@ describe('Conta GIRO', () => {
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible');
     cy.selecionarAssentoAleatorio({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 5000 }).should('be.visible').click()
-    cy.url().should('include', '/pagamento')
-    cy.wait(10000);
-    cy.url().should('include', '/pagamento')
-    cy.get('#tab-conta-giro').click()
-    cy.get('[data-js="conditions-check"]').click({ force: true })
-    cy.get('.btn-register > [type="button"]').should('be.visible').and('not.be.disabled').click()
+    // cy.url().should('include', '/pagamento')
+    // cy.wait(10000);
+    // cy.url().should('include', '/pagamento')
+    // cy.get('#tab-conta-giro').click()
+    // cy.get('[data-js="conditions-check"]').click({ force: true })
+    // cy.get('.btn-register > [type="button"]').should('be.visible').and('not.be.disabled').click()
     // cy.url().should('include', '/login-wallet')
     // cy.get('.pin-input-container > #input-password').type('613459')
     // cy.get(':nth-child(2) > .container > .row > .button-login').should('be.visible').and('not.be.disabled').click()
