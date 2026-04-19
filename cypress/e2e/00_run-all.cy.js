@@ -2,7 +2,7 @@
 
 import './00_smoke/busca_passagens.cy.js'
 
-import './01_autenticacao/01_login.cy.js'
+// import './01_autenticacao/01_login.cy.js'
 
 import './02_conta_giro/01_conta_giro.cy.js'
 

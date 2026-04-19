@@ -22,7 +22,7 @@ jobs:
           browser: chrome
           # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
           # install: false 
-          spec: cypress/e2e/00_smoke/**/*
+          spec: cypress/e2e/00_run-all.cy.js
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
