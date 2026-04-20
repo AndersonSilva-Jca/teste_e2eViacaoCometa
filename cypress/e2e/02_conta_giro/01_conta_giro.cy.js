@@ -25,9 +25,11 @@ describe('Conta GIRO', () => {
     cy.get('#input-date').click()
     cy.selecionarDataIda(1)
     cy.get('#search-button', { timeout: 20000 }).click()
+    cy.wait(5000);
     cy.selecionarPassagemAleatoria1({ timeout: 20000 })
     cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
+    cy.wait(5000);
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible');
     cy.selecionarAssentoAleatorio({ timeout: 5000 });
     cy.get('#btn-proceed', { timeout: 5000 }).should('be.visible').click()

@@ -1,17 +1,32 @@
 const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
-  viewportWidth: 1920,
-  viewportHeight: 1080,  
-  env: {
-      login : process.env.LOGIN,
-      senha : process.env.SENHA,
-      mailUsername : process.env.MAIL_USERNAME,
-      mailPassword : process.env.MAIL_PASSWORD
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
+    mochaJunitReporterReporterOptions: {
+      mochaFile: 'cypress/reports/junit/results-[hash].xml'
+    },
+    cypressMochawesomeReporterReporterOptions: {
+      charts: true,
+      reportPageTitle: 'Relatório de Testes - Viacao Cometa',
+      embeddedScreenshots: true,
+      inlineAssets: true,
+      saveAllAttempts: false,
+    },
   },
-  
-  //npx cypress run --spec "cypress/e2e/01_busca_passagens/**/*"
-  
+  chromeWebSecurity: false,
+  viewportWidth: 1920,
+  viewportHeight: 1080,
+  env: {
+    login: process.env.LOGIN,
+    senha: process.env.SENHA,
+    mailUsername: process.env.MAIL_USERNAME,
+    mailPassword: process.env.MAIL_PASSWORD
+  },
+
+  //npx cypress run --spec "cypress/e2e/00_smoke/**/*"
+
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
     video: true, // Importante para ver o que aconteceu na falha no CI
@@ -22,11 +37,12 @@ module.exports = defineConfig({
     requestTimeout: 15000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
-    // experimentalRunAllSpecs: true,
+    experimentalRunAllSpecs: true,
     // testIsolation: false, // Isso mantém a página carregada entre os 'it's
     allowCypressEnv: false,
-      trashAssetsBeforeRuns: false, // Evita deletar vídeos e screenshots antigos, útil para análise pós-falha
+    trashAssetsBeforeRuns: true, // Evita deletar vídeos e screenshots antigos, útil para análise pós-falha
   },
 });

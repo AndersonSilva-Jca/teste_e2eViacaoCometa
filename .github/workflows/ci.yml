@@ -11,10 +11,10 @@ jobs:
     # self-hosted
 
     steps:
-      - name: Checkout
+      - name: Checkout do Código
         uses: actions/checkout@v4
 
-      - name: Cypress Run
+      - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v6
         id: cypress
         continue-on-error: true
@@ -22,11 +22,19 @@ jobs:
           browser: chrome
           # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
           # install: false 
-          spec: cypress/e2e/00_run-all.cy.js
+          spec: cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir="cypress/reports",overwrite=true,html=true,json=false,reportFilename="index"
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
+
+      - name: Deploy do Relatório para GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports/html/
+          force_orphan: true      
           
       - name: Enviar E-mail de SUCESSO ✅
         if: steps.cypress.outcome == 'success'
@@ -43,6 +51,12 @@ jobs:
             Monitoramento Cypress - Viação Cometa
 
             Todos os testes passaram com sucesso! 🚀
+
+            🔗 ACESSAR RELATÓRIO: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+
+            Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
+
+            Detalhes técnicos da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
             
 
       - name: Enviar E-mail de FALHA 🚨
@@ -59,10 +73,19 @@ jobs:
           body: |
             RELATÓRIO DE FALHA DETECTADA 🚨
 
-            📊 O relatório detalhado está disponível em:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            🔗 ACESSAR RELATÓRIO ONLINE: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             ---
-            ❌ GATILHO: ${{ github.event_name }} agendado para rodar os testes de 5 em 5 minutos.
+            ❌ GATILHO DO ERRO: ${{ github.event_name == 'schedule' && 'Agendamento Automático' || github.event_name == 'push' && 'Novo Código (Push)' || 'Execução Manual' }}
             ❌ EXECUTADO POR: ${{ github.actor }}
             ---
+
+            RESUMO DOS TESTES:
+            O Cypress encontrou um erro. Isso pode indicar instabilidade no site ou falha no login.
+
+            COMO ANALISAR:
+            1. Clique no link do Relatório acima para ver o erro detalhado.
+            2. Se precisar de vídeos ou screenshots, acesse a aba "Artifacts" aqui: 
+               https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Verifique o log do passo "Rodar Testes Viação Cometa".
