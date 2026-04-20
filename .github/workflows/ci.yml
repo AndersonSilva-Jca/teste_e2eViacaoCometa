@@ -44,19 +44,26 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "✅ Monitoramento Cypress - Site Viação Cometa"
+          subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          from: "Monitoramento Contínuo Cypress"
+          from: "Cypress Quality Bot 🤖"
           body: |
             Monitoramento Cypress - Viação Cometa
 
-            Todos os testes passaram com sucesso! 🚀
+            O ciclo de monitoramento contínuo foi finalizado com sucesso. Todos os sistemas críticos estão operacionais.
 
-            🔗 ACESSAR RELATÓRIO: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            📂 ÁREAS VALIDADAS:
+            • [00] Smoke Tests (Fluxos Principais - Seleção de Origem e Destino, Datas, Busca de Passagens, Assentos)
+            • [01] Autenticação (Login)
+            • [02] Conta Giro (Login)
+            • [03/07] Integridade de Links (Header e Footer)
+            • [04/05/06] Ofertas, Conexões e FAQ
+
+            🔗 ACESSAR RELATÓRIO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
 
-            Detalhes técnicos da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Detalhes da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
             
 
       - name: Enviar E-mail de FALHA 🚨
@@ -67,25 +74,27 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "🚨 Falha Detectada - Monitoramento Viação Cometa"
+          subject: "(EM TESTE) 🚨 [ALERTA] Falha Detectada - Monitoramento Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          from: "Monitoramento Contínuo Cypress"
+          from: "Cypress Quality Bot 🤖"
           body: |
             RELATÓRIO DE FALHA DETECTADA 🚨
 
-            🔗 ACESSAR RELATÓRIO ONLINE: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            🔍 DETALHES DA EXECUÇÃO:
+            • Gatilho: ${{ github.event_name == 'schedule' && 'Agendamento Automático de 5 em 5 minutos' || 'Execução Manual' }}
+            • Responsável: ${{ github.actor }}
+            • Status: Erro em uma ou mais suítes de teste.
 
-            ---
-            ❌ GATILHO DO ERRO: ${{ github.event_name == 'schedule' && 'Agendamento Automático' || github.event_name == 'push' && 'Novo Código (Push)' || 'Execução Manual' }}
-            ❌ EXECUTADO POR: ${{ github.actor }}
-            ---
+            💡 POSSÍVEIS CAUSAS:
+            1. Instabilidade na API de busca ou login do site.
+            2. Alteração de seletores (Placeholders/IDs) no front-end.
+            3. Lentidão excessiva no carregamento (Timeout).
 
-            RESUMO DOS TESTES:
-            O Cypress encontrou um erro. Isso pode indicar instabilidade no site ou falha no login.
+            🛠️ PLANO DE AÇÃO:
+            1. ANALISE O PRINT DO ERRO NO RELATÓRIO ONLINE ABAIXO:
+               🔗 https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
-            COMO ANALISAR:
-            1. Clique no link do Relatório acima para ver o erro detalhado.
-            2. Se precisar de vídeos ou screenshots, acesse a aba "Artifacts" aqui: 
-               https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            2. VERIFIQUE OS VÍDEOS E EVIDÊNCIAS (ARTIFACTS): 
+              🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            Verifique o log do passo "Rodar Testes Viação Cometa".
+            Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.

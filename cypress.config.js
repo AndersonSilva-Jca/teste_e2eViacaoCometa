@@ -29,6 +29,7 @@ module.exports = defineConfig({
 
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
+    scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
     video: true, // Importante para ver o que aconteceu na falha no CI
     screenshotOnRunFailure: true,
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
