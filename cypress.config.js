@@ -41,7 +41,7 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
-    experimentalRunAllSpecs: true,
+    // experimentalRunAllSpecs: true, 
     // testIsolation: false, // Isso mantém a página carregada entre os 'it's
     allowCypressEnv: false,
     trashAssetsBeforeRuns: true, // Evita deletar vídeos e screenshots antigos, útil para análise pós-falha
