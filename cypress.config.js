@@ -38,7 +38,7 @@ module.exports = defineConfig({
     requestTimeout: 15000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
+      // require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
     // experimentalRunAllSpecs: true, 
