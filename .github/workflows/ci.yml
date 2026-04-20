@@ -22,7 +22,7 @@ jobs:
           browser: chrome
           # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
           # install: false 
-          spec: cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir="cypress/reports",overwrite=true,html=true,json=false,reportFilename="index"
+          spec: cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir="cypress/reports/html",overwrite=true,html=true,json=false,reportFilename="index"
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
@@ -33,7 +33,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports/html/
+          publish_dir: ./cypress/reports/html
           force_orphan: true      
           
       - name: Enviar E-mail de SUCESSO ✅
