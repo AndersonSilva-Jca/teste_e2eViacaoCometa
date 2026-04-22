@@ -1,6 +1,9 @@
 name: Monitoramento Contínuo Cypress
 
 on:
+  # push:
+  #     branches:
+  #       - main
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch: 
@@ -21,9 +24,7 @@ jobs:
         uses: cypress-io/github-action@v6
         id: cypress
         with:
-          # browser: chrome
-          # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
-          # install: false 
+
           command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -48,6 +49,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
+          cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             Monitoramento Cypress - Viação Cometa
@@ -78,6 +80,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) 🚨 [ALERTA] Falha Detectada - Monitoramento Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
+          cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             RELATÓRIO DE FALHA DETECTADA 🚨
