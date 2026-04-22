@@ -66,7 +66,9 @@ jobs:
             • [03/07] Integridade de Links (Header e Footer)
             • [04/05/06] Ofertas, Conexões e FAQ
 
-            🔗 ACESSAR RELATÓRIO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
+            
 
             Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
 
@@ -100,7 +102,8 @@ jobs:
 
             🛠️ PLANO DE AÇÃO:
             1. ANALISE O PRINT DO ERRO NO RELATÓRIO ONLINE ABAIXO:
-               🔗 https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
+            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             2. VERIFIQUE OS VÍDEOS E EVIDÊNCIAS (ARTIFACTS): 
               🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
