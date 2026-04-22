@@ -17,7 +17,6 @@ describe('Fazer busca de destinos', () => {
       cy.get('.logged-message').should('contain', 'Olá')
     })
   });
-
   it('Fazer busca de destinos IDA com 1 passageiro', () => {
     cy.get('#input-departure').click().type('São Paulo')
     cy.contains(' São Paulo (Todos) (SP) ').click({ force: true })

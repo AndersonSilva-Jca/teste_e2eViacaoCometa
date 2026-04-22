@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          from: "Cypress Quality Bot 🤖"
+          from: "Monitoramento Contínuo Cypress"
           body: |
             Monitoramento Cypress - Viação Cometa
 
@@ -78,7 +78,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) 🚨 [ALERTA] Falha Detectada - Monitoramento Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          from: "Cypress Quality Bot 🤖"
+          from: "Monitoramento Contínuo Cypress"
           body: |
             RELATÓRIO DE FALHA DETECTADA 🚨
 

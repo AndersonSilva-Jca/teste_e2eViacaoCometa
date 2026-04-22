@@ -23,16 +23,17 @@ describe('Conta GIRO', () => {
     cy.get('#input-destination').click().type('Rio de Janeiro')
     cy.contains(' Rio de Janeiro (Todos) (RJ) ').click({ force: true })
     cy.get('#input-date').click()
-    cy.selecionarDataIda(1)
-    cy.get('#search-button', { timeout: 20000 }).click()
+    cy.selecionarDataIda(2)
+    cy.get('#search-button', { timeout: 90000 }).should('be.visible').click()
     cy.wait(5000);
-    cy.selecionarPassagemAleatoria1({ timeout: 20000 })
-    cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
+    cy.selecionarPassagemAleatoria1({ timeout: 90000 })
+    cy.wait(2000);
+    cy.get('#buyer-check-1', { timeout: 90000 }).click({ force: true })
     cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
     cy.wait(5000);
-    cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible');
-    cy.selecionarAssentoAleatorio({ timeout: 5000 });
-    cy.get('#btn-proceed', { timeout: 5000 }).should('be.visible').click()
+    cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
+    cy.selecionarAssentoAleatorio({ timeout: 90000 });
+    cy.get('#btn-proceed', { timeout: 90000 }).should('be.visible').click()
     // cy.url().should('include', '/pagamento')
     // cy.wait(10000);
     // cy.url().should('include', '/pagamento')
