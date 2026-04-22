@@ -2,7 +2,7 @@
 
 import './00_smoke/busca_passagens.cy.js'
 
-// import './01_autenticacao/01_login.cy.js'
+import './01_autenticacao/01_login.cy.js'
 
 import './02_conta_giro/01_conta_giro.cy.js'
 
@@ -26,8 +26,4 @@ import './06_cards_duvidas_frequentes/02_remarcacao.cy.js'
 import './06_cards_duvidas_frequentes/03_reembolso.cy.js'
 import './06_cards_duvidas_frequentes/04_bagagens.cy.js'
 
-import './07_links_footer/01_instagram.cy.js'
-import './07_links_footer/02_facebook.cy.js'
-import './07_links_footer/03_atendimento_whatsapp.cy.js'
-import './07_links_footer/04_vendas_whatsapp.cy.js'
-import './07_links_footer/05_fale_conosco.cy.js'
+import './07_links_footer/01_validar_links.cy.js'

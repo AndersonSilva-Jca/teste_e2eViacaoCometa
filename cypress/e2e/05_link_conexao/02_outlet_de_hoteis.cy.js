@@ -1,6 +1,6 @@
 /// <reference types='cypress' />
 
-describe('', () => {
+describe('Validar Link do Outlet de Hotéis', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });

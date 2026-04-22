@@ -13,16 +13,18 @@ jobs:
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v4
+        
+      - name: Limpar Relatórios Antigos
+        run: rm -rf cypress/reports/html/*
 
       - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v6
         id: cypress
-        continue-on-error: true
         with:
           # browser: chrome
           # Já que é no seu PC, não precisa instalar tudo toda vez se já tiver a node_modules
           # install: false 
-          command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=false,reportFilename=index
+          command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
