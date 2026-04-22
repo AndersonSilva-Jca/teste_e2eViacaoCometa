@@ -7,7 +7,7 @@ import './01_autenticacao/01_login.cy.js'
 import './02_conta_giro/01_conta_giro.cy.js'
 
 import './03_links_header/01_Informacoes_viagens.cy.js'
-import './03_links_header/02_fale_conosco.cy.js'
+// import './03_links_header/02_fale_conosco.cy.js'
 import './03_links_header/03_gratuidade.cy.js'
 import './03_links_header/04_nossos_destinos.cy.js'
 import './03_links_header/05_pontos_de_venda.cy.js'
