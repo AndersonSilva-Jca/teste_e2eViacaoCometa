@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          cc: alfredo.junior@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             Monitoramento Cypress - Viação Cometa
@@ -67,7 +67,7 @@ jobs:
             • [04/05/06] Ofertas, Conexões e FAQ
 
             🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
-            🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
+            # 🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
             
 
             Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
@@ -85,7 +85,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) 🚨 [ALERTA] Falha Detectada - Monitoramento Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          cc: alfredo.junior@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             RELATÓRIO DE FALHA DETECTADA 🚨
@@ -103,7 +103,7 @@ jobs:
             🛠️ PLANO DE AÇÃO:
             1. ANALISE O PRINT DO ERRO NO RELATÓRIO ONLINE ABAIXO:
             📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
-            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            # 📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             2. VERIFIQUE OS VÍDEOS E EVIDÊNCIAS (ARTIFACTS): 
               🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
