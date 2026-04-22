@@ -110,16 +110,13 @@ name: Monitoramento Contínuo Cypress
 
 on: 
   schedule:
-    - cron: '*/8 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch: 
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest 
-    strategy:
-      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-      matrix:
-        containers: [1, 2] # Uses 2 parallel instances
+
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v6
@@ -131,11 +128,9 @@ jobs:
         uses: cypress-io/github-action@v7
         id: cypress
         with:
-          # Adicionamos as flags --record e --key para ativar o Cloud
-          # Mantemos o seu reporter mochawesome intacto
-          command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
-          record: true
-          parallel: true # Runs test in parallel using settings above
+    
+          command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+        
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
