@@ -4,3 +4,4 @@ cypress/videos
 cypress/screenshots
 cypress/fixtures/login.json
 .env
+.github/workflows/cypress.yml

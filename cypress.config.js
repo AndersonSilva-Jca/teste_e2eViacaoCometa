@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
+  projectId: "yc5eka",
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
@@ -40,6 +41,12 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
+      on('before:browser:launch', (browser = {}, launchOptions) => {
+        if (browser.family === 'chromium') {
+          launchOptions.args.push('--ignore-certificate-errors');
+        }
+        return launchOptions;
+      });
     },
     // experimentalRunAllSpecs: true, 
     // testIsolation: false, // Isso mantém a página carregada entre os 'it's
