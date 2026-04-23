@@ -30,7 +30,8 @@ jobs:
         id: cypress
         with:
 
-            command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+            command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+            # command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
 
 
           # command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
