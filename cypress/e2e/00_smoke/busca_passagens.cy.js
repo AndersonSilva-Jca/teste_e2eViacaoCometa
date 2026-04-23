@@ -3,7 +3,7 @@
 
 // const { faker } = require('@faker-js/faker');
 
-describe('Fazer busca de destinos', () => {
+describe('Fazer busca de destinos, selecionar datas, compra de passagens, selecionar poltronas e finalizar compra', () => {
 
   beforeEach(() => {
     cy.clearCookies();

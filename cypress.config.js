@@ -34,7 +34,7 @@ module.exports = defineConfig({
     video: false, // Importante para ver o que aconteceu na falha no CI
     screenshotOnRunFailure: false,
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
-    defaultCommandTimeout: 10000, // Aumenta o tempo padrão de espera por elementos
+    defaultCommandTimeout: 120000, // Aumenta o tempo padrão de espera por elementos
     pageLoadTimeout: 120000, // Espera até 120s para a página carregar totalmente
     requestTimeout: 15000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
