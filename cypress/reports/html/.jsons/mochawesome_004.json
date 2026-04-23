@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-22T20:38:08.741Z",
+    "end": "2026-04-22T20:38:21.149Z",
+    "duration": 12408,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db885e64-3d63-4b01-bd80-ab303cbfc3e5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\03_links_header\\03_gratuidade.cy.js",
+      "file": "cypress\\e2e\\03_links_header\\03_gratuidade.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eeff9371-c732-4cdc-b747-f202c507eb77",
+          "title": "Validar link de gratuidade",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve redirecionar para a página de gratuidade",
+              "fullTitle": "Validar link de gratuidade Deve redirecionar para a página de gratuidade",
+              "timedOut": null,
+              "duration": 12253,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('.header-nav-container > :nth-child(1) > :nth-child(3) > .focusable').invoke('removeAttr', 'target').click();\n// cy.url().should('include', 'https://vendas.jcaholding.com.br/'); //erro",
+              "err": {},
+              "uuid": "85cba962-46b0-4ddc-b1ee-186d04906e2b",
+              "parentUUID": "eeff9371-c732-4cdc-b747-f202c507eb77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "85cba962-46b0-4ddc-b1ee-186d04906e2b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12253,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "charts": true,
+        "reportPageTitle": "Relatório de Testes - Viacao Cometa",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

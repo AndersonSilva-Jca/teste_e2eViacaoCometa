@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="392.375" tests="29" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-22T20:29:08" tests="0" file="cypress\e2e\00_run-all.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fazer busca de destinos" timestamp="2026-04-22T20:29:08" tests="1" time="53.469" failures="0">
+    <testcase name="Fazer busca de destinos Fazer busca de destinos IDA com 1 passageiro" time="53.373" classname="Fazer busca de destinos IDA com 1 passageiro">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login" timestamp="2026-04-22T20:30:01" tests="4" time="56.274" failures="0">
+    <testcase name="Login Deve fazer login com sucesso" time="12.526" classname="Deve fazer login com sucesso">
+    </testcase>
+    <testcase name="Login Deve preencher endereço do perfil" time="15.876" classname="Deve preencher endereço do perfil">
+    </testcase>
+    <testcase name="Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta." time="12.734" classname="Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.">
+    </testcase>
+    <testcase name="Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta." time="14.535" classname="Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Conta GIRO" timestamp="2026-04-22T20:30:57" tests="1" time="76.320" failures="0">
+    <testcase name="Conta GIRO Fazer compra de passagem com conta GIRO " time="76.155" classname="Fazer compra de passagem com conta GIRO ">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link informações de viagens" timestamp="2026-04-22T20:32:14" tests="5" time="84.099" failures="0">
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Bagagem" time="11.999" classname="Validar link informações de Viagem - Bagagem">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Informações para embarque" time="12.910" classname="Validar link informações de Viagem - Informações para embarque">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Compra, remarcação e reembolso" time="21.900" classname="Validar link informações de Viagem - Compra, remarcação e reembolso">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Nossos serviços" time="18.842" classname="Validar link informações de Viagem - Nossos serviços">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Descontos e Gratuidades" time="17.163" classname="Validar link informações de Viagem - Descontos e Gratuidades">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de gratuidade" timestamp="2026-04-22T20:33:38" tests="1" time="7.210" failures="0">
+    <testcase name="Validar link de gratuidade Deve redirecionar para a página de gratuidade" time="7.051" classname="Deve redirecionar para a página de gratuidade">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de nossos destinos" timestamp="2026-04-22T20:33:45" tests="1" time="6.429" failures="0">
+    <testcase name="Validar link de nossos destinos Deve redirecionar para a página de nossos destinos" time="6.307" classname="Deve redirecionar para a página de nossos destinos">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de pontos de venda" timestamp="2026-04-22T20:33:52" tests="1" time="6.881" failures="0">
+    <testcase name="Validar link de pontos de venda Deve redirecionar para a página de pontos de venda" time="6.792" classname="Deve redirecionar para a página de pontos de venda">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link do programa de fidelidade" timestamp="2026-04-22T20:33:58" tests="1" time="7.746" failures="0">
+    <testcase name="Validar link do programa de fidelidade Deve redirecionar para o site Clube Giro com sucesso" time="7.605" classname="Deve redirecionar para o site Clube Giro com sucesso">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link do clube giro" timestamp="2026-04-22T20:34:06" tests="1" time="8.963" failures="0">
+    <testcase name="Validar link do clube giro Deve validar o link do card de clube giro e redirecionar para a página do clube giro" time="8.791" classname="Deve validar o link do card de clube giro e redirecionar para a página do clube giro">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar Link do Outlet de Hotéis" timestamp="2026-04-22T20:34:15" tests="1" time="4.507" failures="0">
+    <testcase name="Validar Link do Outlet de Hotéis Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis" time="4.389" classname="Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de conexão com aeroportos" timestamp="2026-04-22T20:34:20" tests="1" time="6.214" failures="0">
+    <testcase name="Validar link de conexão com aeroportos Deve validar o link do card de conexão com aeroportos e redirecionar para a página de conexão com aeroportos" time="6.117" classname="Deve validar o link do card de conexão com aeroportos e redirecionar para a página de conexão com aeroportos">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de conexão com o Porto de Santos" timestamp="2026-04-22T20:34:26" tests="1" time="6.404" failures="0">
+    <testcase name="Validar link de conexão com o Porto de Santos Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos" time="6.302" classname="Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de conexão com os ônibus" timestamp="2026-04-22T20:34:32" tests="1" time="7.571" failures="0">
+    <testcase name="Validar link de conexão com os ônibus Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato" time="7.454" classname="Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar Cards - dúvidas frequentes" timestamp="2026-04-22T20:34:40" tests="1" time="6.954" failures="0">
+    <testcase name="Validar Cards - dúvidas frequentes Deve validar Cards - informação para sua viagem" time="6.820" classname="Deve validar Cards - informação para sua viagem">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar Cards - dúvidas frequentes" timestamp="2026-04-22T20:34:47" tests="1" time="7.328" failures="0">
+    <testcase name="Validar Cards - dúvidas frequentes Deve validar Cards - remarcação" time="7.181" classname="Deve validar Cards - remarcação">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar Cards - dúvidas frequentes" timestamp="2026-04-22T20:34:54" tests="1" time="7.156" failures="0">
+    <testcase name="Validar Cards - dúvidas frequentes Deve validar Cards - reembolso" time="7.024" classname="Deve validar Cards - reembolso">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar Cards - dúvidas frequentes" timestamp="2026-04-22T20:35:01" tests="1" time="7.139" failures="0">
+    <testcase name="Validar Cards - dúvidas frequentes Deve validar Cards - bagagem" time="7.027" classname="Deve validar Cards - bagagem">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar todos os Links Footer" timestamp="2026-04-22T20:35:08" tests="5" time="31.701" failures="0">
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Instagram" time="6.624" classname="Deve validar Links Footer - Instagram">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Facebook" time="5.518" classname="Deve validar Links Footer - Facebook">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Atendimento virtual whatsapp" time="5.707" classname="Deve validar Links Footer - Atendimento virtual whatsapp">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Vendas whatsapp" time="5.634" classname="Deve validar Links Footer - Vendas whatsapp">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Fale Conosco" time="7.673" classname="Deve validar Links Footer - Fale Conosco">
+    </testcase>
+  </testsuite>
+</testsuites>

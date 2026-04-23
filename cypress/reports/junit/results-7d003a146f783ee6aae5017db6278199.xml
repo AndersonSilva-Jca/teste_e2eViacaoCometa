@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="423.861" tests="4" failures="4">
+  <testsuite name="Root Suite" timestamp="2026-04-22T20:39:32" tests="0" file="cypress\e2e\04_ofertas_promocoes\01_promo_cards.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar cards de promoção" timestamp="2026-04-22T20:39:32" tests="4" time="423.850" failures="4">
+    <testcase name="Validar cards de promoção Deve validar o link do 1º card de promoção e redirecionar para a página de login" time="0.000" classname="Deve validar o link do 1º card de promoção e redirecionar para a página de login">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `li[data-js^=&quot;offer-element-&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `li[data-js^="offer-element-"]`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:275:62)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+    <testcase name="Validar cards de promoção Deve validar o link do 2º card de promoção e redirecionar para a página de login" time="0.000" classname="Deve validar o link do 2º card de promoção e redirecionar para a página de login">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `li[data-js^=&quot;offer-element-&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `li[data-js^="offer-element-"]`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:275:62)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+    <testcase name="Validar cards de promoção Deve validar o link do 3º card de promoção e redirecionar para a página de login" time="0.000" classname="Deve validar o link do 3º card de promoção e redirecionar para a página de login">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `li[data-js^=&quot;offer-element-&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `li[data-js^="offer-element-"]`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:275:62)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+    <testcase name="Validar cards de promoção Deve validar o link do 4º card de promoção e redirecionar para a página de login" time="0.000" classname="Deve validar o link do 4º card de promoção e redirecionar para a página de login">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `li[data-js^=&quot;offer-element-&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `li[data-js^="offer-element-"]`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:275:62)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="17.897" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-22T20:51:50" tests="0" file="cypress\e2e\05_link_conexao\04_conexao_portoSantos.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link de conexão com o Porto de Santos" timestamp="2026-04-22T20:51:50" tests="1" time="17.892" failures="0">
+    <testcase name="Validar link de conexão com o Porto de Santos Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos" time="17.673" classname="Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos">
+    </testcase>
+  </testsuite>
+</testsuites>
