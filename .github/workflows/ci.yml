@@ -154,8 +154,7 @@ jobs:
         id: cypress
         with:
     
-          command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
-          # command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+              command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=true,json=true          # command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
         
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -164,6 +163,12 @@ jobs:
           # Token necessário para o Cypress falar com o GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
+
+      - name: Juntar Relatórios (Merge) 🧩
+        if: always()
+        run: |
+          npx mochawesome-merge cypress/reports/html/*.json > cypress/reports/html/report-final.json
+          npx marger cypress/reports/html/report-final.json -o cypress/reports/html -f index --inline
 
       - name: Deploy do Relatório para GitHub Pages
         if: always()
