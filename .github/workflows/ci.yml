@@ -85,7 +85,7 @@ jobs:
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
-            RELATÓRIO DE FALHA DETECTADA 🚨
+            🚨 RELATÓRIO DE FALHA DETECTADA
 
             🔍 INVESTIGAÇÃO RÁPIDA:
 
