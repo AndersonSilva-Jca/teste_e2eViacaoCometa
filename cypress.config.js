@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
-  // projectId: "yc5eka",
+  projectId: "yc5eka",
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
