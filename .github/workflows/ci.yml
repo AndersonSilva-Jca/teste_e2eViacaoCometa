@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout do Código
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         
       - name: Limpar Relatórios Antigos
         run: rm -rf cypress/reports/html/*
@@ -27,10 +27,10 @@ jobs:
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
-          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+          # NODE_TLS_REJECT_UNAUTHORIZED: "0"
           # Token necessário para o Cypress falar com o GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
+          # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
       - name: Deploy do Relatório para GitHub Pages
         if: always()
