@@ -73,7 +73,7 @@ jobs:
             
 
       - name: Enviar E-mail de FALHA 🚨
-        if: steps.cypress.outcome == 'failure'
+        if: failure()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
