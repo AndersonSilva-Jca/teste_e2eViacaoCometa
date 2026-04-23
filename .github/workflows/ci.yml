@@ -155,7 +155,7 @@ jobs:
         continue-on-error: true
         with:
     
-              command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=true,json=true          # command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+              command: npx cypress run --browser chrome --spec cypress/e2e/00_busca_passagens/**/* --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=true,json=true          # command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
         
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -172,7 +172,7 @@ jobs:
           npx marger cypress/reports/html/report-final.json -o cypress/reports/html -f index --inline
 
       - name: Deploy do Relatório para GitHub Pages
-        if: always()
+        # if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -180,7 +180,7 @@ jobs:
           force_orphan: true      
           
       - name: Enviar E-mail de SUCESSO ✅
-        if: always() && steps.cypress.outcome == 'success' # 👈 Verificação correta
+        if: steps.cypress.outcome == 'success' # 👈 Verificação correta
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com

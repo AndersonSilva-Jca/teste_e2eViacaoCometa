@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-23T17:28:09.548Z",
+    "end": "2026-04-23T17:28:21.988Z",
+    "duration": 12440,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8c62dd4c-908a-48fd-8bb3-b92e4ef4fd21",
+      "title": "",
+      "fullFile": "cypress\\e2e\\05_link_conexao\\02_outlet_de_hoteis.cy.js",
+      "file": "cypress\\e2e\\05_link_conexao\\02_outlet_de_hoteis.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8a11f48f-b04c-4292-93a2-6920bec56e77",
+          "title": "Validar Link do Outlet de Hotéis",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis",
+              "fullTitle": "Validar Link do Outlet de Hotéis Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis",
+              "timedOut": null,
+              "duration": 12210,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('#slick-slide21 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click();\n// cy.url().should('include', 'www.outletdehoteis.com.br');",
+              "err": {},
+              "uuid": "fd27b827-4793-4263-9c0b-2c571ec6a58c",
+              "parentUUID": "8a11f48f-b04c-4292-93a2-6920bec56e77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fd27b827-4793-4263-9c0b-2c571ec6a58c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12210,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "charts": true,
+        "reportPageTitle": "Relatório de Testes - Viacao Cometa",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
