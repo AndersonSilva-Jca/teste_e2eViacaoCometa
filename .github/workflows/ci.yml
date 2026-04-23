@@ -98,8 +98,8 @@ jobs:
             <p><strong>🔗 PAINEL EXECUTIVO (HTML):</strong><br>
             <a href="https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/">Acessar relatório</a></p>
 
-            <p><strong>🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD):</strong><br>
-            <a href="https://cloud.cypress.io/projects/yc5eka/runs">Acessar dashboard</a></p>
+            # <p><strong>🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD):</strong><br>
+            # <a href="https://cloud.cypress.io/projects/yc5eka/runs">Acessar dashboard</a></p>
 
             <p>Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.</p>
 
@@ -121,7 +121,7 @@ jobs:
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
-          html_body: true
+          # html_body: true
           body: |
             <h2 style="color:#c62828;">🚨 RELATÓRIO DE FALHA DETECTADA</h2>
 
@@ -141,10 +141,10 @@ jobs:
 
             <p><strong>🛠️ PLANO DE AÇÃO:</strong></p>
             <ol>
-              <li>
-                <strong>Analise o erro no Cypress Cloud:</strong><br>
-                📺 <a href="https://cloud.cypress.io/projects/yc5eka/runs">Ver execução no Cloud</a>
-              </li>
+              # <li>
+              #   <strong>Analise o erro no Cypress Cloud:</strong><br>
+              #   📺 <a href="https://cloud.cypress.io/projects/yc5eka/runs">Ver execução no Cloud</a>
+              # </li>
               <br>
               <li>
                 <strong>Verifique prints e relatório HTML:</strong><br>
