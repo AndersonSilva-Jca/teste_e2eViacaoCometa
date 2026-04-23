@@ -39,16 +39,37 @@ jobs:
           SENHA: ${{ secrets.SENHA }}
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
 
+      - name: Upload Relatório (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.containers }}
+          path: cypress/reports/html
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+    if: always()
+
+    steps:
+      - name: Download relatórios
+        uses: actions/download-artifact@v4
+        with:
+          path: reports
+
+      - name: Merge relatórios (opcional)
+        run: |
+          mkdir merged
+          cp -r reports/*/* merged/ || true
+
       - name: Deploy do Relatório para GitHub Pages
-        if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports/html
+          publish_dir: ./merged
           force_orphan: true      
           
       - name: Enviar E-mail de SUCESSO ✅
-        if: steps.cypress.outcome == 'success'
+        if: needs.cypress-run.result == 'success'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -59,29 +80,37 @@ jobs:
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
+          html_body: true
           body: |
-            Monitoramento Cypress - Viação Cometa
+            <h2 style="color:#2e7d32;">📊 Monitoramento Cypress - Viação Cometa</h2>
 
-            O ciclo de monitoramento contínuo foi finalizado com sucesso. Todos os sistemas críticos estão operacionais.
+            <p>O ciclo de monitoramento contínuo foi finalizado com sucesso. Todos os sistemas críticos estão operacionais.</p>
 
-            📂 ÁREAS VALIDADAS:
-            • [00] Smoke Tests (Fluxos Principais - Seleção de Origem e Destino, Datas, Busca de Passagens, Assentos)
-            • [01] Autenticação (Login)
-            • [02] Conta Giro (Login)
-            • [03/07] Integridade de Links (Header e Footer)
-            • [04/05/06] Ofertas, Conexões e FAQ
+            <p><strong>📂 ÁREAS VALIDADAS:</strong></p>
+            <ul>
+              <li><strong>[00] Smoke Tests</strong> (Fluxos Principais - Seleção de Origem e Destino, Datas, Busca de Passagens, Assentos)</li>
+              <li><strong>[01] Autenticação</strong> (Login)</li>
+              <li><strong>[02] Conta Giro</strong> (Login)</li>
+              <li><strong>[03/07] Integridade de Links</strong> (Header e Footer)</li>
+              <li><strong>[04/05/06] Ofertas, Conexões e FAQ</strong></li>
+            </ul>
 
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
-            # 🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
-            
+            <p><strong>🔗 PAINEL EXECUTIVO (HTML):</strong><br>
+            <a href="https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/">Acessar relatório</a></p>
 
-            Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.
+            <p><strong>🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD):</strong><br>
+            <a href="https://cloud.cypress.io/projects/yc5eka/runs">Acessar dashboard</a></p>
 
-            Detalhes da execução: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            <p>Os fluxos login, busca de passagens, conta giro, links do header e footer estão funcionando corretamente.</p>
+
+            <p><strong>🔎 Detalhes da execução:</strong><br>
+            <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">
+            Ver execução no GitHub
+            </a></p>
             
 
       - name: Enviar E-mail de FALHA 🚨
-        if: steps.cypress.outcome == 'failure'
+        if: needs.cypress-run.result == 'failure'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -92,28 +121,49 @@ jobs:
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
+          html_body: true
           body: |
-            RELATÓRIO DE FALHA DETECTADA 🚨
+            <h2 style="color:#c62828;">🚨 RELATÓRIO DE FALHA DETECTADA</h2>
 
-            🔍 DETALHES DA EXECUÇÃO:
-            • Gatilho: ${{ github.event_name == 'schedule' && 'Agendamento Automático de 5 em 5 minutos' || 'Execução Manual' }}
-            • Responsável: ${{ github.actor }}
-            • Status: Erro em uma ou mais suítes de teste.
+            <p><strong>🔍 DETALHES DA EXECUÇÃO:</strong></p>
+            <ul>
+              <li><strong>Gatilho:</strong> ${{ github.event_name == 'schedule' && 'Agendamento Automático de 5 em 5 minutos' || 'Execução Manual' }}</li>
+              <li><strong>Responsável:</strong> ${{ github.actor }}</li>
+              <li><strong>Status:</strong> <span style="color:#c62828;"><strong>Erro em uma ou mais suítes de teste</strong></span></li>
+            </ul>
 
-            💡 POSSÍVEIS CAUSAS:
-            1. Instabilidade na API de busca ou login do site.
-            2. Alteração de seletores (Placeholders/IDs) no front-end.
-            3. Lentidão excessiva no carregamento (Timeout).
+            <p><strong>💡 POSSÍVEIS CAUSAS:</strong></p>
+            <ol>
+              <li>Instabilidade na API de busca ou login do site</li>
+              <li>Alteração de seletores (IDs, classes, placeholders) no front-end</li>
+              <li>Lentidão excessiva no carregamento (Timeout)</li>
+            </ol>
 
-            🛠️ PLANO DE AÇÃO:
-            1. ANALISE O PRINT DO ERRO NO RELATÓRIO ONLINE ABAIXO:
-            📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
-            # 📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            <p><strong>🛠️ PLANO DE AÇÃO:</strong></p>
+            <ol>
+              <li>
+                <strong>Analise o erro no Cypress Cloud:</strong><br>
+                📺 <a href="https://cloud.cypress.io/projects/yc5eka/runs">Ver execução no Cloud</a>
+              </li>
+              <br>
+              <li>
+                <strong>Verifique prints e relatório HTML:</strong><br>
+                📊 <a href="https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/">Abrir relatório HTML</a>
+              </li>
+              <br>
+              <li>
+                <strong>Analise evidências completas (GitHub Actions):</strong><br>
+                🔗 <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">
+                Ver execução detalhada
+                </a>
+              </li>
+            </ol>
 
-            2. VERIFIQUE OS VÍDEOS E EVIDÊNCIAS (ARTIFACTS): 
-              🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            <hr>
 
-            Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
+            <p style="font-size:12px;color:gray;">
+              Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
+            </p>
 
 
 
@@ -216,3 +266,4 @@ jobs:
 #             🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 #             Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
+
