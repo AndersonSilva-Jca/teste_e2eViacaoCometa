@@ -18,14 +18,16 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Limpar Relatórios Antigos
-        run: rm -rf cypress/reports/html/*
+        run: |
+          rm -rf cypress/reports/html/*
+          rm -rf cypress/screenshots/*
 
       - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v7
         id: cypress
         with:
     
-          command: npx cypress run --browser chrome --spec cypress/e2e/00_busca_passagens/**/* --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+          command: npx cypress run --browser chrome --spec --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=true,json=true,reportFilename=index
         
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -61,6 +63,7 @@ jobs:
             O ciclo de monitoramento contínuo foi finalizado com sucesso.
 
             📂 RELATÓRIOS DISPONÍVEIS:
+              
             🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             📂 ÁREAS VALIDADAS:
