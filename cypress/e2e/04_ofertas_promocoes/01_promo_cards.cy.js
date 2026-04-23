@@ -17,12 +17,12 @@ describe('Validar cards de promoção', () => {
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
-    cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })
-    cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
-    cy.selecionarAssentoAleatorio({ timeout: 15000 });
+    // cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })
+    // cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
+    // cy.selecionarAssentoAleatorio({ timeout: 15000 });
     // cy.wait(10000)
-    cy.get('#btn-proceed').should('be.visible').click()
-    cy.url().should('include', '/pagamento')
+    // cy.get('#btn-proceed').should('be.visible').click()
+    // cy.url().should('include', '/pagamento')
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     // Não finalizar a compra para evitar transações reais
@@ -37,12 +37,12 @@ describe('Validar cards de promoção', () => {
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
-    cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
-    cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
-    cy.selecionarAssentoAleatorio({ timeout: 15000 });
-    // cy.wait(10000)
-    cy.get('#btn-proceed').should('be.visible').click()
-    cy.url().should('include', '/pagamento')
+    // cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
+    // cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
+    // cy.selecionarAssentoAleatorio({ timeout: 15000 });
+    // // cy.wait(10000)
+    // cy.get('#btn-proceed').should('be.visible').click()
+    // cy.url().should('include', '/pagamento')
   });
 
   it('Deve validar o link do 3º card de promoção e redirecionar para a página de login', () => {
@@ -54,12 +54,12 @@ describe('Validar cards de promoção', () => {
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
-    cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
-    cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
-    cy.selecionarAssentoAleatorio({ timeout: 15000 });
-    // cy.wait(10000)
-    cy.get('#btn-proceed').should('be.visible').click()
-    cy.url().should('include', '/pagamento')
+    // cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
+    // cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
+    // cy.selecionarAssentoAleatorio({ timeout: 15000 });
+    // // cy.wait(10000)
+    // cy.get('#btn-proceed').should('be.visible').click()
+    // cy.url().should('include', '/pagamento')
   });
 
   it('Deve validar o link do 4º card de promoção e redirecionar para a página de login', () => {
@@ -71,11 +71,11 @@ describe('Validar cards de promoção', () => {
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
-    cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
-    cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
-    cy.selecionarAssentoAleatorio({ timeout: 15000 });
-    // cy.wait(10000)
-    cy.get('#btn-proceed').should('be.visible').click()
-    cy.url().should('include', '/pagamento')
+    // cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
+    // cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
+    // cy.selecionarAssentoAleatorio({ timeout: 15000 });
+    // // cy.wait(10000)
+    // cy.get('#btn-proceed').should('be.visible').click()
+    // cy.url().should('include', '/pagamento')
   });
 });

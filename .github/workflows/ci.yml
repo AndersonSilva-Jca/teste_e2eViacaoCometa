@@ -30,7 +30,7 @@ jobs:
         id: cypress
         with:
 
-            command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --spec cypress/e2e/00_smoke/**/* --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+            command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
 
 
           # command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
@@ -80,7 +80,7 @@ jobs:
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
-          html_body: true
+          # html_body: true
           body: |
             <h2 style="color:#2e7d32;">📊 Monitoramento Cypress - Viação Cometa</h2>
 
