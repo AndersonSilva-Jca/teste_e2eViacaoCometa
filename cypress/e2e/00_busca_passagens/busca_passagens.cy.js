@@ -14,7 +14,7 @@ describe('Fazer busca de destinos', () => {
       cy.get('#input-login').type(env.login)
       cy.get('#input-password').type(env.senha, { log: false })
       cy.get('#button-login').click()
-      cy.get('.logged-message').should('contain', 'OIIIIII')
+      cy.get('.logged-message').should('contain', 'Olá')
     })
   });
   it('Fazer busca de destinos IDA com 1 passageiro', () => {
