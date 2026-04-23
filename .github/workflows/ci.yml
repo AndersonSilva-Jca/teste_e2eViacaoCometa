@@ -152,6 +152,7 @@ jobs:
       - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v7
         id: cypress
+        continue-on-error: true
         with:
     
               command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=true,json=true          # command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
@@ -179,7 +180,7 @@ jobs:
           force_orphan: true      
           
       - name: Enviar E-mail de SUCESSO ✅
-        if: steps.cypress.outcome == 'success'
+        if: always() && steps.cypress.outcome == 'success' # 👈 Verificação correta
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -210,7 +211,7 @@ jobs:
             
 
       - name: Enviar E-mail de FALHA 🚨
-        if: steps.cypress.outcome == 'failure'
+        if: always() && steps.cypress.outcome == 'failure' # 👈 Verificação correta
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
