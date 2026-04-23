@@ -1,163 +1,56 @@
-name: Monitoramento Contínuo Cypress
-
-on:
-  # push:
-  #     branches:
-  #       - main
-  schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch: 
-
-jobs:
-  cypress-run:
-    runs-on: ubuntu-latest 
-    # self-hosted
-    # strategy:
-    #       # fail-fast: false
-    #       matrix:
-    #         containers: [1, 2, 3]  # 🔥 paralelismo
-    
-
-    steps:
-      - name: Checkout do Código
-        uses: actions/checkout@v4
-        
-      - name: Limpar Relatórios Antigos
-        run: rm -rf cypress/reports/html/*
-
-      - name: Cypress Run - Testes E2E Viação Cometa
-        uses: cypress-io/github-action@v6
-        id: cypress
-        with:
-
-            command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
-            # command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
-
-
-          # command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
-        env:
-          LOGIN: ${{ secrets.LOGIN }}
-          SENHA: ${{ secrets.SENHA }}
-          NODE_TLS_REJECT_UNAUTHORIZED: "0"
-
-      - name: Upload Relatório (artifact)
-        uses: actions/upload-artifact@v4
-        with:
-          name: report-${{ matrix.containers }}
-          path: cypress/reports/html
-
-  notify:
-    runs-on: ubuntu-latest
-    needs: cypress-run
-    if: always()
-
-    steps:
-      - name: Download relatórios
-        uses: actions/download-artifact@v4
-        with:
-          path: reports
-
-      - name: Merge relatórios (opcional)
-        run: |
-          mkdir merged
-          cp -r reports/*/* merged/ || true
-
-      - name: Deploy do Relatório para GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./merged
-          force_orphan: true      
-          
-      - name: Enviar E-mail de SUCESSO ✅
-        if: needs.cypress-run.result == 'success'
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
-          to: anderson.ssantos@jcatlm.com.br
-          # cc: alfredo.junior@jcatlm.com.br
-          from: "Monitoramento Contínuo Cypress"
-          # html_body: true
-          body: |
-            Monitoramento Cypress - Viação Cometa
-
-            O ciclo de monitoramento contínuo foi finalizado com sucesso.
-
-            📂 RELATÓRIOS DISPONÍVEIS:
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
-            # 🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
-
-            📂 ÁREAS VALIDADAS:
-            • [00] Smoke Tests (Busca, Datas, Assentos)
-            • [01] Autenticação
-            • [02] Conta Giro
-            • [03/07] Integridade de Links
-
-            Detalhes técnicos: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
-
-      - name: Enviar E-mail de FALHA 🚨
-        if: needs.cypress-run.result == 'failure'
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "(EM TESTE) 🚨 [ALERTA] Falha Detectada - Monitoramento Viação Cometa"
-          to: anderson.ssantos@jcatlm.com.br
-          # cc: alfredo.junior@jcatlm.com.br
-          from: "Monitoramento Contínuo Cypress"
-          # html_body: true
-          body: |
-            🚨 RELATÓRIO DE FALHA DETECTADA
-
-            🔍 INVESTIGAÇÃO RÁPIDA:
-            # 📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
-            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
-
-            💡 POSSÍVEIS CAUSAS:
-            1. Instabilidade na API de busca ou login do site.
-            2. Alteração de seletores (Placeholders/IDs) no front-end.
-            3. Lentidão excessiva no carregamento (Timeout).
-
-            🛠️ LOGS GERAIS: 
-            🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-
-            Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
-            
-
-
-
 # name: Monitoramento Contínuo Cypress
 
-# on: 
+# on:
+#   # push:
+#   #     branches:
+#   #       - main
 #   schedule:
 #     - cron: '*/10 * * * *'
 #   workflow_dispatch: 
 
-# jobs:
-#   cypress-run:
-#     runs-on: ubuntu-latest 
-
-#     steps:
-#       - name: Checkout do Código
-#         uses: actions/checkout@v6
-        
-#       - name: Limpar Relatórios Antigos
-#         run: rm -rf cypress/reports/html/*
-
-#       - name: Cypress Run - Testes E2E Viação Cometa
-#         uses: cypress-io/github-action@v7
-#         id: cypress
-#         with:
+# # jobs:
+# #   cypress-run:
+# #     runs-on: ubuntu-latest 
+#     # self-hosted
+#     # strategy:
+#     #       # fail-fast: false
+#     #       matrix:
+#     #         containers: [1, 2, 3]  # 🔥 paralelismo
     
-#           command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+
+#     # steps:
+#     #   - name: Checkout do Código
+#     #     uses: actions/checkout@v4
         
+#     #   - name: Limpar Relatórios Antigos
+#     #     run: rm -rf cypress/reports/html/*
+
+#     #   - name: Cypress Run - Testes E2E Viação Cometa
+#     #     uses: cypress-io/github-action@v6
+#     #     id: cypress
+#     #     with:
+
+#     jobs:
+#     cypress-run:
+#       runs-on: ubuntu-latest 
+
+#       steps:
+#         - name: Checkout do Código
+#           uses: actions/checkout@v6
+          
+#         - name: Limpar Relatórios Antigos
+#           run: rm -rf cypress/reports/html/*
+
+#         - name: Cypress Run - Testes E2E Viação Cometa
+#           uses: cypress-io/github-action@v7
+#           id: cypress
+#           with:
+
+#             command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+#             # command: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --group "Smoke Tests" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+
+
+#           # command: npx cypress run --browser chrome --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
 #         env:
 #           LOGIN: ${{ secrets.LOGIN }}
 #           SENHA: ${{ secrets.SENHA }}
@@ -175,7 +68,7 @@ jobs:
 #           force_orphan: true      
           
 #       - name: Enviar E-mail de SUCESSO ✅
-#         if: steps.cypress.outcome == 'success'
+# #         if: steps.cypress.outcome == 'success'
 #         uses: dawidd6/action-send-mail@v3
 #         with:
 #           server_address: smtp.gmail.com
@@ -186,6 +79,7 @@ jobs:
 #           to: anderson.ssantos@jcatlm.com.br
 #           # cc: alfredo.junior@jcatlm.com.br
 #           from: "Monitoramento Contínuo Cypress"
+#           # html_body: true
 #           body: |
 #             Monitoramento Cypress - Viação Cometa
 
@@ -193,7 +87,7 @@ jobs:
 
 #             📂 RELATÓRIOS DISPONÍVEIS:
 #             🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
-#             🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
+#             # 🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
 
 #             📂 ÁREAS VALIDADAS:
 #             • [00] Smoke Tests (Busca, Datas, Assentos)
@@ -216,11 +110,12 @@ jobs:
 #           to: anderson.ssantos@jcatlm.com.br
 #           # cc: alfredo.junior@jcatlm.com.br
 #           from: "Monitoramento Contínuo Cypress"
+#           # html_body: true
 #           body: |
-#             RELATÓRIO DE FALHA DETECTADA 🚨
+#             🚨 RELATÓRIO DE FALHA DETECTADA
 
 #             🔍 INVESTIGAÇÃO RÁPIDA:
-#             📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
+#             # 📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
 #             📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
 #             💡 POSSÍVEIS CAUSAS:
@@ -232,4 +127,108 @@ jobs:
 #             🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 #             Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
+            
+
+
+
+name: Monitoramento Contínuo Cypress
+
+on: 
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: 
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v6
+        
+      - name: Limpar Relatórios Antigos
+        run: rm -rf cypress/reports/html/*
+
+      - name: Cypress Run - Testes E2E Viação Cometa
+        uses: cypress-io/github-action@v7
+        id: cypress
+        with:
+    
+          command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+          # command: npx cypress run --browser chrome --key ${{ secrets.CYPRESS_RECORD_KEY }} --spec cypress/e2e/00_run-all.cy.js --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
+        
+        env:
+          LOGIN: ${{ secrets.LOGIN }}
+          SENHA: ${{ secrets.SENHA }}
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+          # Token necessário para o Cypress falar com o GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
+
+      - name: Deploy do Relatório para GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports/html
+          force_orphan: true      
+          
+      - name: Enviar E-mail de SUCESSO ✅
+        if: steps.cypress.outcome == 'success'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
+          to: anderson.ssantos@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
+          from: "Monitoramento Contínuo Cypress"
+          body: |
+            Monitoramento Cypress - Viação Cometa
+
+            O ciclo de monitoramento contínuo foi finalizado com sucesso.
+
+            📂 RELATÓRIOS DISPONÍVEIS:
+            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            # 🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
+
+            📂 ÁREAS VALIDADAS:
+            • [00] Smoke Tests (Busca, Datas, Assentos)
+            • [01] Autenticação
+            • [02] Conta Giro
+            • [03/07] Integridade de Links
+
+            Detalhes técnicos: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+
+      - name: Enviar E-mail de FALHA 🚨
+        if: steps.cypress.outcome == 'failure'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "(EM TESTE) 🚨 [ALERTA] Falha Detectada - Monitoramento Viação Cometa"
+          to: anderson.ssantos@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
+          from: "Monitoramento Contínuo Cypress"
+          body: |
+            RELATÓRIO DE FALHA DETECTADA 🚨
+
+            🔍 INVESTIGAÇÃO RÁPIDA:
+            # 📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
+            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+
+            💡 POSSÍVEIS CAUSAS:
+            1. Instabilidade na API de busca ou login do site.
+            2. Alteração de seletores (Placeholders/IDs) no front-end.
+            3. Lentidão excessiva no carregamento (Timeout).
+
+            🛠️ LOGS GERAIS: 
+            🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
 
