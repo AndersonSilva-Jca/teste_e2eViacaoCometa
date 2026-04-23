@@ -12,10 +12,10 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest 
     # self-hosted
-    strategy:
-          # fail-fast: false
-          matrix:
-            containers: [1, 2, 3]  # 🔥 paralelismo
+    # strategy:
+    #       # fail-fast: false
+    #       matrix:
+    #         containers: [1, 2, 3]  # 🔥 paralelismo
     
 
     steps:
