@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="130.730" tests="9" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-23T12:57:28" tests="0" file="cypress\e2e\00_smoke\01_giro_linksHeader_ofertas.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link informações de viagens" timestamp="2026-04-23T12:57:28" tests="5" time="67.424" failures="0">
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Bagagem" time="24.911" classname="Validar link informações de Viagem - Bagagem">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Informações para embarque" time="10.357" classname="Validar link informações de Viagem - Informações para embarque">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Compra, remarcação e reembolso" time="9.195" classname="Validar link informações de Viagem - Compra, remarcação e reembolso">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Nossos serviços" time="9.350" classname="Validar link informações de Viagem - Nossos serviços">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Descontos e Gratuidades" time="12.818" classname="Validar link informações de Viagem - Descontos e Gratuidades">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de gratuidade" timestamp="2026-04-23T12:58:35" tests="1" time="12.204" failures="0">
+    <testcase name="Validar link de gratuidade Deve redirecionar para a página de gratuidade" time="11.907" classname="Deve redirecionar para a página de gratuidade">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de nossos destinos" timestamp="2026-04-23T12:58:47" tests="1" time="17.970" failures="0">
+    <testcase name="Validar link de nossos destinos Deve redirecionar para a página de nossos destinos" time="17.771" classname="Deve redirecionar para a página de nossos destinos">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link de pontos de venda" timestamp="2026-04-23T12:59:05" tests="1" time="17.037" failures="0">
+    <testcase name="Validar link de pontos de venda Deve redirecionar para a página de pontos de venda" time="16.813" classname="Deve redirecionar para a página de pontos de venda">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validar link do programa de fidelidade" timestamp="2026-04-23T12:59:22" tests="1" time="16.092" failures="0">
+    <testcase name="Validar link do programa de fidelidade Deve redirecionar para o site Clube Giro com sucesso" time="15.799" classname="Deve redirecionar para o site Clube Giro com sucesso">
+    </testcase>
+  </testsuite>
+</testsuites>
