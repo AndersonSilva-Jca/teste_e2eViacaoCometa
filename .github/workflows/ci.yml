@@ -59,7 +59,6 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
             🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
-            🔗 CYPRESS CLOUD (VÍDEOS/DASHBOARD): https://cloud.cypress.io/projects/yc5eka/runs
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests (Busca, Datas, Assentos)
@@ -86,7 +85,7 @@ jobs:
             RELATÓRIO DE FALHA DETECTADA 🚨
 
             🔍 INVESTIGAÇÃO RÁPIDA:
-            📺 Ver Vídeo da Falha no Cloud: https://cloud.cypress.io/projects/yc5eka/runs
+
             📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             💡 POSSÍVEIS CAUSAS:
