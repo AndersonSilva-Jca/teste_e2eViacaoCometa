@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
   // projectId: "yc5eka",
-  reporter: 'cypress-multi-reporters',
+reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
     mochaJunitReporterReporterOptions: {
@@ -14,6 +14,8 @@ module.exports = defineConfig({
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: false,
+      // ADICIONE ESTA LINHA ABAIXO:
+      ignoreVideos: true, 
     },
   },
   chromeWebSecurity: false,
@@ -39,7 +41,7 @@ module.exports = defineConfig({
     requestTimeout: 15000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
     setupNodeEvents(on, config) {
-      // require('cypress-mochawesome-reporter/plugin')(on);
+      require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
       on('before:browser:launch', (browser = {}, launchOptions) => {
         if (browser.family === 'chromium') {

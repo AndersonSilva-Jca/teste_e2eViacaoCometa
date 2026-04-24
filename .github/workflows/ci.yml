@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
         with:
     
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{05_link_conexao,06_cards_duvidas_frequentes}/**/*" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=false,json=true
+          command: npx cypress run --browser chrome --spec "cypress/e2e/{05_link_conexao,06_cards_duvidas_frequentes}/**/*"
         
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -38,15 +38,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
-      - name: Mesclar Relatórios (Merge)
-        if: always()
-        run: |
-          npx mochawesome-merge cypress/reports/html/*.json > cypress/reports/html/report-final.json
+      # - name: Mesclar Relatórios (Merge)
+      #   if: always()
+      #   run: |
+      #     npx mochawesome-merge cypress/reports/html/*.json > cypress/reports/html/report-final.json
 
-      - name: Gerar HTML Final
-        if: always()
-        run: |
-          npx marge cypress/reports/html/report-final.json --reportDir cypress/reports/html --reportFilename index.html
+      # - name: Gerar HTML Final
+      #   if: always()
+      #   run: |
+      #     npx marge cypress/reports/html/report-final.json --reportDir cypress/reports/html --reportFilename index.html
           
 
       - name: Deploy do Relatório para GitHub Pages
