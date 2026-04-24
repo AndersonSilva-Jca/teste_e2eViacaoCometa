@@ -6,4 +6,3 @@ cypress/fixtures/login.json
 .env
 .github/workflows/cypress.yml
 cypress/downloads/00_smoke/
-cypress/reports

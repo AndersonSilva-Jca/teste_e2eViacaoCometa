@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="17.867" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2026-04-22T20:51:29" tests="0" file="cypress\e2e\05_link_conexao\03_conexao_aeroportos.cy.js" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Validar link de conexão com aeroportos" timestamp="2026-04-22T20:51:29" tests="1" time="17.862" failures="0">
-    <testcase name="Validar link de conexão com aeroportos Deve validar o link do card de conexão com aeroportos e redirecionar para a página de conexão com aeroportos" time="17.683" classname="Deve validar o link do card de conexão com aeroportos e redirecionar para a página de conexão com aeroportos">
-    </testcase>
-  </testsuite>
-</testsuites>

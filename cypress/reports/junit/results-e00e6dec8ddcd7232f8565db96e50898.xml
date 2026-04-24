@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="88.009" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2026-04-24T12:06:33" tests="0" file="cypress\e2e\00_smoke\busca_passagens.cy.js" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra" timestamp="2026-04-24T12:06:33" tests="1" time="87.996" failures="0">
-    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro" time="87.851" classname="Fazer busca de destinos IDA com 1 passageiro">
-    </testcase>
-  </testsuite>
-</testsuites>
