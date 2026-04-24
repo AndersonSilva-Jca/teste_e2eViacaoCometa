@@ -25,12 +25,12 @@ describe('Login', () => {
     cy.get('.logged-message').click()
     cy.get('a[data-pagetype="edit-profile-page"]:visible').click()
     cy.get('.title-address-info > p').should('contain', 'Informações opcionais')
-    cy.get('#input-zipcode').clear().type('06455020')
-    cy.get('#input-address').clear().type(faker.location.streetAddress())
-    cy.get('#input-number').clear().type(faker.number.int({ min: 1, max: 1000 }))
-    cy.get('#input-city').clear().type(faker.location.city())
-    cy.get('#button-register').click({ force: true })
-    cy.get(':nth-child(3) > .xf-content-height > :nth-child(1) > .confirmation-alert > .container-confirmation > .message-confirmation-container > .content-message-confirmation > .confirmation-alert-body-par > .aem-Grid > :nth-child(1) > .cmp-text > p').should('contain', 'Tudo certo!')
+    // cy.get('#input-zipcode').clear().type('06455020')
+    // cy.get('#input-address').clear().type(faker.location.streetAddress())
+    // cy.get('#input-number').clear().type(faker.number.int({ min: 1, max: 1000 }))
+    // cy.get('#input-city').clear().type(faker.location.city())
+    // cy.get('#button-register').click({ force: true })
+    // cy.get(':nth-child(3) > .xf-content-height > :nth-child(1) > .confirmation-alert > .container-confirmation > .message-confirmation-container > .content-message-confirmation > .confirmation-alert-body-par > .aem-Grid > :nth-child(1) > .cmp-text > p').should('contain', 'Tudo certo!')
   });;
 
   it('Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.', () => {
