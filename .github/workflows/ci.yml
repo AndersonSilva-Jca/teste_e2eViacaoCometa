@@ -80,7 +80,7 @@ jobs:
             🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             📂 ÁREAS VALIDADAS:
-            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra)
+            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
             • [01] Autenticação
             • [02] Conta Giro
             • [03/07] Integridade de Links
