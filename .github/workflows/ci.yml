@@ -44,7 +44,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports_/html
+          publish_dir: ./cypress/reports/html
+          destination_dir: reports/${{ github.run_number }}
+          # Mantenha como false para NÃO apagar as pastas das execuções anteriores
+          keep_files: true
           force_orphan: true      
           
       - name: Enviar E-mail de SUCESSO ✅
@@ -66,7 +69,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
