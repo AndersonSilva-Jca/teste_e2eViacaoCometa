@@ -12,8 +12,8 @@ describe('Validar cards de promoção', () => {
     cy.get('.aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', { timeout: 60000 }).eq(0).click({ force: true });
     cy.selecionarPassagemAleatoria1({ timeout: 60000 })
     cy.env(['login', 'senha']).then((env) => {
-      cy.get('#input-login').type(env.login)
-      cy.get('#input-password').type(env.senha, { log: false })
+      cy.get('#input-login').type(env.login, {delay: 100})
+      cy.get('#input-password').type(env.senha, {delay: 100}, { log: false })
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
@@ -33,7 +33,7 @@ describe('Validar cards de promoção', () => {
     cy.selecionarPassagemAleatoria1({ timeout: 15000 })
     cy.env(['login', 'senha']).then((env) => {
       cy.get('#input-login').type(env.login)
-      cy.get('#input-password').type(env.senha, { log: false })
+      cy.get('#input-password').type(env.senha, { log: false }, {delay: 100})
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
@@ -50,7 +50,7 @@ describe('Validar cards de promoção', () => {
     cy.selecionarPassagemAleatoria1({ timeout: 60000 })
     cy.env(['login', 'senha']).then((env) => {
       cy.get('#input-login').type(env.login)
-      cy.get('#input-password').type(env.senha, { log: false })
+      cy.get('#input-password').type(env.senha, { log: false }, {delay: 100})
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
@@ -67,7 +67,7 @@ describe('Validar cards de promoção', () => {
     cy.selecionarPassagemAleatoria1({ timeout: 15000 })
     cy.env(['login', 'senha']).then((env) => {
       cy.get('#input-login').type(env.login)
-      cy.get('#input-password').type(env.senha, { log: false })
+      cy.get('#input-password').type(env.senha, { log: false }, {delay: 100})
       cy.get('#button-login').click()
       cy.get('.logged-message').should('contain', 'Olá')
     })
