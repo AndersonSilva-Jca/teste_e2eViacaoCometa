@@ -4,5 +4,5 @@ cypress/videos
 # cypress/screenshots
 cypress/fixtures/login.json
 .env
-.github/workflows/cypress.yml
+# .github/workflows/cypress.yml
 cypress/downloads/00_smoke/

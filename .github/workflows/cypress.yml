@@ -1,0 +1,106 @@
+
+name: Monitoramento Contínuo Cypress 2
+
+on:  
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: 
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+        
+      - name: Limpar Relatórios Antigos
+        run: |
+          rm -rf cypress/reports/html/*
+          rm -rf cypress/screenshots/*
+
+      - name: Cypress Run - Testes E2E Viação Cometa
+        uses: cypress-io/github-action@v7
+        id: cypress
+        continue-on-error: true
+        with:
+    
+          command: npx cypress run --browser chrome --spec "cypress/e2e/{03_links_header,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*"
+          
+        env:
+          LOGIN: ${{ secrets.LOGIN }}
+          SENHA: ${{ secrets.SENHA }}
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+          # Token necessário para o Cypress falar com o GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
+
+      - name: Deploy do Relatório para GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports/html
+          force_orphan: true      
+          
+      - name: Enviar E-mail de SUCESSO ✅
+        if: steps.cypress.outcome == 'success'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "✅ [ESTÁVEL] Monitoramento Contínuo - Viação Cometa"
+          to: anderson.ssantos@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
+          from: "Monitoramento Contínuo Cypress"
+          body: |
+            Monitoramento Cypress - Viação Cometa
+
+            O ciclo de monitoramento contínuo foi finalizado com sucesso.
+
+            📂 RELATÓRIOS DISPONÍVEIS:
+              
+            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+
+            📂 ÁREAS VALIDADAS:
+            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
+            • [01] Autenticação
+            • [02] Conta Giro
+            • [03/07] Integridade de Links
+
+            Detalhes técnicos: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+
+      - name: Enviar E-mail de FALHA 🚨
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "🚨 [ALERTA] Monitoramento Contínuo - Viação Cometa"
+          to: anderson.ssantos@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
+          from: "Monitoramento Contínuo Cypress"
+          body: |
+            🚨 RELATÓRIO DE FALHA DETECTADA
+
+            🔍 INVESTIGAÇÃO RÁPIDA:
+
+            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+
+            💡 POSSÍVEIS CAUSAS:
+            1. Instabilidade na API de busca ou login do site.
+            2. Alteração de seletores (Placeholders/IDs) no front-end.
+            3. Lentidão excessiva no carregamento (Timeout).
+
+            🛠️ LOGS GERAIS: 
+            🔗 https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Este alerta foi gerado automaticamente pelo sistema de Qualidade de Software.
