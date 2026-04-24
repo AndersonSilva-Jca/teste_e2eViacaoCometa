@@ -28,7 +28,8 @@ jobs:
         continue-on-error: true
         with:
     
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
+          command: npx cypress run --browser chrome 
+          # --spec "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
         
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -65,7 +66,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
+          subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Contínuo - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
@@ -79,7 +80,7 @@ jobs:
             🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
 
             📂 ÁREAS VALIDADAS:
-            • [00] Smoke Tests (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra)
+            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra)
             • [01] Autenticação
             • [02] Conta Giro
             • [03/07] Integridade de Links
