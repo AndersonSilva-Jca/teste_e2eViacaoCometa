@@ -28,8 +28,8 @@ jobs:
         continue-on-error: true
         with:
     
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{05_link_conexao,06_cards_duvidas_frequentes}/**/*"
-          # "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
+          command: npx cypress run --browser chrome --spec "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
+          # --spec "cypress/e2e/{05_link_conexao,06_cards_duvidas_frequentes}/**/*"
           
         env:
           LOGIN: ${{ secrets.LOGIN }}
