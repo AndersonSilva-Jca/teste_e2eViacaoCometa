@@ -32,7 +32,7 @@ module.exports = defineConfig({
     baseUrl: 'https://www.viacaocometa.com.br',
     scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
     video: false, // Importante para ver o que aconteceu na falha no CI
-    screenshotOnRunFailure: false,
+    screenshotOnRunFailure: true,
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
     defaultCommandTimeout: 120000, // Aumenta o tempo padrão de espera por elementos
     pageLoadTimeout: 120000, // Espera até 120s para a página carregar totalmente
