@@ -45,7 +45,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./cypress/reports/html
-          destination_dir: reports/${{ github.run_number }}
+          destination_dir: reports/html/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
           force_orphan: true      
@@ -60,7 +60,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Contínuo - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          cc: alfredo.junior@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             Monitoramento Cypress - Viação Cometa
@@ -69,7 +69,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/${{ github.run_number }}/index.html
+            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -90,14 +90,14 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) 🚨 [ALERTA] Monitoramento Contínuo - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          cc: alfredo.junior@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             🚨 RELATÓRIO DE FALHA DETECTADA
 
             🔍 INVESTIGAÇÃO RÁPIDA:
 
-            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/
+            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html/${{ github.run_number }}/index.html
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.
