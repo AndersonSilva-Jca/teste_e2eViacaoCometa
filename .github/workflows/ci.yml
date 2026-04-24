@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
         with:
     
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{005_link_conexao,06_cards_duvidas_frequentes}/**/*"
+          command: npx cypress run --browser chrome --spec "cypress/e2e/{005_link_conexao,06_cards_duvidas_frequentes}/**/*" --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=true,html=true,json=true,reportFilename=index
           # "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
           
         env:
