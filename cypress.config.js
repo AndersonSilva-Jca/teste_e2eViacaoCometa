@@ -36,9 +36,9 @@ reporter: 'cypress-multi-reporters',
     video: false, // Importante para ver o que aconteceu na falha no CI
     screenshotOnRunFailure: true,
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
-    defaultCommandTimeout: 120000, // Aumenta o tempo padrão de espera por elementos
-    pageLoadTimeout: 120000, // Espera até 120s para a página carregar totalmente
-    requestTimeout: 15000,  // Espera até 15s por respostas de APIs (cy.request)
+    defaultCommandTimeout: 20000, // Aumenta o tempo padrão de espera por elementos
+    pageLoadTimeout: 60000, // Espera até 120s para a página carregar totalmente
+    requestTimeout: 10000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
