@@ -1,5 +1,5 @@
 
-name: Monitoramento Contínuo Cypress 2
+name: Monitoramento Contínuo Cypress
 
 on:  
   push:
