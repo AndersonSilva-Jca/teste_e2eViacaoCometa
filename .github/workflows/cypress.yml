@@ -47,7 +47,7 @@ jobs:
           destination_dir: reports/html_links/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
-          force_orphan: true      
+          force_orphan: false      
           
       - name: Enviar E-mail de SUCESSO ✅
         if: steps.cypress.outcome == 'success'

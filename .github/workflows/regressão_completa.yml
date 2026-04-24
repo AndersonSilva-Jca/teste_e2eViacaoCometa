@@ -42,11 +42,11 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports/html_regressao_completa
-          destination_dir: reports/html_regressao_completa/${{ github.run_number }}
+          publish_dir: ./cypress/reports/regressao_completa
+          destination_dir: reports/regressao_completa/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
-          force_orphan: true      
+          force_orphan: false      
           
       - name: Enviar E-mail de SUCESSO ✅
         if: steps.cypress.outcome == 'success'
@@ -67,7 +67,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html_regressao_completa/${{ github.run_number }}/index.html
+            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/regressao_completa/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -95,7 +95,7 @@ jobs:
 
             🔍 INVESTIGAÇÃO RÁPIDA:
 
-            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html_regressao_completa/${{ github.run_number }}/index.html
+            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/regressao_completa/${{ github.run_number }}/index.html
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.
