@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
         with:
     
-          command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=true,json=true,reportFilename=index
+          command: npx cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports/html,overwrite=false,html=false,json=true
         
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -46,7 +46,7 @@ jobs:
       - name: Gerar HTML Final
         if: always()
         run: |
-          npx marge cypress/reports/mocha/report-full.json --reportDir cypress/reports/html --reportFilename index.html
+          npx marge cypress/reports/html/merged-report.json --reportDir cypress/reports/html --reportFilename index.html
           
 
       - name: Deploy do Relatório para GitHub Pages
@@ -67,7 +67,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "(EM TESTE) ✅ [ESTÁVEL] Monitoramento Integrado - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
-          cc: alfredo.junior@jcatlm.com.br
+          # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo Cypress"
           body: |
             Monitoramento Cypress - Viação Cometa

@@ -187,6 +187,8 @@ Cypress.Commands.add('selecionarDoisAssentosAleatorios', () => {
 
     cy.get('button.outer-seat[id^="seat-"]:not(:has(.occupied-seat))', { timeout: 90000 })
       .should('be.visible')
+      .should('exist')
+      .invoke('show')
       .then(($seats) => {
         const ids = $seats.map((i, el) => el.id).get();
         const shuffled = ids.sort(() => 0.5 - Math.random());
@@ -279,6 +281,8 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
 
   // 2. Buscamos as ofertas disponíveis
   cy.get('li[data-js^="offer-element-"]:has(.available)', { timeout: 90000 })
+    .should('exist')
+    .invoke('show')
     .then(($ofertas) => {
       // Filtramos (removendo CAMA)
       const ofertasValidas = $ofertas.filter((i, el) => {
@@ -301,6 +305,8 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
       cy.wrap($btnCompra)
         .scrollIntoView({ offset: { top: -150 } })
         .should('be.visible')
+        .should('exist')
+        .invoke('show')
         .and('not.be.disabled')
         .click({ force: true });
 
@@ -360,6 +366,8 @@ Cypress.Commands.add('selecionarPassagemAleatoriaVolta', () => {
       cy.wrap($btnCompra)
         .scrollIntoView({ offset: { top: -150 } })
         .should('be.visible')
+        .should('exist')
+        .invoke('show')
         .and('not.be.disabled')
         .click({ force: true });
 
