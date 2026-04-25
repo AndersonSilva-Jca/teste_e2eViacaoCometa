@@ -43,7 +43,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports/html_links
+          publish_dir: ./cypress/reports
           destination_dir: reports/html_links/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
