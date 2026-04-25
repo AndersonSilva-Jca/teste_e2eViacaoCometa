@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="86.495" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T19:07:49" tests="0" file="cypress/e2e/03_links_header/01_Informacoes_viagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link informações de viagens" timestamp="2026-04-25T19:07:49" tests="5" time="86.494" failures="0">
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Bagagem" time="24.555" classname="Validar link informações de Viagem - Bagagem">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Informações para embarque" time="16.026" classname="Validar link informações de Viagem - Informações para embarque">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Compra, remarcação e reembolso" time="14.290" classname="Validar link informações de Viagem - Compra, remarcação e reembolso">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Nossos serviços" time="14.814" classname="Validar link informações de Viagem - Nossos serviços">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Descontos e Gratuidades" time="16.560" classname="Validar link informações de Viagem - Descontos e Gratuidades">
+    </testcase>
+  </testsuite>
+</testsuites>
