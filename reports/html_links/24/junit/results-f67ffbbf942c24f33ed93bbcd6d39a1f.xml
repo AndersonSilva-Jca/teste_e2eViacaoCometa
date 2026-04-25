@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="17.642" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T15:51:57" tests="0" file="cypress/e2e/06_cards_duvidas_frequentes/04_bagagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar Cards - dúvidas frequentes" timestamp="2026-04-25T15:51:57" tests="1" time="17.639" failures="0">
+    <testcase name="Validar Cards - dúvidas frequentes Deve validar Cards - bagagem" time="17.614" classname="Deve validar Cards - bagagem">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.424" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T15:50:03" tests="0" file="cypress/e2e/05_link_conexao/02_outlet_de_hoteis.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar Link do Outlet de Hotéis" timestamp="2026-04-25T15:50:03" tests="1" time="11.422" failures="0">
+    <testcase name="Validar Link do Outlet de Hotéis Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis" time="11.371" classname="Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis">
+    </testcase>
+  </testsuite>
+</testsuites>
