@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="21.099" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T20:19:30" tests="0" file="cypress/e2e/03_links_header/06_programa_fidelidade.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link do programa de fidelidade" timestamp="2026-04-25T20:19:30" tests="1" time="21.098" failures="0">
+    <testcase name="Validar link do programa de fidelidade Deve redirecionar para o site Clube Giro com sucesso" time="21.017" classname="Deve redirecionar para o site Clube Giro com sucesso">
+    </testcase>
+  </testsuite>
+</testsuites>

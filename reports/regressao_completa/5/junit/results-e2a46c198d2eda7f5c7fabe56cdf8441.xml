@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="149.657" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T20:19:53" tests="0" file="cypress/e2e/04_ofertas_promocoes/01_promo_cards.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar cards de promoção" timestamp="2026-04-25T20:19:53" tests="4" time="149.656" failures="0">
+    <testcase name="Validar cards de promoção Deve validar o link do 1º card de promoção e redirecionar para a página de login" time="52.438" classname="Deve validar o link do 1º card de promoção e redirecionar para a página de login">
+    </testcase>
+    <testcase name="Validar cards de promoção Deve validar o link do 2º card de promoção e redirecionar para a página de login" time="29.196" classname="Deve validar o link do 2º card de promoção e redirecionar para a página de login">
+    </testcase>
+    <testcase name="Validar cards de promoção Deve validar o link do 3º card de promoção e redirecionar para a página de login" time="37.835" classname="Deve validar o link do 3º card de promoção e redirecionar para a página de login">
+    </testcase>
+    <testcase name="Validar cards de promoção Deve validar o link do 4º card de promoção e redirecionar para a página de login" time="29.960" classname="Deve validar o link do 4º card de promoção e redirecionar para a página de login">
+    </testcase>
+  </testsuite>
+</testsuites>
