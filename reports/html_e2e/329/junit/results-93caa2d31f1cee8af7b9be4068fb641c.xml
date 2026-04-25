@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="59.488" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T16:30:48" tests="0" file="cypress/e2e/01_autenticacao/01_login.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login" timestamp="2026-04-25T16:30:48" tests="4" time="59.487" failures="0">
+    <testcase name="Login Deve fazer login com sucesso" time="13.809" classname="Deve fazer login com sucesso">
+    </testcase>
+    <testcase name="Login Deve preencher endereço do perfil" time="14.571" classname="Deve preencher endereço do perfil">
+    </testcase>
+    <testcase name="Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta." time="15.176" classname="Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.">
+    </testcase>
+    <testcase name="Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta." time="15.728" classname="Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.">
+    </testcase>
+  </testsuite>
+</testsuites>
