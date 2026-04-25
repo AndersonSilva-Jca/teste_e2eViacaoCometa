@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="129.671" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-25T23:33:26" tests="0" file="cypress/e2e/02_conta_giro/01_conta_giro.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Conta GIRO" timestamp="2026-04-25T23:33:26" tests="1" time="129.667" failures="1">
+    <testcase name="Conta GIRO Fazer compra de passagem com conta GIRO " time="0.000" classname="Fazer compra de passagem com conta GIRO ">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `li[data-js^=&quot;offer-element-&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `li[data-js^="offer-element-"]`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:277:62)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
