@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="442.790" tests="5" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-25T17:06:41" tests="0" file="cypress/e2e/00_smoke/busca_passagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra" timestamp="2026-04-25T17:06:41" tests="5" time="442.786" failures="1">
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro" time="0.000" classname="Fazer busca de destinos IDA com 1 passageiro">
+      <failure message="Timed out retrying after 20000ms: expected &apos;&lt;button#buy-ticket-35351-0.focusable&gt;&apos; to be &apos;visible&apos;
+
+This element `&lt;button#buy-ticket-35351-0.focusable&gt;` is not visible because its parent `&lt;div.available.col-12.col-xl-6.ml-xl-auto.mt-3.mt-sm-4.mt-xl-0&gt;` has CSS property: `display: none`" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 20000ms: expected '<button#buy-ticket-35351-0.focusable>' to be 'visible'
+
+This element `<button#buy-ticket-35351-0.focusable>` is not visible because its parent `<div.available.col-12.col-xl-6.ml-xl-auto.mt-3.mt-sm-4.mt-xl-0>` has CSS property: `display: none`
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:307:9)
+    at getRet (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122798:20)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)
+    at Context.thenFn (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122809:66)
+    at Context.then (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:123060:21)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146287:19)]]></failure>
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 2 passageiros" time="70.932" classname="Fazer busca de destinos IDA com 2 passageiros">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento" time="66.979" classname="Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 1 passageiro" time="134.817" classname="Fazer busca de destinos IDA e Volta com 1 passageiro">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 2 passageiros" time="109.246" classname="Fazer busca de destinos IDA e Volta com 2 passageiros">
+    </testcase>
+  </testsuite>
+</testsuites>
