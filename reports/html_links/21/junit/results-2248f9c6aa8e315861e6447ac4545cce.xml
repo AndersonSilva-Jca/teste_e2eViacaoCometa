@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="18.601" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T12:52:14" tests="0" file="cypress/e2e/03_links_header/02_fale_conosco.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link fale conosco" timestamp="2026-04-25T12:52:14" tests="1" time="18.600" failures="0">
+    <testcase name="Validar link fale conosco Deve preencher o formulário de contato" time="18.538" classname="Deve preencher o formulário de contato">
+    </testcase>
+  </testsuite>
+</testsuites>
