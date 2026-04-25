@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="68.349" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-25T12:04:55" tests="0" file="cypress/e2e/02_conta_giro/01_conta_giro.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Conta GIRO" timestamp="2026-04-25T12:04:55" tests="1" time="68.344" failures="0">
+    <testcase name="Conta GIRO Fazer compra de passagem com conta GIRO " time="68.268" classname="Fazer compra de passagem com conta GIRO ">
+    </testcase>
+  </testsuite>
+</testsuites>
