@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="450.398" tests="5" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-25T22:52:47" tests="0" file="cypress/e2e/00_smoke/busca_passagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra" timestamp="2026-04-25T22:52:47" tests="5" time="450.393" failures="1">
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro" time="65.535" classname="Fazer busca de destinos IDA com 1 passageiro">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 2 passageiros" time="65.979" classname="Fazer busca de destinos IDA com 2 passageiros">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento" time="58.723" classname="Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 1 passageiro" time="0.000" classname="Fazer busca de destinos IDA e Volta com 1 passageiro">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `li[data-js^=&quot;offer-element-&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `li[data-js^="offer-element-"]`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:277:62)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 2 passageiros" time="110.056" classname="Fazer busca de destinos IDA e Volta com 2 passageiros">
+    </testcase>
+  </testsuite>
+</testsuites>
