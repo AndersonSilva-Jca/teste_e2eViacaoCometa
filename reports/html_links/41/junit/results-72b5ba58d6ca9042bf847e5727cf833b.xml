@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="47.133" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-26T11:12:41" tests="0" file="cypress/e2e/07_links_footer/01_validar_links.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar todos os Links Footer" timestamp="2026-04-26T11:12:41" tests="5" time="47.132" failures="0">
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Instagram" time="12.398" classname="Deve validar Links Footer - Instagram">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Facebook" time="8.883" classname="Deve validar Links Footer - Facebook">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Atendimento virtual whatsapp" time="7.726" classname="Deve validar Links Footer - Atendimento virtual whatsapp">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Vendas whatsapp" time="6.534" classname="Deve validar Links Footer - Vendas whatsapp">
+    </testcase>
+    <testcase name="Validar todos os Links Footer Deve validar Links Footer - Fale Conosco" time="11.382" classname="Deve validar Links Footer - Fale Conosco">
+    </testcase>
+  </testsuite>
+</testsuites>
