@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="18.684" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-26T14:13:46" tests="0" file="cypress/e2e/03_links_header/05_pontos_de_venda.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link de pontos de venda" timestamp="2026-04-26T14:13:46" tests="1" time="18.684" failures="0">
+    <testcase name="Validar link de pontos de venda Deve redirecionar para a página de pontos de venda" time="18.618" classname="Deve redirecionar para a página de pontos de venda">
+    </testcase>
+  </testsuite>
+</testsuites>
