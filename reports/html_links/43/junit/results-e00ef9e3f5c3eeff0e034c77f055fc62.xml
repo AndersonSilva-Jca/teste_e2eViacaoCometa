@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="17.438" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-26T13:16:03" tests="0" file="cypress/e2e/05_link_conexao/05_conheca_nossos_onibus.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link de conexão com os ônibus" timestamp="2026-04-26T13:16:03" tests="1" time="17.436" failures="0">
+    <testcase name="Validar link de conexão com os ônibus Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato" time="17.387" classname="Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato">
+    </testcase>
+  </testsuite>
+</testsuites>
