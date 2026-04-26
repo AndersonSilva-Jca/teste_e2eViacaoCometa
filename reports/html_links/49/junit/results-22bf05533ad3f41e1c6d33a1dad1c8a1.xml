@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="16.711" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-26T18:32:50" tests="0" file="cypress/e2e/05_link_conexao/01_clube_giro.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link do clube giro" timestamp="2026-04-26T18:32:50" tests="1" time="16.709" failures="0">
+    <testcase name="Validar link do clube giro Deve validar o link do card de clube giro e redirecionar para a página do clube giro" time="16.671" classname="Deve validar o link do card de clube giro e redirecionar para a página do clube giro">
+    </testcase>
+  </testsuite>
+</testsuites>
