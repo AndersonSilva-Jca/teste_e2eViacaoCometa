@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="430.978" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-04-26T15:53:37" tests="0" file="cypress/e2e/00_smoke/busca_passagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra" timestamp="2026-04-26T15:53:37" tests="5" time="430.976" failures="0">
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro" time="82.935" classname="Fazer busca de destinos IDA com 1 passageiro">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 2 passageiros" time="63.342" classname="Fazer busca de destinos IDA com 2 passageiros">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento" time="56.517" classname="Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 1 passageiro" time="126.346" classname="Fazer busca de destinos IDA e Volta com 1 passageiro">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 2 passageiros" time="101.499" classname="Fazer busca de destinos IDA e Volta com 2 passageiros">
+    </testcase>
+  </testsuite>
+</testsuites>
