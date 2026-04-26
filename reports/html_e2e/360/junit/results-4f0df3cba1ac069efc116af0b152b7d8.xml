@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="61.571" tests="5" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-26T21:51:09" tests="0" file="cypress/e2e/00_smoke/busca_passagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra" timestamp="2026-04-26T21:51:09" tests="5" time="61.570" failures="1">
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra &quot;before each&quot; hook for &quot;Fazer busca de destinos IDA com 1 passageiro&quot;" time="0.000" classname="&quot;before each&quot; hook for &quot;Fazer busca de destinos IDA com 1 passageiro&quot;">
+      <failure message="Timed out after waiting `60000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `60000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Fazer busca de destinos, se...`" type="CypressError"><![CDATA[CypressError: Timed out after waiting `60000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `60000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Fazer busca de destinos, se...`
+    at timedOutWaitingForPageLoad (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:134158:64)
+    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:135154:16)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4156:41)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://cypress-treino/./cypress/e2e/00_smoke/busca_passagens.cy.js:12:9)
+    at getRet (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122798:20)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)
+    at Context.thenFn (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122809:66)
+    at Context.then (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:123060:21)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146287:19)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
