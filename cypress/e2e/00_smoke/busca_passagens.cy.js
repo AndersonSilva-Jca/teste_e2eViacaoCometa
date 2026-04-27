@@ -78,8 +78,8 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.contains(' Rio de Janeiro (Todos) (RJ) ').click()
     cy.get(loc.BUSCAS.DATA_IDA).click()
     cy.selecionarDataIda(1)
-    cy.get('.jca-ico-angle-down').click()
-    cy.get('[data-js="infant-quantity-plus-one"] > .plusone').click()
+    cy.get(loc.BUSCAS.BOTAO_PASSAGEIROS).click()
+    cy.get(loc.BUSCAS.BOTAO_ADICIONAR_PASSAGEIRO).click()
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.contains('IDA', { timeout: 90000 }).should('be.visible');

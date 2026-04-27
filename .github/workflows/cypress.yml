@@ -1,4 +1,4 @@
-name: Monitoramento Contínuo Cypress
+name: Monitoramento Contínuo Cypress - Cards e Links
 
 on:
   push:
