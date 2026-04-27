@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="496.476" tests="5" failures="2">
+  <testsuite name="Root Suite" timestamp="2026-04-27T04:49:17" tests="0" file="cypress/e2e/00_smoke/busca_passagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra" timestamp="2026-04-27T04:49:17" tests="5" time="496.469" failures="2">
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro" time="0.000" classname="Fazer busca de destinos IDA com 1 passageiro">
+      <failure message="Timed out retrying after 90000ms: Expected to find element: `button.outer-seat[id^=&quot;seat-&quot;]:not(:has(.occupied-seat))`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 90000ms: Expected to find element: `button.outer-seat[id^="seat-"]:not(:has(.occupied-seat))`, but never found it.
+    at Context.eval (webpack://cypress-treino/./cypress/support/commands.js:71:5)
+    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146279:43)]]></failure>
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 2 passageiros" time="77.129" classname="Fazer busca de destinos IDA com 2 passageiros">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento" time="56.899" classname="Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 1 passageiro" time="123.114" classname="Fazer busca de destinos IDA e Volta com 1 passageiro">
+    </testcase>
+    <testcase name="Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 2 passageiros" time="0.000" classname="Fazer busca de destinos IDA e Volta com 2 passageiros">
+      <failure message="Timed out retrying after 20050ms: `cy.click()` failed because this element:
+
+`&lt;input autocomplete=&quot;off&quot; title=&quot;Nome completo.....&quot; class=&quot;input-name focusable&quot; id=&quot;input-name-2&quot; type=&quot;text&quot; data-js=&quot;input-name-2&quot; minlength=&quot;6&quot; maxlength=&quot;45&quot; required=&quot;required&quot; placeholder=&quot;Nome completo.....&quot;&gt;`
+
+is being covered by another element:
+
+`&lt;article&gt;...&lt;/article&gt;`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 20050ms: `cy.click()` failed because this element:
+
+`<input autocomplete="off" title="Nome completo....." class="input-name focusable" id="input-name-2" type="text" data-js="input-name-2" minlength="6" maxlength="45" required="required" placeholder="Nome completo.....">`
+
+is being covered by another element:
+
+`<article>...</article>`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at ensureIsDescendent (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115148:68)
+    at ensureDescendents (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115199:5)
+    at ensureDescendentsAndScroll (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115205:14)
+    at ensureElIsNotCovered (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115336:5)
+    at runAllChecks (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115535:52)
+    at retryActionability (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:115572:16)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)
+    at whenStable (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:152009:70)
+    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:151924:14)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1671:18)
+    at Promise._fulfill (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1615:18)
+    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:5420:46)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
