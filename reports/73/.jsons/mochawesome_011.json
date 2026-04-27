@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T18:31:54.469Z",
+    "end": "2026-04-27T18:32:09.884Z",
+    "duration": 15415,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "91abf1e1-a98b-465c-a49b-40d6e2d0a77e",
+      "title": "",
+      "fullFile": "cypress/e2e/06_cards_duvidas_frequentes/01_info_viagens.cy.js",
+      "file": "cypress/e2e/06_cards_duvidas_frequentes/01_info_viagens.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c74f06dc-aa44-4b2b-8fc3-387203c12600",
+          "title": "Validar Cards - dúvidas frequentes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar Cards - informação para sua viagem",
+              "fullTitle": "Validar Cards - dúvidas frequentes Deve validar Cards - informação para sua viagem",
+              "timedOut": null,
+              "duration": 15333,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(3) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\ncy.url().should('include', 'https://www.viacaocometa.com.br/informacao-para-sua-viagem');",
+              "err": {},
+              "uuid": "d1b72f60-a071-44a4-a961-0cfe8190e4e1",
+              "parentUUID": "c74f06dc-aa44-4b2b-8fc3-387203c12600",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1b72f60-a071-44a4-a961-0cfe8190e4e1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15333,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
