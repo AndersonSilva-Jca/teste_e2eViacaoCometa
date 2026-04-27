@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T15:15:26.585Z",
+    "end": "2026-04-27T15:16:45.461Z",
+    "duration": 78876,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9b785010-4780-44b1-884d-767508bd0aad",
+      "title": "",
+      "fullFile": "cypress/e2e/01_autenticacao/01_login.cy.js",
+      "file": "cypress/e2e/01_autenticacao/01_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9becff76-472b-4425-9f47-899fbb9e32c0",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Login Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 20753,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logged-message').should('be.visible');",
+              "err": {},
+              "uuid": "7c37b5a7-9484-4971-ab35-3747f48010ad",
+              "parentUUID": "9becff76-472b-4425-9f47-899fbb9e32c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve preencher endereço do perfil",
+              "fullTitle": "Login Deve preencher endereço do perfil",
+              "timedOut": null,
+              "duration": 19426,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logged-message').click();\ncy.get('a[data-pagetype=\"edit-profile-page\"]:visible').click();\ncy.get('.title-address-info > p').should('contain', 'Informações opcionais');\n// cy.get('#input-zipcode').clear().type('06455020')\n// cy.get('#input-address').clear().type(faker.location.streetAddress())\n// cy.get('#input-number').clear().type(faker.number.int({ min: 1, max: 1000 }))\n// cy.get('#input-city').clear().type(faker.location.city())\n// cy.get('#button-register').click({ force: true })\n// cy.get(':nth-child(3) > .xf-content-height > :nth-child(1) > .confirmation-alert > .container-confirmation > .message-confirmation-container > .content-message-confirmation > .confirmation-alert-body-par > .aem-Grid > :nth-child(1) > .cmp-text > p').should('contain', 'Tudo certo!')",
+              "err": {},
+              "uuid": "ed5f919b-3a56-4844-bed5-349e36808dc0",
+              "parentUUID": "9becff76-472b-4425-9f47-899fbb9e32c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.",
+              "fullTitle": "Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.",
+              "timedOut": null,
+              "duration": 19180,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logged-message').click();\ncy.get('a[href=\"https://www.viacaocometa.com.br/minhas-compras\"]:visible').click();\ncy.get('.next-trips > :nth-child(1) > :nth-child(1) > .account-info > p').should('contain', 'Não encontramos nenhuma viagem futura em sua conta.');",
+              "err": {},
+              "uuid": "d279b699-27b0-43f5-bafc-4a0ac2a8dcbe",
+              "parentUUID": "9becff76-472b-4425-9f47-899fbb9e32c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.",
+              "fullTitle": "Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.",
+              "timedOut": null,
+              "duration": 19286,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logged-message').click();\ncy.get('a[href=\"https://www.viacaocometa.com.br/minhas-compras\"]:visible').click();\ncy.get('#button-tab-trip-edit > .cmp-text > p > [style=\"color: rgb(255,0,150);\"]').click();\ncy.get('.previous-trips > .row > :nth-child(1) > .account-info > p').should('contain', 'Não encontramos nenhuma viagem passada em sua conta.');",
+              "err": {},
+              "uuid": "e1c8a562-8a55-47d1-9987-98e8e198c70b",
+              "parentUUID": "9becff76-472b-4425-9f47-899fbb9e32c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7c37b5a7-9484-4971-ab35-3747f48010ad",
+            "ed5f919b-3a56-4844-bed5-349e36808dc0",
+            "d279b699-27b0-43f5-bafc-4a0ac2a8dcbe",
+            "e1c8a562-8a55-47d1-9987-98e8e198c70b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 78645,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
