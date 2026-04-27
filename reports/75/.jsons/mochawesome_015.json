@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T19:00:31.023Z",
+    "end": "2026-04-27T19:01:18.650Z",
+    "duration": 47627,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2377526a-7cdf-4595-a7dd-16f459fe68dd",
+      "title": "",
+      "fullFile": "cypress/e2e/07_links_footer/01_validar_links.cy.js",
+      "file": "cypress/e2e/07_links_footer/01_validar_links.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d512a899-c8fc-4f74-9c1c-2585b1119c4d",
+          "title": "Validar todos os Links Footer",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar Links Footer - Instagram",
+              "fullTitle": "Validar todos os Links Footer Deve validar Links Footer - Instagram",
+              "timedOut": null,
+              "duration": 14161,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.social-networks-list > :nth-child(1) > [href=\"https://www.instagram.com/viacaocometa.oficial/?hl=pt-br\"]').click();",
+              "err": {},
+              "uuid": "3c1f09a9-86e2-4ca1-bbae-fb1298341388",
+              "parentUUID": "d512a899-c8fc-4f74-9c1c-2585b1119c4d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar Links Footer - Facebook",
+              "fullTitle": "Validar todos os Links Footer Deve validar Links Footer - Facebook",
+              "timedOut": null,
+              "duration": 7888,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('a[href=\"https://www.facebook.com/ViacaoCometaOficial\"]').click();",
+              "err": {},
+              "uuid": "2dac4791-d5b4-4625-a5cc-02b7aacbe8de",
+              "parentUUID": "d512a899-c8fc-4f74-9c1c-2585b1119c4d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar Links Footer - Atendimento virtual whatsapp",
+              "fullTitle": "Validar todos os Links Footer Deve validar Links Footer - Atendimento virtual whatsapp",
+              "timedOut": null,
+              "duration": 8078,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[href=\"https://api.whatsapp.com/send?phone=5511972645808\"] > b').click();\ncy.url().should('include', '/send?phone=5511972645808');",
+              "err": {},
+              "uuid": "078d14e9-51c2-4520-a758-ac5a22534a00",
+              "parentUUID": "d512a899-c8fc-4f74-9c1c-2585b1119c4d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar Links Footer - Vendas whatsapp",
+              "fullTitle": "Validar todos os Links Footer Deve validar Links Footer - Vendas whatsapp",
+              "timedOut": null,
+              "duration": 7059,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2) > [href=\"https://wa.me/5511933153607\"]').click();\n// cy.url().should('include', '/5511933153607')",
+              "err": {},
+              "uuid": "2aa8d2e7-add3-4406-b848-718390cd6eed",
+              "parentUUID": "d512a899-c8fc-4f74-9c1c-2585b1119c4d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar Links Footer - Fale Conosco",
+              "fullTitle": "Validar todos os Links Footer Deve validar Links Footer - Fale Conosco",
+              "timedOut": null,
+              "duration": 10203,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(4) > :nth-child(1) > [href=\"/fale-conosco\"]').click();\ncy.url().should('include', '/fale-conosco');",
+              "err": {},
+              "uuid": "f188ea9e-87d8-46cb-837a-533fdb47bdb4",
+              "parentUUID": "d512a899-c8fc-4f74-9c1c-2585b1119c4d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3c1f09a9-86e2-4ca1-bbae-fb1298341388",
+            "2dac4791-d5b4-4625-a5cc-02b7aacbe8de",
+            "078d14e9-51c2-4520-a758-ac5a22534a00",
+            "2aa8d2e7-add3-4406-b848-718390cd6eed",
+            "f188ea9e-87d8-46cb-837a-533fdb47bdb4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 47389,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
