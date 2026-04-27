@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T14:53:35.009Z",
+    "end": "2026-04-27T14:53:53.863Z",
+    "duration": 18854,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "37b46c0b-f284-41e3-8017-d83c7257caf1",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/05_pontos_de_venda.cy.js",
+      "file": "cypress/e2e/03_links_header/05_pontos_de_venda.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e069644-681a-4544-811e-676025520786",
+          "title": "Validar link de pontos de venda",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve redirecionar para a página de pontos de venda",
+              "fullTitle": "Validar link de pontos de venda Deve redirecionar para a página de pontos de venda",
+              "timedOut": null,
+              "duration": 18770,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(5) > .focusable').click();\ncy.url().should('include', '/pontos-de-venda');",
+              "err": {},
+              "uuid": "a55b8fe1-cdb9-4367-80c7-f5a59833cb93",
+              "parentUUID": "2e069644-681a-4544-811e-676025520786",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a55b8fe1-cdb9-4367-80c7-f5a59833cb93"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18770,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
