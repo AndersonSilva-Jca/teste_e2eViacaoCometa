@@ -22,10 +22,11 @@ module.exports = defineConfig({
     reporterOptions: {
       reportDir: 'cypress/reports/.jsons',
       overwrite: false,
-      html: true,
+      html: false,
       json: true,
       embeddedScreenshots: true,
       inlineAssets: true
+      
     },
     screenshotOnRunFailure: true,
     screenshotsFolder: 'cypress/reports/screenshots',
