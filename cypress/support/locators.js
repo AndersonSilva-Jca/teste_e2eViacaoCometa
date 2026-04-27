@@ -4,6 +4,8 @@ const loc = {
     USUARIO: '#input-login',
     SENHA: '#input-password',
     BOTAO_LOGIN: '#button-login',
+
+    
  
     MENSAGEM_LOGADO: '.logged-message',
     CHECK_PASSAGEIRO: '#buyer-check-1',

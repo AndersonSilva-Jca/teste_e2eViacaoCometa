@@ -8,8 +8,8 @@ on:
     - cron: "*/5 * * * *"
   workflow_dispatch:
 
-# permissions:
-#   contents: write
+permissions:
+  contents: write
 #   pages: write
 #   id-token: write
 
@@ -43,6 +43,17 @@ jobs:
           # Token necessário para o Cypress falar com o GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
+
+      - name: Merge reports
+        if: always()
+        run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+
+      - name: Generate HTML report
+        if: always()
+        run: npx marge cypress/reports/report.json -f index -o cypress/reports
+
+      - name: Debug - listar arquivos
+        run: ls -R cypress/reports
 
       - name: Deploy do Relatório para GitHub Pages
         if: always()

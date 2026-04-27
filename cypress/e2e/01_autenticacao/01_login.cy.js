@@ -8,21 +8,21 @@ describe('Login', () => {
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     cy.env(['login', 'senha']).then((env) => {
       cy.visit('/');
-      cy.get('#header-login-button').click()
-      cy.get('#input-login').type(env.login)
-      cy.get('#input-password').type(env.senha, { log: false })
-      cy.get('#button-login').click()
-      cy.get('.logged-message').should('contain', 'Olá')
+      cy.get(loc.HEADER.LOGIN_BUTTON).click()
+      cy.get(loc.USUARIO).type(env.login)
+      cy.get(loc.SENHA).type(env.senha, { log: false })
+      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.MENSAGEM_LOGADO).should('contain', 'Olá')
 
     })
 
   });
   it('Deve fazer login com sucesso', () => {
-    cy.get('.logged-message').should('be.visible')
+    cy.get(loc.MENSAGEM_LOGADO).should('be.visible')
   });
 
   it('Deve preencher endereço do perfil', () => {
-    cy.get('.logged-message').click()
+    cy.get(loc.MENSAGEM_LOGADO).click()
     cy.get('a[data-pagetype="edit-profile-page"]:visible').click()
     cy.get('.title-address-info > p').should('contain', 'Informações opcionais')
     // cy.get('#input-zipcode').clear().type('06455020')
