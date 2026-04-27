@@ -84,7 +84,7 @@ jobs:
             Detalhes técnicos: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Enviar E-mail de FALHA 🚨
-        if: failure()
+        if: steps.cypress.outcome == 'failure'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com

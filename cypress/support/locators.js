@@ -8,9 +8,10 @@ const loc = {
     MENSAGEM_LOGADO: '.logged-message',
     CHECK_PASSAGEIRO: '#buyer-check-1',
     BOTAO_AVANCAR: '#btn-proceed',
-    INPUT_PASSAGEIRO_2: '#input-name-2',
-    INPUT_ANIVERSARIO_PASSAGEIRO_2: '#input-birth-2',
-    
+    NOME_PASSAGEIRO_2: '#input-name-2',
+    DATA_ANIVERSARIO_PASSAGEIRO_2: '#input-birth-2',
+    CLICK_PASSAGEIROS: '.passenger-footer',
+
     BUSCAS: {
       DESTINO_IDA: '#input-departure',
       DESTINO_VOLTA: '#input-destination',
