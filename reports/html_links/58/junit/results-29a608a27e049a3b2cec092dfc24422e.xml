@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="139.933" tests="5" failures="1">
+  <testsuite name="Root Suite" timestamp="2026-04-27T06:37:32" tests="0" file="cypress/e2e/03_links_header/01_Informacoes_viagens.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validar link informações de viagens" timestamp="2026-04-27T06:37:32" tests="5" time="139.932" failures="1">
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Bagagem" time="21.324" classname="Validar link informações de Viagem - Bagagem">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Informações para embarque" time="0.000" classname="Validar link informações de Viagem - Informações para embarque">
+      <failure message="Timed out after waiting `60000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `60000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands." type="CypressError"><![CDATA[CypressError: Timed out after waiting `60000ms` for your remote page to load.
+
+Your page did not fire its `load` event within `60000ms`.
+
+You can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.
+
+Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.
+
+When this `load` event occurs, Cypress will continue running commands.
+    at timedOutWaitingForPageLoad (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:134158:64)
+    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:134474:16)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4156:41)
+    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://cypress-treino/./cypress/e2e/03_links_header/01_Informacoes_viagens.cy.js:36:7)]]></failure>
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Compra, remarcação e reembolso" time="13.967" classname="Validar link informações de Viagem - Compra, remarcação e reembolso">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Nossos serviços" time="13.042" classname="Validar link informações de Viagem - Nossos serviços">
+    </testcase>
+    <testcase name="Validar link informações de viagens Validar link informações de Viagem - Descontos e Gratuidades" time="25.640" classname="Validar link informações de Viagem - Descontos e Gratuidades">
+    </testcase>
+  </testsuite>
+</testsuites>
