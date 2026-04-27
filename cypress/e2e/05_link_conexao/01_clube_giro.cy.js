@@ -7,7 +7,7 @@ describe('Validar link do clube giro', () => {
     cy.visit('/');
   });
 
-  it.only('Deve validar o link do card de clube giro e redirecionar para a página do clube giro', () => {
+  it('Deve validar o link do card de clube giro e redirecionar para a página do clube giro', () => {
     cy.get('#slick-slide20 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click({ force: true })
     // cy.url().should('include', 'https://www.viacaocometa.com.br/clubegiro')
     // cy.env(['login', 'senha']).then((env) => {

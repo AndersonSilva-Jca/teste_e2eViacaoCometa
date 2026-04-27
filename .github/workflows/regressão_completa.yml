@@ -1,34 +1,37 @@
-
 name: Monitoramento Regressão Completa - Viação Cometa
 
-on:  
+on:
   schedule:
-    - cron: '40 19 * * *'
-  workflow_dispatch: 
+    - cron: "40 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v4
-        
-      # - name: Limpar Relatórios Antigos
-      #   run: |
-      #     rm -rf cypress/reports/html/*
-      #     rm -rf cypress/screenshots/*
+
+        # - name: Limpar Relatórios Antigos
+        # run: |
+        #   rm -rf cypress/reports/regressao_completa/*
+        #   rm -rf cypress/screenshots/*
 
       - name: Cypress Run - Viação Cometa Regressão Completa
         uses: cypress-io/github-action@v7
         id: cypress
         continue-on-error: true
         with:
-    
-          command: npx cypress run --browser chrome 
+          command: npx cypress run --browser chrome --reporter mochawesome --reporter-options "reportDir=cypress/reports,overwrite=false,html=true,json=true,embeddedScreenshots=true,inlineAssets=true"
           # --spec "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
           # --spec "cypress/e2e/{05_link_conexao,06_cards_duvidas_frequentes}/**/*"
-          
+
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
@@ -46,8 +49,8 @@ jobs:
           destination_dir: reports/regressao_completa/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
-          force_orphan: false      
-          
+          force_orphan: false
+
       - name: Enviar E-mail de SUCESSO ✅
         if: steps.cypress.outcome == 'success'
         uses: dawidd6/action-send-mail@v3
@@ -67,7 +70,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/regressao_completa/${{ github.run_number }}/index.html
+            🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/regressao_completa/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -76,7 +79,6 @@ jobs:
             • [03/07] Integridade de Links
 
             Detalhes técnicos: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
 
       - name: Enviar E-mail de FALHA 🚨
         if: failure()
@@ -95,7 +97,11 @@ jobs:
 
             🔍 INVESTIGAÇÃO RÁPIDA:
 
-            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/regressao_completa/${{ github.run_number }}/index.html
+                        📊 ACESSAR RELATÓRIO COMPLETO: 
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/regressao_completa/${{ github.run_number }}/index.html
+
+            📸 VER PRINTS DO ERRO (Se disponível):
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/regressao_completa/${{ github.run_number }}/screenshots/
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.

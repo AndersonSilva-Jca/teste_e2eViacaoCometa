@@ -1,22 +1,26 @@
-
 name: Monitoramento Contínuo Cypress
 
-on:  
+on:
   push:
     branches:
       - main
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch: 
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v4
-        
+
       # - name: Limpar Relatórios Antigos
       #   run: |
       #     rm -rf cypress/reports/html/*
@@ -27,9 +31,8 @@ jobs:
         id: cypress
         continue-on-error: true
         with:
-    
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{03_links_header,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*"
-          
+          command: npx cypress run --browser chrome --spec "cypress/e2e/{03_links_header,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*" --reporter mochawesome --reporter-options "reportDir=cypress/reports,overwrite=false,html=true,json=true,embeddedScreenshots=true,inlineAssets=true"
+
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
@@ -47,8 +50,8 @@ jobs:
           destination_dir: reports/html_links/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
-          force_orphan: false      
-          
+          force_orphan: false
+
       - name: Enviar E-mail de SUCESSO ✅
         if: steps.cypress.outcome == 'success'
         uses: dawidd6/action-send-mail@v3
@@ -60,7 +63,7 @@ jobs:
           subject: "✅ [ESTÁVEL] Monitoramento Contínuo - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
-          from: "Monitoramento Contínuo Cypress"
+          from: "Monitoramento Contínuo - Cards"
           body: |
             Monitoramento Cypress - Viação Cometa
 
@@ -68,7 +71,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html_links/${{ github.run_number }}/index.html
+              🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html_links/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -77,7 +80,6 @@ jobs:
             • [03/07] Integridade de Links
 
             Detalhes técnicos: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
 
       - name: Enviar E-mail de FALHA 🚨
         if: failure()
@@ -90,13 +92,17 @@ jobs:
           subject: "🚨 [ALERTA] Monitoramento Contínuo - Viação Cometa"
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
-          from: "Monitoramento Contínuo Cypress"
+          from: "Monitoramento Contínuo - Cards"
           body: |
             🚨 RELATÓRIO DE FALHA DETECTADA
 
             🔍 INVESTIGAÇÃO RÁPIDA:
 
-            📊 Ver Print no Relatório HTML: https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/html_links/${{ github.run_number }}/index.html
+            📊 ACESSAR RELATÓRIO COMPLETO: 
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/html_links/${{ github.run_number }}/index.html
+
+            📸 VER PRINTS DO ERRO (Se disponível):
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/html_links/${{ github.run_number }}/screenshots/
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.

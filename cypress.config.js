@@ -35,6 +35,8 @@ reporter: 'cypress-multi-reporters',
     scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
     video: false, // Importante para ver o que aconteceu na falha no CI
     screenshotOnRunFailure: true,
+    screenshotsFolder: "cypress/reports/screenshots", // Pasta centralizada
+    // Se estiver usando mochawesome, garanta que ele busque os prints aqui
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
     defaultCommandTimeout: 20000, // Aumenta o tempo padrão de espera por elementos
     pageLoadTimeout: 60000, // Espera até 120s para a página carregar totalmente
