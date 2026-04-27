@@ -31,7 +31,7 @@ jobs:
         id: cypress
         continue-on-error: true
         with:
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{03_links_header,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*" --reporter mochawesome --reporter-options "reportDir=cypress/reports,overwrite=false,html=true,json=true,embeddedScreenshots=true,inlineAssets=true"
+          command: npx cypress run --browser chrome --spec "cypress/e2e/{03_links_header,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*"
 
         env:
           LOGIN: ${{ secrets.LOGIN }}
