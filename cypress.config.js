@@ -2,22 +2,36 @@ const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
   // projectId: "yc5eka",
-reporter: 'cypress-multi-reporters',
-  reporterOptions: {
-    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
-    mochaJunitReporterReporterOptions: {
-      mochaFile: 'cypress/reports/junit/results-[hash].xml'
-    },
-    cypressMochawesomeReporterReporterOptions: {
-      charts: true,
-      reportPageTitle: 'Relatório de Testes - Viacao Cometa',
+// reporter: 'cypress-multi-reporters',
+//   reporterOptions: {
+//     reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
+//     mochaJunitReporterReporterOptions: {
+//       mochaFile: 'cypress/reports/junit/results-[hash].xml'
+//     },
+//     cypressMochawesomeReporterReporterOptions: {
+//       charts: true,
+//       reportPageTitle: 'Relatório de Testes - Viacao Cometa',
+//       embeddedScreenshots: true,
+//       inlineAssets: true,
+//       saveAllAttempts: false,
+//       // ADICIONE ESTA LINHA ABAIXO:
+//       ignoreVideos: true, 
+//     },
+//   },
+  reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: true,
+      json: true,
       embeddedScreenshots: true,
-      inlineAssets: true,
-      saveAllAttempts: false,
-      // ADICIONE ESTA LINHA ABAIXO:
-      ignoreVideos: true, 
+      inlineAssets: true
     },
-  },
+    screenshotOnRunFailure: true,
+    screenshotsFolder: 'cypress/reports/screenshots',
+    video: false,
+
+
   chromeWebSecurity: false,
   viewportWidth: 1920,
   viewportHeight: 1080,
@@ -33,8 +47,6 @@ reporter: 'cypress-multi-reporters',
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
     scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
-    video: false, // Importante para ver o que aconteceu na falha no CI
-    screenshotOnRunFailure: true,
     screenshotsFolder: "cypress/reports/screenshots", // Pasta centralizada
     // Se estiver usando mochawesome, garanta que ele busque os prints aqui
     // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
