@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T18:27:40.446Z",
+    "end": "2026-04-27T18:27:58.427Z",
+    "duration": 17981,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cd9c87d2-fae4-4119-b9ca-9a5d87063f73",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/02_fale_conosco.cy.js",
+      "file": "cypress/e2e/03_links_header/02_fale_conosco.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fbe37911-fbeb-4592-94ae-dac34951d7bd",
+          "title": "Validar link fale conosco",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve preencher o formulário de contato",
+              "fullTitle": "Validar link fale conosco Deve preencher o formulário de contato",
+              "timedOut": null,
+              "duration": 17916,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(2) > .focusable').click();\ncy.url({\n  timeout: 2000\n}).should('include', '/fale-conosco');\ncy.get('#input-name').type('Teste ROBO ODP');\ncy.get('#input-doc').type('38485984854', {\n  log: false\n});\ncy.get('#input-email').type('teste.robo@odp.com.br');\ncy.get('#input-ddd').type('11');\ncy.get('#input-phone').type('99999-9999', {\n  log: false\n});\n// cy.get('#btn-contact-us').should('not.be.disabled').click()\n// cy.get('.container-form-protocol-contact-us > .title-form > .aem-Grid > .text > .cmp-text > p').should('contain', 'Faça sua requisição')\n// cy.get(':nth-child(1) > :nth-child(1) > .field > .input-container > .select-custom > .select-selected').click()\n// cy.get(':nth-child(1) > :nth-child(1) > .field > .input-container > .select-custom > .select-items > :nth-child(4) > [href=\"javascript:void(0)\"]').click()\n// cy.get(':nth-child(2) > .field > .input-container > .select-custom > .select-selected').click()\n// cy.get(':nth-child(2) > .field > .input-container > .select-custom > .select-items > :nth-child(2) > [href=\"javascript:void(0)\"]').click()\n// cy.get(':nth-child(3) > .input-container > .field > .select-custom > .select-selected').click()\n// cy.get('.field > .select-custom > .select-items > :nth-child(2) > [href=\"javascript:void(0)\"]').click()\n// cy.get('#input-local').type('Sao Paulo')\n// cy.contains('SAO PAULO ROD TIETE(SP)').click()\n// cy.get('#has-bought').click({force: true})\n// cy.get('#input-date-buy').click()\n// cy.selecionarDataCompra(1)\n// cy.get('#input-date-trip').click()\n// cy.selecionarDataViagem(6)\n// cy.get('#input-origin').type('AGUAS DA PRATA(SP)')\n// cy.contains('AGUAS DA PRATA(SP)').click({ force: true })\n// cy.get('#input-dest').type('AGUAS DA PRATA - M. DIVISORIO(SP)')\n// cy.contains('AGUAS DA PRATA - M. DIVISORIO(SP)').click({ force: true })\n// cy.get('#description').type('Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit ame.')\n// cy.get('[for=\"protocol-file\"] > .cmp-text > [style=\"text-align: left;\"]').click() // por algum motivo não possui mais a caixa de upload de arquivo para anexar uma evidência\n// cy.get('[data-js=\"protocol-file\"]').selectFile('cypress/fixtures/documento.pdf', { force: true }) \n// Não finalizar a solicitação para evitar requisições reais\n// cy.get('#submit-protocol').click()",
+              "err": {},
+              "uuid": "96c1be6c-9e5e-4357-a3fe-ef79b331de42",
+              "parentUUID": "fbe37911-fbeb-4592-94ae-dac34951d7bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96c1be6c-9e5e-4357-a3fe-ef79b331de42"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17916,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
