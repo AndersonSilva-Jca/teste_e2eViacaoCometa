@@ -1,0 +1,183 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T15:12:35.217Z",
+    "end": "2026-04-27T15:13:46.253Z",
+    "duration": 71036,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cf8b4202-d1e5-41b0-8275-5874b02e3278",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/01_Informacoes_viagens.cy.js",
+      "file": "cypress/e2e/03_links_header/01_Informacoes_viagens.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bd25d948-0864-4f11-9f39-2426467629e7",
+          "title": "Validar link informações de viagens",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar link informações de Viagem - Bagagem",
+              "fullTitle": "Validar link informações de viagens Validar link informações de Viagem - Bagagem",
+              "timedOut": null,
+              "duration": 21118,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(1) > .focusable').click();\ncy.url().should('include', 'informacao-para-sua-viagem');\ncy.get('.aem-Grid--12 > :nth-child(4) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\ncy.get('#bagagemdemao > p').should('contain', 'Bagagem de mão');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#bagagemdespachada\"] > .btn-title').click();\ncy.get('#bagagemdespachada > [style=\"text-align: left;\"]').should('contain', 'Bagagem despachada no bagageiro');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#bagagemproibida\"]').click();\ncy.get('#bagagemproibida > p').should('contain', 'Bagagem proibida');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#bagagensespeciaiseesportivas\"] > .btn-title').click();\ncy.get('#bagagensespeciaiseesportivas > p').should('contain', 'Bagagens especiais e esportivas');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#bagagensextraviadas\"] > .btn-title').click();\ncy.get('#bagagensextraviadas > p').should('contain', 'Bagagens extraviadas ou danificadas');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#objetosesquecidos\"] > .btn-title').click();\ncy.get('#objetosesquecidos > p').should('contain', 'Objetos esquecidos no interior do veículo');\ncy.scrollTo('top');\ncy.get('[href=\"#cobranca\"] > .btn-title').click();\ncy.get('#cobranca > p').should('contain', 'Cobrança por excesso de bagagem');",
+              "err": {},
+              "uuid": "23cf6a95-5bf4-4326-8640-f34917baacf6",
+              "parentUUID": "bd25d948-0864-4f11-9f39-2426467629e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar link informações de Viagem - Informações para embarque",
+              "fullTitle": "Validar link informações de viagens Validar link informações de Viagem - Informações para embarque",
+              "timedOut": null,
+              "duration": 12124,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(1) > .focusable').click();\ncy.url().should('include', 'informacao-para-sua-viagem');\ncy.get('.aem-Grid--12 > :nth-child(5) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\ncy.get('[href=\"#documentacaoparaembarque\"] > .btn-title').click();\ncy.get('#documentacaoparaembarque > p').should('contain', 'Documentação para embarque');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#embarqueparamenores\"] > .btn-title').click();\ncy.get('#embarqueparamenores > p').should('contain', 'Embarque para Menores');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#horariodeembarque\"]').click();\ncy.get('#horariodeembarque > p').should('contain', 'Horário de embarque');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#transportedeanimais\"]').click();\ncy.get('#transportedeanimais > p').should('contain', 'Transporte de Animais');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#segurofacultativo\"]').click();\ncy.get('#segurofacultativo > p').should('contain', 'Seguro Facultativo');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#alteracoesdehorario\"]').click();\ncy.get('#alteracoesdehorario > p').should('contain', 'Alterações de Horários e Frequências');\ncy.scrollTo('top', {\n  timeout: 1000\n});",
+              "err": {},
+              "uuid": "181465ab-a1e8-4f40-a575-5f569899c176",
+              "parentUUID": "bd25d948-0864-4f11-9f39-2426467629e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar link informações de Viagem - Compra, remarcação e reembolso",
+              "fullTitle": "Validar link informações de viagens Validar link informações de Viagem - Compra, remarcação e reembolso",
+              "timedOut": null,
+              "duration": 12832,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(1) > .focusable').click();\ncy.url().should('include', 'informacao-para-sua-viagem');\ncy.get('[style=\"padding: 0rem 2rem 2rem 2rem \"] > :nth-child(1) > .aem-Grid--12 > :nth-child(1) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\ncy.get('[href=\"#formasdepagamento\"]').click();\ncy.get('#formasdepagamento > p').should('contain', 'Formas de Pagamento');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#remarcacaoetroca\"]').click();\ncy.get('#remarcacaoetroca > p').should('contain', 'Remarcação e Troca');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#cancelamentoereembolso\"]').click();\ncy.get('#cancelamentoereembolso > p').should('contain', 'Cancelamento e Reembolso');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#reacomodacao\"]').click();\ncy.get('#reacomodacao > p').should('contain', 'Reacomodações');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#taxas\"]').click();\ncy.get('#taxas > p').should('contain', 'Taxas de serviços');\ncy.scrollTo('top', {\n  timeout: 1000\n});",
+              "err": {},
+              "uuid": "ca1879da-5eb9-4958-88d2-056230595c6e",
+              "parentUUID": "bd25d948-0864-4f11-9f39-2426467629e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar link informações de Viagem - Nossos serviços",
+              "fullTitle": "Validar link informações de viagens Validar link informações de Viagem - Nossos serviços",
+              "timedOut": null,
+              "duration": 12522,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(1) > .focusable').click();\ncy.url().should('include', 'informacao-para-sua-viagem');\ncy.get(':nth-child(2) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\ncy.get('[href=\"#nossosonibus\"]').click();\ncy.get('#nossosonibus > p').should('contain', 'Conheça Nossos Ônibus');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#salasvips\"]').click();\ncy.get('#salasvips > p').should('contain', 'SALAS VIPS');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#salasnets\"]').click();\ncy.get('[style=\"margin: auto auto auto auto \"] > [style=\"padding: 2rem 2rem 2rem 2rem \"] > :nth-child(1) > .aem-Grid--phone--12 > :nth-child(1) > #salasnets > p').should('contain', 'SALAS NETS');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#clubegiro\"]').click();\ncy.get('#clubegiro > [style=\"padding: 2rem 2rem 2rem 2rem \"] > :nth-child(1) > .aem-Grid--phone--12 > :nth-child(1) > #salasnets > p').should('contain', 'CLUBE GIRO');",
+              "err": {},
+              "uuid": "21b30dea-f3b3-4372-ba95-1841cc7d22a3",
+              "parentUUID": "bd25d948-0864-4f11-9f39-2426467629e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar link informações de Viagem - Descontos e Gratuidades",
+              "fullTitle": "Validar link informações de viagens Validar link informações de Viagem - Descontos e Gratuidades",
+              "timedOut": null,
+              "duration": 12136,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(1) > .focusable').click();\ncy.url().should('include', 'informacao-para-sua-viagem');\ncy.get(':nth-child(4) > :nth-child(2) > :nth-child(2) > :nth-child(1) > .aem-Grid--12 > .cmp > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\ncy.get('[href=\"#estudante\"]').click();\ncy.get('#estudante > p').should('contain', 'Estudante e Professor');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#PCD\"]').click();\ncy.get('#PCD > p').should('contain', 'Pessoa com deficiência');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#idoso\"]').click();\ncy.get('#idoso > p').should('contain', 'Idoso');\ncy.scrollTo('top', {\n  timeout: 1000\n});\ncy.get('[href=\"#IDJovem\"]').click();\ncy.get('#IDJovem > p').should('contain', 'ID Jovem');",
+              "err": {},
+              "uuid": "cc4175bf-2d3e-4f47-bb82-64453ce89428",
+              "parentUUID": "bd25d948-0864-4f11-9f39-2426467629e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "23cf6a95-5bf4-4326-8640-f34917baacf6",
+            "181465ab-a1e8-4f40-a575-5f569899c176",
+            "ca1879da-5eb9-4958-88d2-056230595c6e",
+            "21b30dea-f3b3-4372-ba95-1841cc7d22a3",
+            "cc4175bf-2d3e-4f47-bb82-64453ce89428"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 70732,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
