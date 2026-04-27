@@ -71,7 +71,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/regressao/${{ github.run_number }}/index.html
+            🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -99,10 +99,10 @@ jobs:
             🔍 INVESTIGAÇÃO RÁPIDA:
 
                         📊 ACESSAR RELATÓRIO COMPLETO: 
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/regressao/${{ github.run_number }}/index.html
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
 
             📸 VER PRINTS DO ERRO (Se disponível):
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/regressao/${{ github.run_number }}/screenshots/
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/screenshots/
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.
