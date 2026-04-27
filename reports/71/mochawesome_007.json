@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T18:17:46.537Z",
+    "end": "2026-04-27T18:18:00.556Z",
+    "duration": 14019,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b1376e12-7382-4c3f-b825-02d419f46f04",
+      "title": "",
+      "fullFile": "cypress/e2e/05_link_conexao/02_outlet_de_hoteis.cy.js",
+      "file": "cypress/e2e/05_link_conexao/02_outlet_de_hoteis.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc0739f1-71cd-4fc5-8f07-0c3916fd69ce",
+          "title": "Validar Link do Outlet de Hotéis",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis",
+              "fullTitle": "Validar Link do Outlet de Hotéis Deve validar o link do card de outlet de hotéis e redirecionar para a página do outlet de hotéis",
+              "timedOut": null,
+              "duration": 13977,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('#slick-slide21 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click();\n// cy.url().should('include', 'www.outletdehoteis.com.br');",
+              "err": {},
+              "uuid": "5a74aa89-a950-4a59-b14a-858b14c0ccb6",
+              "parentUUID": "dc0739f1-71cd-4fc5-8f07-0c3916fd69ce",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a74aa89-a950-4a59-b14a-858b14c0ccb6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13977,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
