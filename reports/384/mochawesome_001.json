@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-04-27T20:09:36.422Z",
+    "end": "2026-04-27T20:09:36.636Z",
+    "duration": 214,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "0ce891b5-bb98-4fd0-9dc9-9ff475906221",
+      "title": "",
+      "fullFile": "cypress/e2e/01_autenticacao/01_login.cy.js",
+      "file": "cypress/e2e/01_autenticacao/01_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a4a25f7c-77b0-4e85-b13d-68208a3d1a1a",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Login Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 164,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/01_autenticacao/01_login.cy.js/Login -- Deve fazer login com sucesso -- before each hook (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get(loc.MENSAGEM_LOGADO).should('be.visible');",
+              "err": {
+                "message": "ReferenceError: loc is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login`",
+                "estack": "ReferenceError: loc is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login`\n    at Context.eval (webpack://cypress-treino/./cypress/e2e/01_autenticacao/01_login.cy.js:11:13)\n    at getRet (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122798:20)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122809:66)\n    at Context.then (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:123060:21)\n    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146287:19)\n    at <unknown> (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:152285:15)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)",
+                "diff": null
+              },
+              "uuid": "bbde34ee-3fc6-4595-931b-318372527e69",
+              "parentUUID": "a4a25f7c-77b0-4e85-b13d-68208a3d1a1a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve preencher endereço do perfil",
+              "fullTitle": "Login Deve preencher endereço do perfil",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(loc.MENSAGEM_LOGADO).click();\ncy.get('a[data-pagetype=\"edit-profile-page\"]:visible').click();\ncy.get('.title-address-info > p').should('contain', 'Informações opcionais');\n// cy.get('#input-zipcode').clear().type('06455020')\n// cy.get('#input-address').clear().type(faker.location.streetAddress())\n// cy.get('#input-number').clear().type(faker.number.int({ min: 1, max: 1000 }))\n// cy.get('#input-city').clear().type(faker.location.city())\n// cy.get('#button-register').click({ force: true })\n// cy.get(':nth-child(3) > .xf-content-height > :nth-child(1) > .confirmation-alert > .container-confirmation > .message-confirmation-container > .content-message-confirmation > .confirmation-alert-body-par > .aem-Grid > :nth-child(1) > .cmp-text > p').should('contain', 'Tudo certo!')",
+              "err": {},
+              "uuid": "6bc12839-7730-490e-948a-8d1154b6ca72",
+              "parentUUID": "a4a25f7c-77b0-4e85-b13d-68208a3d1a1a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.",
+              "fullTitle": "Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem futura em sua conta.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logged-message').click();\ncy.get('a[href=\"https://www.viacaocometa.com.br/minhas-compras\"]:visible').click();\ncy.get('.next-trips > :nth-child(1) > :nth-child(1) > .account-info > p').should('contain', 'Não encontramos nenhuma viagem futura em sua conta.');",
+              "err": {},
+              "uuid": "8eed193f-5e30-4909-ae06-a19245851df8",
+              "parentUUID": "a4a25f7c-77b0-4e85-b13d-68208a3d1a1a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.",
+              "fullTitle": "Login Minhas Viagens - Validar mensagem: Não encontramos nenhuma viagem passada em sua conta.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.logged-message').click();\ncy.get('a[href=\"https://www.viacaocometa.com.br/minhas-compras\"]:visible').click();\ncy.get('#button-tab-trip-edit > .cmp-text > p > [style=\"color: rgb(255,0,150);\"]').click();\ncy.get('.previous-trips > .row > :nth-child(1) > .account-info > p').should('contain', 'Não encontramos nenhuma viagem passada em sua conta.');",
+              "err": {},
+              "uuid": "d7bed86a-094d-4009-8324-83a5276bbe45",
+              "parentUUID": "a4a25f7c-77b0-4e85-b13d-68208a3d1a1a",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bbde34ee-3fc6-4595-931b-318372527e69"
+          ],
+          "pending": [],
+          "skipped": [
+            "6bc12839-7730-490e-948a-8d1154b6ca72",
+            "8eed193f-5e30-4909-ae06-a19245851df8",
+            "d7bed86a-094d-4009-8324-83a5276bbe45"
+          ],
+          "duration": 164,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
