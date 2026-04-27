@@ -1,6 +1,6 @@
 /// <reference types='cypress' />
 
-
+import loc from '../../support/locators'
 // const { faker } = require('@faker-js/faker');
 
 describe('Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra', () => {
@@ -10,11 +10,11 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     cy.env(['login', 'senha']).then((env) => {
       cy.visit('/');
-      cy.get('#header-login-button').click()
-      cy.get('#input-login').type(env.login)
-      cy.get('#input-password').type(env.senha, { log: false })
-      cy.get('#button-login').click()
-      cy.get('.logged-message').should('contain', 'Olá')
+      cy.get(loc.HEADER_LOGIN_BUTTON).click()
+      cy.get(loc.USER).type(env.login)
+      cy.get(loc.PASSWORD).type(env.senha, { log: false })
+      cy.get(loc.BTN_LOGIN).click()
+      cy.get(loc.MESSAGE_LOGGED).should('contain', 'Olá')
     })
   });
   it('Fazer busca de destinos IDA com 1 passageiro', () => {
