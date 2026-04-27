@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T20:53:17.470Z",
+    "end": "2026-04-27T20:55:55.871Z",
+    "duration": 158401,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e72adcc3-50aa-49ab-8273-ef3b4ba395e2",
+      "title": "",
+      "fullFile": "cypress/e2e/04_ofertas_promocoes/01_promo_cards.cy.js",
+      "file": "cypress/e2e/04_ofertas_promocoes/01_promo_cards.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c15b2bbf-f900-42a3-8daa-2a48c732412d",
+          "title": "Validar cards de promoção",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do 1º card de promoção e redirecionar para a página de login",
+              "fullTitle": "Validar cards de promoção Deve validar o link do 1º card de promoção e redirecionar para a página de login",
+              "timedOut": null,
+              "duration": 47499,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', {\n  timeout: 60000\n}).eq(0).click({\n  force: true\n});\ncy.selecionarPassagemAleatoria1({\n  timeout: 60000\n});\ncy.env(['login', 'senha']).then(env => {\n  cy.get('#input-login').type(env.login, {\n    delay: 100\n  });\n  cy.get('#input-password').type(env.senha, {\n    delay: 100\n  }, {\n    log: false\n  });\n  cy.get('#button-login').click();\n  cy.get('.logged-message').should('contain', 'Olá');\n});\n// cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })\n// cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\n// cy.selecionarAssentoAleatorio({ timeout: 15000 });\n// cy.wait(10000)\n// cy.get('#btn-proceed').should('be.visible').click()\n// cy.url().should('include', '/pagamento')\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n// Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {},
+              "uuid": "c93bc87e-2582-41fc-9cf5-c8865786cd87",
+              "parentUUID": "c15b2bbf-f900-42a3-8daa-2a48c732412d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o link do 2º card de promoção e redirecionar para a página de login",
+              "fullTitle": "Validar cards de promoção Deve validar o link do 2º card de promoção e redirecionar para a página de login",
+              "timedOut": null,
+              "duration": 33097,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.aem-Grid > .aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', {\n  timeout: 15000\n}).eq(1).click({\n  force: true\n});\ncy.selecionarPassagemAleatoria1({\n  timeout: 15000\n});\ncy.env(['login', 'senha']).then(env => {\n  cy.get('#input-login').type(env.login);\n  cy.get('#input-password').type(env.senha, {\n    log: false\n  }, {\n    delay: 100\n  });\n  cy.get('#button-login').click();\n  cy.get('.logged-message').should('contain', 'Olá');\n});\n// cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })\n// cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\n// cy.selecionarAssentoAleatorio({ timeout: 15000 });\n// // cy.wait(10000)\n// cy.get('#btn-proceed').should('be.visible').click()\n// cy.url().should('include', '/pagamento')",
+              "err": {},
+              "uuid": "f07a4807-df40-4f73-ab47-b13026ba2512",
+              "parentUUID": "c15b2bbf-f900-42a3-8daa-2a48c732412d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o link do 3º card de promoção e redirecionar para a página de login",
+              "fullTitle": "Validar cards de promoção Deve validar o link do 3º card de promoção e redirecionar para a página de login",
+              "timedOut": null,
+              "duration": 39407,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.aem-Grid > .aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', {\n  timeout: 60000\n}).eq(2).click({\n  force: true\n});\ncy.selecionarPassagemAleatoria1({\n  timeout: 60000\n});\ncy.env(['login', 'senha']).then(env => {\n  cy.get('#input-login').type(env.login);\n  cy.get('#input-password').type(env.senha, {\n    log: false\n  }, {\n    delay: 100\n  });\n  cy.get('#button-login').click();\n  cy.get('.logged-message').should('contain', 'Olá');\n});\n// cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })\n// cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\n// cy.selecionarAssentoAleatorio({ timeout: 15000 });\n// // cy.wait(10000)\n// cy.get('#btn-proceed').should('be.visible').click()\n// cy.url().should('include', '/pagamento')",
+              "err": {},
+              "uuid": "8b73a9bb-f645-4138-883c-29da1f701b58",
+              "parentUUID": "c15b2bbf-f900-42a3-8daa-2a48c732412d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar o link do 4º card de promoção e redirecionar para a página de login",
+              "fullTitle": "Validar cards de promoção Deve validar o link do 4º card de promoção e redirecionar para a página de login",
+              "timedOut": null,
+              "duration": 38162,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.aem-Grid > .aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', {\n  timeout: 15000\n}).eq(3).click({\n  force: true\n});\ncy.selecionarPassagemAleatoria1({\n  timeout: 15000\n});\ncy.env(['login', 'senha']).then(env => {\n  cy.get('#input-login').type(env.login);\n  cy.get('#input-password').type(env.senha, {\n    log: false\n  }, {\n    delay: 100\n  });\n  cy.get('#button-login').click();\n  cy.get('.logged-message').should('contain', 'Olá');\n});\n// cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })\n// cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\n// cy.selecionarAssentoAleatorio({ timeout: 15000 });\n// // cy.wait(10000)\n// cy.get('#btn-proceed').should('be.visible').click()\n// cy.url().should('include', '/pagamento')",
+              "err": {},
+              "uuid": "4fb0ee77-e479-4228-9278-c770a14e8525",
+              "parentUUID": "c15b2bbf-f900-42a3-8daa-2a48c732412d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c93bc87e-2582-41fc-9cf5-c8865786cd87",
+            "f07a4807-df40-4f73-ab47-b13026ba2512",
+            "8b73a9bb-f645-4138-883c-29da1f701b58",
+            "4fb0ee77-e479-4228-9278-c770a14e8525"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 158165,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
