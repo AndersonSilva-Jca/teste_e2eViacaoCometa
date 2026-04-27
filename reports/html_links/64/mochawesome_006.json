@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T14:06:30.171Z",
+    "end": "2026-04-27T14:06:47.645Z",
+    "duration": 17474,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0e974336-5020-4dab-9f1c-d5fc4d104062",
+      "title": "",
+      "fullFile": "cypress/e2e/05_link_conexao/01_clube_giro.cy.js",
+      "file": "cypress/e2e/05_link_conexao/01_clube_giro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d2940800-be33-4771-89b3-80c20b0a9d04",
+          "title": "Validar link do clube giro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de clube giro e redirecionar para a página do clube giro",
+              "fullTitle": "Validar link do clube giro Deve validar o link do card de clube giro e redirecionar para a página do clube giro",
+              "timedOut": null,
+              "duration": 17434,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#slick-slide20 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click({\n  force: true\n});\n// cy.url().should('include', 'https://www.viacaocometa.com.br/clubegiro')\n// cy.env(['login', 'senha']).then((env) => {\n//   cy.get('#header-login-button').click()\n//   cy.get('#input-login').type(env.login)\n//   cy.get('#input-password').type(env.senha, { log: false })\n//   cy.get('#button-login').click()\n//   cy.get('.logged-message').should('contain', 'Olá')\n// cy.get(':nth-child(6) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click({ force: true })\n//   cy.url().should('include', 'https://www.clubegiro.com.br/')\n// })",
+              "err": {},
+              "uuid": "ccc826bb-49bc-4082-9253-36bd2241d5c6",
+              "parentUUID": "d2940800-be33-4771-89b3-80c20b0a9d04",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ccc826bb-49bc-4082-9253-36bd2241d5c6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17434,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
