@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-27T18:46:03.897Z",
+    "end": "2026-04-27T18:46:24.139Z",
+    "duration": 20242,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2b7297fa-cca6-4383-91d7-8d30099a0cfe",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/06_programa_fidelidade.cy.js",
+      "file": "cypress/e2e/03_links_header/06_programa_fidelidade.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d0efd651-b2d5-4daa-b969-a737bff88bbe",
+          "title": "Validar link do programa de fidelidade",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve redirecionar para o site Clube Giro com sucesso",
+              "fullTitle": "Validar link do programa de fidelidade Deve redirecionar para o site Clube Giro com sucesso",
+              "timedOut": null,
+              "duration": 20146,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > :nth-child(6) > .focusable').click();\ncy.url().should('include', '/clubegiro');\n//   cy.get('a[href=\"https://www.clubegiro.com.br\"]').click()\n//   cy.url().should('include', 'clubegiro.com.br')",
+              "err": {},
+              "uuid": "cce15d6e-841e-4c89-a1c2-d394b0c9da06",
+              "parentUUID": "d0efd651-b2d5-4daa-b969-a737bff88bbe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cce15d6e-841e-4c89-a1c2-d394b0c9da06"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20146,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
