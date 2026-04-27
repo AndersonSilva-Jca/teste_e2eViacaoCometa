@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-04-27T16:57:37.752Z",
+    "end": "2026-04-27T16:58:17.590Z",
+    "duration": 39838,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "34e25f51-d2fe-49a2-a140-7ef13e83c4a3",
+      "title": "",
+      "fullFile": "cypress/e2e/00_smoke/busca_passagens.cy.js",
+      "file": "cypress/e2e/00_smoke/busca_passagens.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ade75ea7-b315-4e74-8d88-e2d4bdf97c9e",
+          "title": "Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fazer busca de destinos IDA com 1 passageiro",
+              "fullTitle": "Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro",
+              "timedOut": null,
+              "duration": 39748,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/00_smoke/busca_passagens.cy.js/Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra -- Fazer busca de destinos IDA com 1 passageiro -- before each hook (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('#input-departure').click().type('São Paulo (Todos) (SP)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' São Paulo (Todos) (SP) ').click({\n  force: true\n});\ncy.get('#input-destination').click().type('Rio de Janeiro (Todos) (RJ)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click({\n  force: true\n});\ncy.get('#input-date').click();\ncy.selecionarDataIda(2);\ncy.get('#search-button', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(2000);\ncy.get('#buyer-check-1', {\n  timeout: 90000\n}).click({\n  force: true\n});\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.selecionarAssentoAleatorio({\n  timeout: 90000\n});\ncy.get('#btn-proceed').should('be.visible').click();\ncy.url({\n  timeout: 90000\n}).should('include', '/pagamento');\n// Não finalizar a compra para evitar transações reais\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `undefined`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Fazer busca de destinos, se...`",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `undefined`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Fazer busca de destinos, se...`\n    at Context.eval (webpack://cypress-treino/./cypress/e2e/00_smoke/busca_passagens.cy.js:13:9)\n    at getRet (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122798:20)\n    at tryCatcher (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:122809:66)\n    at Context.then (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:123060:21)\n    at wrapped (https://www.viacaocometa.com.br/__cypress/runner/cypress_runner.js:146287:19)",
+                "diff": null
+              },
+              "uuid": "2f080493-4c84-49cc-8be6-b1adb038ddf6",
+              "parentUUID": "ade75ea7-b315-4e74-8d88-e2d4bdf97c9e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fazer busca de destinos IDA com 2 passageiros",
+              "fullTitle": "Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 2 passageiros",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo (Todos) (SP)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro (Todos) (RJ)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('#input-passengers').click();\ncy.get('#passenger-quantity-plus-one > .plusone').click();\ncy.get('#close-person-quantity').click();\ncy.get('#search-button', {\n  timeout: 90000\n}).click();\ncy.wait(15000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(2000);\ncy.get('#buyer-check-1', {\n  timeout: 15000\n}).click({\n  force: true\n});\ncy.get('#input-name-2').click();\ncy.contains('Teste Robo ODP').should('be.visible').click();\ncy.get('#input-birth-2').type('01011990');\ncy.get('.passenger-footer').click();\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(10000);\ncy.selecionarDoisAssentosAleatorios('IDA', {\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\n// cy.contains('Cartões de crédito').should('be.visible')\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n//  Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {},
+              "uuid": "07e8de7c-918c-4f01-90ca-4e1e56dec618",
+              "parentUUID": "ade75ea7-b315-4e74-8d88-e2d4bdf97c9e",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento",
+              "fullTitle": "Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo (Todos) (SP)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro (Todos) (RJ)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('.jca-ico-angle-down').click();\ncy.get('[data-js=\"infant-quantity-plus-one\"] > .plusone').click();\ncy.get('#close-person-quantity').click();\ncy.get('#search-button', {\n  timeout: 90000\n}).click();\ncy.contains('IDA', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(10000);\ncy.get('#buyer-check-1', {\n  timeout: 90000\n}).click({\n  force: true\n});\ncy.get('#input-name-2').click();\ncy.contains('Teste Menor de Idade ODP').should('be.visible').click();\ncy.get('#input-birth-child-2').type('23032023');\ncy.get('.passenger-footer').click();\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(5000);\ncy.selecionarAssentoAleatorio('IDA', {\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\n// cy.url().should('include', '/pagamento')\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n//  Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {},
+              "uuid": "3dd1bcc6-f3c4-44a1-9ab3-a6056b96452c",
+              "parentUUID": "ade75ea7-b315-4e74-8d88-e2d4bdf97c9e",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Fazer busca de destinos IDA e Volta com 1 passageiro",
+              "fullTitle": "Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 1 passageiro",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#input-departure').click().type('São Paulo (Todos) (SP)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro (Todos) (RJ)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('#input-date-return').click();\ncy.selecionarDataVolta(6);\ncy.get('#search-button', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.contains('ESCOLHER PASSAGENS', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(30000);\ncy.contains('ESCOLHER PASSAGENS', {\n  timeout: 90000\n}).should('be.visible');\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(15000);\ncy.get('#buyer-check-1', {\n  timeout: 60000\n}).click({\n  force: true\n});\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({\n  force: true\n});\ncy.url({\n  timeout: 60000\n}).should('include', '/poltrona');\ncy.wait(8000);\ncy.contains('Escolha o seu assento', {\n  timeout: 20000\n}).should('be.visible');\ncy.selecionarAssentoAleatorio1({\n  timeout: 15000\n});\ncy.wait(8000);\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({\n  force: true\n});\ncy.url({\n  timeout: 60000\n}).should('include', '/poltrona');\ncy.wait(8000);\ncy.selecionarAssentoAleatorio1({\n  timeout: 15000\n});\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click({\n  force: true\n});\ncy.url({\n  timeout: 60000\n}).should('include', '/pagamento');\n//   cy.get('#tab-pix').click() \n//   cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n// Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {},
+              "uuid": "0efb5a6e-b27a-451d-9000-0b273330a339",
+              "parentUUID": "ade75ea7-b315-4e74-8d88-e2d4bdf97c9e",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Fazer busca de destinos IDA e Volta com 2 passageiros",
+              "fullTitle": "Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra Fazer busca de destinos IDA e Volta com 2 passageiros",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.clearCookies();\ncy.get('#input-departure').click().type('São Paulo (Todos) (SP)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' São Paulo (Todos) (SP) ').click();\ncy.get('#input-destination').click().type('Rio de Janeiro (Todos) (RJ)', {\n  delay: 100\n}).should('exist').invoke('show');\ncy.contains(' Rio de Janeiro (Todos) (RJ) ').click();\ncy.get('#input-date').click();\ncy.selecionarDataIda(1);\ncy.get('#input-date-return').click();\ncy.selecionarDataVolta(6);\ncy.get('#input-passengers').click();\ncy.get('#passenger-quantity-plus-one > .plusone').click();\ncy.get('#close-person-quantity').click();\ncy.get('#search-button', {\n  timeout: 90000\n}).click();\ncy.wait(5000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(30000);\ncy.selecionarPassagemAleatoria1({\n  timeout: 90000\n});\ncy.wait(5000);\ncy.get('#buyer-check-1', {\n  timeout: 20000\n}).click({\n  force: true\n});\ncy.get('#input-name-2').click();\ncy.contains('Teste Robo ODP').should('be.visible').click();\ncy.get('#input-birth-2').type('01011990');\ncy.get('.passenger-footer').click();\ncy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 20000\n}).should('be.visible');\ncy.wait(2000);\ncy.selecionarDoisAssentosAleatorios({\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\ncy.contains('Escolha o seu assento', {\n  timeout: 90000\n}).should('be.visible');\ncy.wait(2000);\ncy.selecionarDoisAssentosAleatorios({\n  timeout: 90000\n});\ncy.get('#btn-proceed', {\n  timeout: 90000\n}).should('be.visible').click();\n// cy.wait(5000)\n// cy.get('#tab-pix').click()\n// cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })\n//  Não finalizar a compra para evitar transações reais\n// cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();",
+              "err": {},
+              "uuid": "2ee1a8c7-8794-4a22-af05-89c81bbd3145",
+              "parentUUID": "ade75ea7-b315-4e74-8d88-e2d4bdf97c9e",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2f080493-4c84-49cc-8be6-b1adb038ddf6"
+          ],
+          "pending": [],
+          "skipped": [
+            "07e8de7c-918c-4f01-90ca-4e1e56dec618",
+            "3dd1bcc6-f3c4-44a1-9ab3-a6056b96452c",
+            "0efb5a6e-b27a-451d-9000-0b273330a339",
+            "2ee1a8c7-8794-4a22-af05-89c81bbd3145"
+          ],
+          "duration": 39748,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
