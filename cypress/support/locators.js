@@ -1,19 +1,20 @@
 const locators = {
   LOGIN: {
-    HEADER_LOGIN_BUTTON: '#header-login-button',
-    USER: '#input-login',
-    PASSWORD: '#input-password',
-    BTN_LOGIN: '#button-login',
+    HEADER_BOTAO_LOGIN: '#header-login-button',
+    USUARIO: '#input-login',
+    SENHA: '#input-password',
+    BOTAO_LOGIN: '#button-login',
   },
-  MESSAGE: {
-    MESSAGE_LOGGED: '.logged-message',
+  MENSAGEM: {
+    MENSAGEM_LOGADO: '.logged-message',
 
   },
-  SEARCH: {
-    INPUT_DEPARTURE: '#input-departure',
-    INPUT_DESTINATION: '#input-destination',
-    INPUT_DATE: '#input-date',
-    SEARCH_BUTTON: '#search-button',
+  BUSCAS: {
+    DESTINO_IDA: '#input-departure',
+    DESTINO_VOLTA: '#input-destination',
+    DATA_IDA: '#input-date',
+    DATA_VOLTA: '#input-data-return',
+    BOTAO_BUSCAR: '#search-button',
   },
 
 

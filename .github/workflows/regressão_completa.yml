@@ -18,6 +18,8 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
+      - name: Create Reports Folder
+        run: mkdir -p cypress/reports/.jsons
         # - name: Limpar Relatórios Antigos
         # run: |
         #   rm -rf cypress/reports/regressao_completa/*

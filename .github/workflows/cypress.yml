@@ -26,6 +26,9 @@ jobs:
       #     rm -rf cypress/reports/html/*
       #     rm -rf cypress/screenshots/*
 
+      - name: Create Reports Folder
+        run: mkdir -p cypress/reports/.jsons
+
       - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v7
         id: cypress
