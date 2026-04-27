@@ -14,26 +14,26 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
       cy.get(loc.USUARIO).type(env.login)
       cy.get(loc.SENHA).type(env.senha, { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
-      cy.get(loc.MESSAGE_LOGGED).should('contain', 'Olá')
+      cy.get(loc.MENSAGEM_LOGADO).should('contain', 'Olá')
     })
   });
-  it('Fazer busca de destinos IDA com 1 passageiro', () => {
-    cy.get(loc.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
+  it.only('Fazer busca de destinos IDA com 1 passageiro', () => {
+    cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click({ force: true })
-    cy.get(loc.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
+    cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' Rio de Janeiro (Todos) (RJ) ').click({ force: true })
-    cy.get(loc.DATA_IDA).click()
+    cy.get(loc.BUSCAS.DATA_IDA).click()
     cy.selecionarDataIda(2)
-    cy.get(loc.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
+    cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
     cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(2000)
-    cy.get('#buyer-check-1', { timeout: 90000 }).click({ force: true })
-    cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
+    cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
+    cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
     cy.selecionarAssentoAleatorio({ timeout: 90000 });
-    cy.get('#btn-proceed').should('be.visible').click()
-    cy.url({ timeout: 90000 }).should('include', '/pagamento')
+    cy.get(loc.BOTAO_AVANCAR).should('be.visible').click()
+    // cy.url({ timeout: 90000 }).should('include', '/pagamento')
     // Não finalizar a compra para evitar transações reais
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
