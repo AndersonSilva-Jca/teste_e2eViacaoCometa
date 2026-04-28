@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T09:12:46.649Z",
+    "end": "2026-04-28T09:13:01.793Z",
+    "duration": 15144,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "870abe6a-2295-44dc-92f9-42783bc1ae91",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/04_nossos_destinos.cy.js",
+      "file": "cypress/e2e/03_links_header/04_nossos_destinos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7f3cf710-6828-4d05-b0d0-8095a6cfe570",
+          "title": "Validar link de nossos destinos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve redirecionar para a página de nossos destinos",
+              "fullTitle": "Validar link de nossos destinos Deve redirecionar para a página de nossos destinos",
+              "timedOut": null,
+              "duration": 15086,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(4) > .focusable').click();\ncy.url().should('include', '/nossos-destinos');",
+              "err": {},
+              "uuid": "b517ef05-af95-408c-aba4-f7c12206abc4",
+              "parentUUID": "7f3cf710-6828-4d05-b0d0-8095a6cfe570",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b517ef05-af95-408c-aba4-f7c12206abc4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15086,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
