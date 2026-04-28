@@ -25,9 +25,9 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.DATA_IDA).click()
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
-    // cy.wait(5000)
+    cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(2000)
+    cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
@@ -51,9 +51,9 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_ADICIONAR_PASSAGEIRO).click()
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
-    // cy.wait(15000)
+    cy.wait(15000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(2000)
+    cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 15000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
@@ -61,7 +61,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.CLICK_PASSAGEIROS).click()
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible')
-    // cy.wait(10000)
+    cy.wait(10000)
     cy.selecionarDoisAssentosAleatorios('IDA', { timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click()
     // cy.contains('Cartões de crédito').should('be.visible')
@@ -83,9 +83,9 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.contains('IDA', { timeout: 90000 }).should('be.visible');
-    // cy.wait(5000)
+    cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(10000)
+    cy.wait(10000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
     cy.contains('Teste Menor de Idade ODP').should('be.visible').click()
@@ -93,7 +93,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get('.passenger-footer').click()
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
-    // cy.wait(5000)
+    cy.wait(5000)
     cy.selecionarDoisAssentosAleatorios('IDA', { timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click()
     // cy.url().should('include', '/pagamento')
@@ -113,23 +113,23 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.DATA_VOLTA).click()
     cy.selecionarDataVolta(6)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
-    // cy.wait(5000)
+    cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
-    // cy.wait(30000)
+    cy.wait(15000)
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(15000)
+    cy.wait(15000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 60000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/poltrona')
-    // cy.wait(8000)
+    cy.wait(8000)
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
     cy.selecionarAssentoAleatorio1({ timeout: 15000 });
-    // cy.wait(8000)
+    cy.wait(8000)
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/poltrona')
-    // cy.wait(8000)
+    cy.wait(8000)
     cy.selecionarAssentoAleatorio1({ timeout: 15000 });
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/pagamento')
@@ -153,11 +153,11 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_ADICIONAR_PASSAGEIRO).click()
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
-    // cy.wait(5000)
+    cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(30000)
+    cy.wait(15000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(5000)
+    cy.wait(5000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 20000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
@@ -165,14 +165,14 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.CLICK_PASSAGEIROS).click()
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 20000 }).should('be.visible')
-    // cy.wait(2000)
+    cy.wait(2000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click()
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible')
-    // cy.wait(2000)
+    cy.wait(2000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click();
-    // // cy.wait(5000)
+    // cy.wait(5000)
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     //  Não finalizar a compra para evitar transações reais

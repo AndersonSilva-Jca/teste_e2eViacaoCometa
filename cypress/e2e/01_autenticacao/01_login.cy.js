@@ -1,14 +1,14 @@
 /// <reference types='cypress' />
 
 const { faker } = require('@faker-js/faker');
-
+import loc from '../../support/locators'
 
 describe('Login', () => {
   beforeEach(() => {
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     cy.env(['login', 'senha']).then((env) => {
       cy.visit('/');
-      cy.get(loc.HEADER.LOGIN_BUTTON).click()
+      cy.get(loc.HEADER_BOTAO_LOGIN).click()
       cy.get(loc.USUARIO).type(env.login)
       cy.get(loc.SENHA).type(env.senha, { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
