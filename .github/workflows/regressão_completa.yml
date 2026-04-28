@@ -41,6 +41,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
+      - name: Merge reports - Regressão
+        if: always()
+        run : npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+
+      - name: Generate HTML report - Regressão
+        if: always()
+        run: npx marge cypress/reports/report.json -f index -o cypress/reports
+
       - name: Deploy do Relatório para GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3

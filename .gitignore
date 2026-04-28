@@ -1,7 +1,7 @@
 cypress.env.json
 node_modules
 cypress/videos
-# cypress/screenshots
+cypress/screenshots
 cypress/fixtures/login.json
 .env
 # .github/workflows/cypress.yml
