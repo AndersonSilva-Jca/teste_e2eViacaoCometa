@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T06:42:13.756Z",
+    "end": "2026-04-28T06:42:21.747Z",
+    "duration": 7991,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "93f7e74d-9cfe-4f31-a07a-1f1c0fbcc532",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/03_gratuidade.cy.js",
+      "file": "cypress/e2e/03_links_header/03_gratuidade.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a03ce65f-fde7-4af4-913f-97febffec2d1",
+          "title": "Validar link de gratuidade",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve redirecionar para a página de gratuidade",
+              "fullTitle": "Validar link de gratuidade Deve redirecionar para a página de gratuidade",
+              "timedOut": null,
+              "duration": 7937,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('.header-nav-container > :nth-child(1) > :nth-child(3) > .focusable').invoke('removeAttr', 'target').click();\n// cy.url().should('include', 'https://vendas.jcaholding.com.br/'); //erro",
+              "err": {},
+              "uuid": "efd5f9fe-3cd9-4c16-80d9-eac138fedc0c",
+              "parentUUID": "a03ce65f-fde7-4af4-913f-97febffec2d1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "efd5f9fe-3cd9-4c16-80d9-eac138fedc0c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7937,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

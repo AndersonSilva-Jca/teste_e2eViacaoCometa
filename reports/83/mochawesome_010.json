@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T06:43:52.911Z",
+    "end": "2026-04-28T06:44:07.957Z",
+    "duration": 15046,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d9c45af9-b250-497b-b6c2-d54f95b6fc59",
+      "title": "",
+      "fullFile": "cypress/e2e/05_link_conexao/05_conheca_nossos_onibus.cy.js",
+      "file": "cypress/e2e/05_link_conexao/05_conheca_nossos_onibus.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "56376d07-88b1-4825-a023-1fadd3ba3d6a",
+          "title": "Validar link de conexão com os ônibus",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato",
+              "fullTitle": "Validar link de conexão com os ônibus Deve validar o link do card de conexão com os ônibus e redirecionar para a página de contato",
+              "timedOut": null,
+              "duration": 14963,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#headingitem0').click();\ncy.get('#headingitem1').click();\ncy.get('#headingitem2').click();\ncy.get('#headingitem3').click();\ncy.get('[style=\"color: rgb(255,0,150);\"] > .focusable > span').click({\n  force: true\n});\ncy.url().should('include', 'fale-conosco');",
+              "err": {},
+              "uuid": "901bdb9f-e81b-4dd5-be18-4d6429e8b8f7",
+              "parentUUID": "56376d07-88b1-4825-a023-1fadd3ba3d6a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "901bdb9f-e81b-4dd5-be18-4d6429e8b8f7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14963,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
