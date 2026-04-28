@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T00:05:03.861Z",
+    "end": "2026-04-28T00:05:15.756Z",
+    "duration": 11895,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6bc535d4-6379-4b6c-8536-a0e2db3c23da",
+      "title": "",
+      "fullFile": "cypress/e2e/05_link_conexao/04_conexao_portoSantos.cy.js",
+      "file": "cypress/e2e/05_link_conexao/04_conexao_portoSantos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4bbdbc4a-6944-4ceb-b3bf-6784c81928f0",
+          "title": "Validar link de conexão com o Porto de Santos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos",
+              "fullTitle": "Validar link de conexão com o Porto de Santos Deve validar o link do card de conexão com o Porto de Santos e redirecionar para a página de conexão com o Porto de Santos",
+              "timedOut": null,
+              "duration": 11851,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('[data-tab=\"slick_tabs-content-carousel-2\"]').click({ force: true });\n// cy.get('#slick-slide90 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').click({ force: true });\n// cy.url().should('include', '/destinos/porto-santos')",
+              "err": {},
+              "uuid": "54dcf634-6737-4da5-be6e-21b017ced049",
+              "parentUUID": "4bbdbc4a-6944-4ceb-b3bf-6784c81928f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "54dcf634-6737-4da5-be6e-21b017ced049"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11851,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
