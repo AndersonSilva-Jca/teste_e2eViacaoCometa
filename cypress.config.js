@@ -18,9 +18,11 @@ module.exports = defineConfig({
 //       ignoreVideos: true, 
 //     },
 //   },
-  reporter: 'mochawesome',
+  reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
       reportDir: 'cypress/reports/',
+      charts: true,
+      reportPageTitle: 'Relatório de Testes - Viacao Cometa',
       overwrite: false,
       html: true,
       json: true,

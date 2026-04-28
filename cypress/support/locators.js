@@ -18,7 +18,7 @@ const loc = {
       DESTINO_IDA: '#input-departure',
       DESTINO_VOLTA: '#input-destination',
       DATA_IDA: '#input-date',
-      DATA_VOLTA: '#input-data-return',
+      DATA_VOLTA: '#input-date-return',
       BOTAO_PASSAGEIROS: '#input-passengers',
       BOTAO_ADICIONAR_PASSAGEIRO: '#passenger-quantity-plus-one > .plusone',
       BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS: '#close-person-quantity',

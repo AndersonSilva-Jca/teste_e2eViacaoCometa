@@ -21,12 +21,10 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
-      # - name: Limpar Relatórios Antigos
-      #   run: |
-      #     rm -rf cypress/reports/html/*
-      #     rm -rf cypress/screenshots/*
-      - name: Create Reports Folder
-        run: mkdir -p cypress/reports/.jsons
+      - name: Limpar Relatórios Antigos
+        run: |
+          rm -rf cypress/reports/*
+          rm -rf cypress/screenshots/*
 
       - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v7
@@ -44,16 +42,27 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
-      - name: Merge reports - Smoke Testes
-        if: always()
-        run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+      # - name: Merge reports - Smoke Testes
+      #   if: always()
+      #   run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
 
-      - name: Generate HTML report - Smoke Testes
-        if: always()
-        run: npx marge cypress/reports/report.json -f index -o cypress/reports
+      # - name: Generate HTML report - Smoke Testes
+      #   if: always()
+      #   run: npx marge cypress/reports/report.json -f index -o cypress/reports
+
+      # - name: Debug - listar arquivos
+      #   run: ls -R cypress/reports
 
       - name: Debug - listar arquivos
-        run: ls -R cypress/reports
+        run: ls -R cypress/reports || true
+
+      - name: Gerar índice de relatórios
+        if: always()
+        run: |
+          echo "<h1>Histórico de Execuções</h1>" > cypress/reports/index.html
+          for dir in $(ls -d reports/* 2>/dev/null || true); do
+            echo "<a href=\"/$dir/index.html\">$dir</a><br>" >> cypress/reports/index.html
+          done
 
       - name: Deploy do Relatório para GitHub Pages
         if: always()
@@ -113,9 +122,6 @@ jobs:
 
             📊 ACESSAR RELATÓRIO COMPLETO: 
             https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
-
-            📸 VER PRINTS DO ERRO (Se disponível):
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/screenshots/
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.
