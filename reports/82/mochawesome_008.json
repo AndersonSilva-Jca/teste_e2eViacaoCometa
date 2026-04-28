@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T04:05:17.018Z",
+    "end": "2026-04-28T04:05:27.747Z",
+    "duration": 10729,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4e346b00-b00a-4e71-ae13-5601450ea3ff",
+      "title": "",
+      "fullFile": "cypress/e2e/05_link_conexao/03_conexao_aeroportos.cy.js",
+      "file": "cypress/e2e/05_link_conexao/03_conexao_aeroportos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6044203f-9a66-4ae6-b427-1b5d6b65a164",
+          "title": "Validar link de conexão com aeroportos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de conexão com aeroportos e redirecionar para a página de conexão com aeroportos",
+              "fullTitle": "Validar link de conexão com aeroportos Deve validar o link do card de conexão com aeroportos e redirecionar para a página de conexão com aeroportos",
+              "timedOut": null,
+              "duration": 10680,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('[data-tab=\"slick_tabs-content-carousel-1\"]').click({ force: true });\n// cy.get('#slick-slide80 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').click({ force: true });\n// cy.url().should('include', '/destinos/aeroporto')",
+              "err": {},
+              "uuid": "553d54d5-9653-4806-856e-9bce7f4ac679",
+              "parentUUID": "6044203f-9a66-4ae6-b427-1b5d6b65a164",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "553d54d5-9653-4806-856e-9bce7f4ac679"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10680,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

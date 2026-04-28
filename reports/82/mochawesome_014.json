@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-28T04:06:57.026Z",
+    "end": "2026-04-28T04:07:16.263Z",
+    "duration": 19237,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ac117415-0bae-489e-be91-03753008a7e4",
+      "title": "",
+      "fullFile": "cypress/e2e/06_cards_duvidas_frequentes/04_bagagens.cy.js",
+      "file": "cypress/e2e/06_cards_duvidas_frequentes/04_bagagens.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5fd0cf9b-2908-4a03-bba2-8ae01eb3238a",
+          "title": "Validar Cards - dúvidas frequentes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar Cards - bagagem",
+              "fullTitle": "Validar Cards - dúvidas frequentes Deve validar Cards - bagagem",
+              "timedOut": null,
+              "duration": 19189,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(6) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .image > .cmp-image > #cmp-image-link > .cmp-image__image').click();\n// cy.url().should('include', '/bagagem')",
+              "err": {},
+              "uuid": "37b0afa7-2fb1-44b2-bb8b-a65fffa46a4c",
+              "parentUUID": "5fd0cf9b-2908-4a03-bba2-8ae01eb3238a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "37b0afa7-2fb1-44b2-bb8b-a65fffa46a4c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19189,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
