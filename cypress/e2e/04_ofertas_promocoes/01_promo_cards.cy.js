@@ -1,5 +1,6 @@
 /// <reference types='cypress' />
 
+import loc from '../../support/locators'
 
 describe('Validar cards de promoção', () => {
   beforeEach(() => {

@@ -116,7 +116,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
-    cy.wait(15000)
+    cy.wait(25000)
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(15000)
@@ -155,7 +155,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(15000)
+    cy.wait(25000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(5000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 20000 }).click({ force: true })
