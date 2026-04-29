@@ -2,39 +2,20 @@ const { defineConfig } = require("cypress");
 require('dotenv').config();
 module.exports = defineConfig({
   // projectId: "yc5eka",
-// reporter: 'cypress-multi-reporters',
-//   reporterOptions: {
-//     reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
-//     mochaJunitReporterReporterOptions: {
-//       mochaFile: 'cypress/reports/junit/results-[hash].xml'
-//     },
-//     cypressMochawesomeReporterReporterOptions: {
-//       charts: true,
-//       reportPageTitle: 'Relatório de Testes - Viacao Cometa',
-//       embeddedScreenshots: true,
-//       inlineAssets: true,
-//       saveAllAttempts: false,
-//       // ADICIONE ESTA LINHA ABAIXO:
-//       ignoreVideos: true, 
-//     },
-//   },
   reporter: 'cypress-mochawesome-reporter',
-    reporterOptions: {
-      reportDir: 'cypress/reports/',
-      charts: true,
-      reportPageTitle: 'Relatório de Testes - Viacao Cometa',
-      overwrite: false,
-      html: true,
-      json: true,
-      embeddedScreenshots: true,
-      inlineAssets: true
-      
-    },
-    screenshotOnRunFailure: true,
-    screenshotsFolder: 'cypress/reports/screenshots',
-    video: false,
-
-
+  reporterOptions: {
+    reportDir: 'cypress/reports/',
+    charts: true,
+    reportPageTitle: 'Relatório de Testes - Viacao Cometa',
+    overwrite: false,
+    html: true,
+    json: true,
+    embeddedScreenshots: true,
+    inlineAssets: true
+  },
+  screenshotOnRunFailure: true,
+  screenshotsFolder: 'cypress/reports/screenshots',
+  video: false,
   chromeWebSecurity: false,
   viewportWidth: 1920,
   viewportHeight: 1080,
@@ -44,17 +25,12 @@ module.exports = defineConfig({
     mailUsername: process.env.MAIL_USERNAME,
     mailPassword: process.env.MAIL_PASSWORD
   },
-
-  //npx cypress run --spec "cypress/e2e/00_smoke/**/*"
-
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
     scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
-    screenshotsFolder: "cypress/reports/screenshots", // Pasta centralizada
-    // Se estiver usando mochawesome, garanta que ele busque os prints aqui
-    // scrollBehavior: true, // Evita que o Cypress role a página automaticamente durante os testes
+    screenshotsFolder: "cypress/reports/screenshots",
     defaultCommandTimeout: 20000, // Aumenta o tempo padrão de espera por elementos
-    pageLoadTimeout: 60000, // Espera até 120s para a página carregar totalmente
+    pageLoadTimeout: 90000, // Espera até 120s para a página carregar totalmente
     requestTimeout: 10000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações
     setupNodeEvents(on, config) {
@@ -67,8 +43,6 @@ module.exports = defineConfig({
         return launchOptions;
       });
     },
-    // experimentalRunAllSpecs: true, 
-    // testIsolation: false, // Isso mantém a página carregada entre os 'it's
     allowCypressEnv: false,
     trashAssetsBeforeRuns: true, // Evita deletar vídeos e screenshots antigos, útil para análise pós-falha
   },

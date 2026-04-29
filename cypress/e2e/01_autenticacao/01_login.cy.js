@@ -13,8 +13,6 @@ describe('Login', () => {
       cy.get(loc.SENHA).type(env.senha, { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
       cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
-
-
     })
 
   });

@@ -2,7 +2,7 @@ name: Monitoramento Regressão - Viação Cometa
 
 on:
   schedule:
-    - cron: "40 19 * * *"
+    - cron: "40 18 * * *"
   workflow_dispatch:
 
 jobs:
