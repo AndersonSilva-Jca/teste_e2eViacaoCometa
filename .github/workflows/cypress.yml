@@ -34,7 +34,7 @@ jobs:
         id: cypress
         continue-on-error: true
         with:
-          command: npx cypress run --browser chrome --spec "cypress/e2e/{03_links_header,04_promo_cards.cy.js,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*"
+          command: npx cypress run --browser electron --spec "cypress/e2e/{03_links_header,04_promo_cards.cy.js,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*"
 
         env:
           LOGIN: ${{ secrets.LOGIN }}
