@@ -13,7 +13,7 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
-      - name: Cypress Run - Viação Cometa Regressão Completa
+      - name: Cypress Run - Viação Cometa Regressão
         uses: cypress-io/github-action@v7
         id: cypress
         continue-on-error: true
