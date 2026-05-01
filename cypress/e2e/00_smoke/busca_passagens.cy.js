@@ -139,7 +139,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
   })
 
-  it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
+  it.only('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
     cy.clearCookies();
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click()

@@ -251,7 +251,7 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
   cy.get('li[data-js^="offer-element-"]', { timeout: 90000 }).should('be.visible');
 
   // O "pulo do gato": Esperar um pequeno respiro para o JS da Cometa atachar os eventos nos botões
-  cy.wait(3000);
+  // cy.wait(3000);
 
   // 2. Buscamos as ofertas disponíveis
   cy.get('li[data-js^="offer-element-"]:has(.available)', { timeout: 90000 })
@@ -271,7 +271,7 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
       // 3. Sorteio
       const randomIndex = Math.floor(Math.random() * total);
       const escolha = ofertasValidas[randomIndex];
-      const $btnCompra = Cypress.$(escolha).find('button[data-js="buy-ticket"]');
+      const $btnCompra = Cypress.$(escolha).find('button[data-js="buy-ticket"]',{ timeout: 90000 });
 
       cy.log(`🎰 Sorteada opção ${randomIndex + 1} de ${total}`);
 
