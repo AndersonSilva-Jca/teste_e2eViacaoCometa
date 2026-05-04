@@ -23,11 +23,11 @@ jobs:
 
       # - name: Limpar Relatórios Antigos
       #   run: |
-      #     rm -rf cypress/reports/
+      #     rm -rf cypress/report/
       #     rm -rf cypress/screenshots/
 
-      # - name: Create Reports Folder
-      #   run: mkdir -p cypress/reports/.jsons
+      # - name: Create report Folder
+      #   run: mkdir -p cypress/report/.jsons
 
       - name: Cypress Run - Testes E2E Viação Cometa
         uses: cypress-io/github-action@v7
@@ -44,24 +44,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
-      # - name: Merge reports - Cards e Links
+      # - name: Merge report - Cards e Links
       #   if: always()
-      #   run : npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+      #   run : npx mochawesome-merge cypress/report/*.json > cypress/report/report.json
 
       # - name: Generate HTML report - Cards e Links
       #   if: always()
-      #   run: npx marge cypress/reports/report.json -f index -o cypress/reports
+      #   run: npx marge cypress/report/report.json -f index -o cypress/report
 
       - name: Debug - listar arquivos
-        run: ls -R cypress/reports || true
+        run: ls -R cypress/report || true
 
       - name: Deploy do Relatório para GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports
-          destination_dir: reports/${{ github.run_number }}
+          publish_dir: ./cypress/report
+          destination_dir: report/${{ github.run_number }}
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
           force_orphan: false
@@ -85,7 +85,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-              🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/${{ github.run_number }}/index.html
+              🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/report/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -113,7 +113,7 @@ jobs:
             🔍 INVESTIGAÇÃO RÁPIDA:
 
             📊 ACESSAR RELATÓRIO COMPLETO: 
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/report/${{ github.run_number }}/index.html
 
 
             💡 POSSÍVEIS CAUSAS:
