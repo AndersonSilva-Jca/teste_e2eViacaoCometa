@@ -62,7 +62,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./cypress/reports
-          destination_dir: reports/${{ github.run_number }}
+          destination_dir: reports/${{ github.run_number }}/cards_links
           # Mantenha como false para NÃO apagar as pastas das execuções anteriores
           keep_files: true
           force_orphan: false
@@ -86,7 +86,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-              🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/${{ github.run_number }}/index.html
+              🔗 PAINEL EXECUTIVO (HTML): https://andersonsilva-jca.github.io/teste_e2eViacaoCometa/reports/${{ github.run_number }}/cards_links/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -114,7 +114,7 @@ jobs:
             🔍 INVESTIGAÇÃO RÁPIDA:
 
             📊 ACESSAR RELATÓRIO COMPLETO: 
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/cards_links/index.html
 
 
             💡 POSSÍVEIS CAUSAS:
