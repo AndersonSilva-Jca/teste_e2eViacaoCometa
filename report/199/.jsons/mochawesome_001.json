@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-04T13:50:20.149Z",
+    "end": "2026-05-04T13:50:46.066Z",
+    "duration": 25917,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "81b90934-5739-4540-a12a-63423950be52",
+      "title": "",
+      "fullFile": "cypress/e2e/03_links_header/02_fale_conosco.cy.js",
+      "file": "cypress/e2e/03_links_header/02_fale_conosco.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7ebcad32-54bc-4220-a0b3-c03891e22b46",
+          "title": "Validar link fale conosco",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve preencher o formulário de contato",
+              "fullTitle": "Validar link fale conosco Deve preencher o formulário de contato",
+              "timedOut": null,
+              "duration": 25735,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header-nav-container > :nth-child(1) > :nth-child(2) > .focusable').click();\ncy.url({\n  timeout: 2000\n}).should('include', '/fale-conosco');\ncy.get('#input-name').type('Teste ROBO ODP');\ncy.get('#input-doc').type('38485984854', {\n  log: false\n});\ncy.get('#input-email').type('teste.robo@odp.com.br');\ncy.get('#input-ddd').type('11');\ncy.get('#input-phone').type('99999-9999', {\n  log: false\n});\ncy.get('#btn-contact-us').should('not.be.disabled').click();\ncy.get('.container-form-protocol-contact-us > .title-form > .aem-Grid > .text > .cmp-text > p').should('contain', 'Faça sua requisição');\ncy.get(':nth-child(1) > :nth-child(1) > .field > .input-container > .select-custom > .select-selected').click();\ncy.get(':nth-child(1) > :nth-child(1) > .field > .input-container > .select-custom > .select-items > :nth-child(4) > [href=\"javascript:void(0)\"]').click();\ncy.get(':nth-child(2) > .field > .input-container > .select-custom > .select-selected').click();\ncy.get(':nth-child(2) > .field > .input-container > .select-custom > .select-items > :nth-child(2) > [href=\"javascript:void(0)\"]').click();\ncy.get(':nth-child(3) > .input-container > .field > .select-custom > .select-selected').click();\ncy.get('.field > .select-custom > .select-items > :nth-child(2) > [href=\"javascript:void(0)\"]').click();\ncy.get('#input-local').type('Sao Paulo');\ncy.contains('SAO PAULO ROD TIETE(SP)').click();\ncy.get('#has-bought').click({\n  force: true\n});\ncy.get('#input-date-buy').click();\ncy.selecionarDataCompra(1);\ncy.get('#input-date-trip').click();\ncy.selecionarDataViagem(6);\ncy.get('#input-origin').type('AGUAS DA PRATA(SP)');\ncy.contains('AGUAS DA PRATA(SP)').click({\n  force: true\n});\ncy.get('#input-dest').type('AGUAS DA PRATA - M. DIVISORIO(SP)');\ncy.contains('AGUAS DA PRATA - M. DIVISORIO(SP)').click({\n  force: true\n});\ncy.get('#description').type('Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit ame.');\ncy.get('[for=\"protocol-file\"] > .cmp-text > [style=\"text-align: left;\"]').click(); // por algum motivo não possui mais a caixa de upload de arquivo para anexar uma evidência\ncy.get('[data-js=\"protocol-file\"]').selectFile('cypress/fixtures/documento.pdf', {\n  force: true\n});\n// Não finalizar a solicitação para evitar requisições reais\n// cy.get('#submit-protocol').click()",
+              "err": {},
+              "uuid": "d2f3d38b-b8f9-4856-bc04-7b0f3e130ddd",
+              "parentUUID": "7ebcad32-54bc-4220-a0b3-c03891e22b46",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d2f3d38b-b8f9-4856-bc04-7b0f3e130ddd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25735,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório de Testes - Viacao Cometa",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

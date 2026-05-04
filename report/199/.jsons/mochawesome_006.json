@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-04T13:52:12.211Z",
+    "end": "2026-05-04T13:52:29.001Z",
+    "duration": 16790,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "53170995-7507-409f-834f-5d756fa96bde",
+      "title": "",
+      "fullFile": "cypress/e2e/05_link_conexao/01_clube_giro.cy.js",
+      "file": "cypress/e2e/05_link_conexao/01_clube_giro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "608ad8a1-c8b2-43c8-9b64-8e5a5168809b",
+          "title": "Validar link do clube giro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar o link do card de clube giro e redirecionar para a página do clube giro",
+              "fullTitle": "Validar link do clube giro Deve validar o link do card de clube giro e redirecionar para a página do clube giro",
+              "timedOut": null,
+              "duration": 16723,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#slick-slide20 > .carousel-cards-content-text > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click({\n  force: true\n});\n// cy.url().should('include', 'https://www.viacaocometa.com.br/clubegiro')\n// cy.env(['login', 'senha']).then((env) => {\n//   cy.get('#header-login-button').click()\n//   cy.get('#input-login').type(env.login)\n//   cy.get('#input-password').type(env.senha, { log: false })\n//   cy.get('#button-login').click()\n//   cy.get('.logged-message').should('contain', 'Olá')\n// cy.get(':nth-child(6) > .custom-padding > .container > :nth-child(1) > .aem-Grid > .button > clientlib > .about-card-button > .focusable').invoke('removeAttr', 'target').click({ force: true })\n//   cy.url().should('include', 'https://www.clubegiro.com.br/')\n// })",
+              "err": {},
+              "uuid": "58ed089f-82aa-4842-b4ad-1b9a2344a85c",
+              "parentUUID": "608ad8a1-c8b2-43c8-9b64-8e5a5168809b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "58ed089f-82aa-4842-b4ad-1b9a2344a85c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16723,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório de Testes - Viacao Cometa",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
