@@ -4,7 +4,7 @@ module.exports = defineConfig({
   // projectId: "yc5eka",
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/report/',
+    reportDir: 'cypress/reports/',
     charts: true,
     reportPageTitle: 'Relatório de Testes - Viacao Cometa',
     overwrite: false,
@@ -14,7 +14,7 @@ module.exports = defineConfig({
     inlineAssets: true
   },
   screenshotOnRunFailure: true,
-  screenshotsFolder: 'cypress/report/screenshots',
+  screenshotsFolder: 'cypress/reports/screenshots',
   video: false,
   chromeWebSecurity: false,
   viewportWidth: 1920,
@@ -28,7 +28,7 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://www.viacaocometa.com.br',
     scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
-    screenshotsFolder: "cypress/report/screenshots",
+    screenshotsFolder: "cypress/reports/screenshots",
     defaultCommandTimeout: 20000, // Aumenta o tempo padrão de espera por elementos
     pageLoadTimeout: 90000, // Espera até 120s para a página carregar totalmente
     requestTimeout: 10000,  // Espera até 15s por respostas de APIs (cy.request)

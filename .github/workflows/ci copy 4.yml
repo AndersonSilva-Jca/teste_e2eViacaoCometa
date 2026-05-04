@@ -23,7 +23,7 @@ jobs:
 
       # - name: Limpar Relatórios Antigos
       #   run: |
-      #     rm -rf cypress/report/
+      #     rm -rf cypress/reports/
       #     rm -rf cypress/screenshots/
 
       - name: Cypress Run - Testes E2E Viação Cometa
@@ -42,26 +42,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
-      # - name: Merge report - Smoke Testes
+      # - name: Merge reports - Smoke Testes
       #   if: always()
-      #   run: npx mochawesome-merge cypress/report/*.json > cypress/report/report.json
+      #   run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/reports.json
 
-      # - name: Generate HTML report - Smoke Testes
+      # - name: Generate HTML reports - Smoke Testes
       #   if: always()
-      #   run: npx marge cypress/report/report.json -f index -o cypress/report
+      #   run: npx marge cypress/reports/reports.json -f index -o cypress/reports
 
       # - name: Debug - listar arquivos
-      #   run: ls -R cypress/report
+      #   run: ls -R cypress/reports
 
       - name: Debug - listar arquivos
-        run: ls -R cypress/report || true
+        run: ls -R cypress/reports || true
 
       # - name: Gerar índice de relatórios
       #   if: always()
       #   run: |
-      #     echo "<h1>Histórico de Execuções</h1>" > cypress/report/index.html
-      #     for dir in $(ls -d report/* 2>/dev/null || true); do
-      #       echo "<a href=\"/$dir/index.html\">$dir</a><br>" >> cypress/report/index.html
+      #     echo "<h1>Histórico de Execuções</h1>" > cypress/reports/index.html
+      #     for dir in $(ls -d reports/* 2>/dev/null || true); do
+      #       echo "<a href=\"/$dir/index.html\">$dir</a><br>" >> cypress/reports/index.html
       #     done
 
       - name: Deploy do Relatório para GitHub Pages
@@ -69,8 +69,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/report
-          destination_dir: report/${{ github.run_number }}
+          publish_dir: ./cypress/reports
+          destination_dir: reports/${{ github.run_number }}
           keep_files: true
           force_orphan: false
 
@@ -93,7 +93,7 @@ jobs:
 
             📂 RELATÓRIOS DISPONÍVEIS:
               
-            🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/report/${{ github.run_number }}/index.html
+            🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
 
             📂 ÁREAS VALIDADAS:
             • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
@@ -121,7 +121,7 @@ jobs:
             🔍 INVESTIGAÇÃO RÁPIDA
 
             📊 ACESSAR RELATÓRIO COMPLETO: 
-            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/report/${{ github.run_number }}/index.html
+            https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/index.html
 
             💡 POSSÍVEIS CAUSAS:
             1. Instabilidade na API de busca ou login do site.
