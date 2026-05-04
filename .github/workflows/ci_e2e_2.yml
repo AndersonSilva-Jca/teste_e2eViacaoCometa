@@ -15,10 +15,15 @@ permissions:
 #   pages: write
 #   id-token: write
 
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-latest
 jobs:
   cypress-run:
+    # Se o workflow anterior falhar, você decide se quer rodar este ou não
+    # Se quiser que rode mesmo com falha no anterior, use a condição abaixo:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout do Código
         uses: actions/checkout@v4
