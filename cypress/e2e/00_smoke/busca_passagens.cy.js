@@ -42,7 +42,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
   })
 
-  it.only('Fazer busca de destinos IDA com 2 passageiros', () => {
+  it('Fazer busca de destinos IDA com 2 passageiros', () => {
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
