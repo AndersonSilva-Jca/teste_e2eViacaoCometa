@@ -6,8 +6,8 @@ import loc from '../../support/locators'
 describe('Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra', () => {
 
   beforeEach(() => {
-    // cy.clearCookies();
-    // cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
+    cy.clearCookies();
+    cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     cy.env(['login', 'senha']).then((env) => {
       cy.visit('/');
       cy.get(loc.HEADER_BOTAO_LOGIN).click()
@@ -37,6 +37,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     // cy.get('[alt="loader"]').should('not.be.visible')
     // cy.url({ timeout: 90000 }).should('include', '/pagamento')
     // Não finalizar a compra para evitar transações reais
+    cy.get('[alt="loader"]').should('not.exist')
     cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     // cy.get('#payment-submit').should('be.visible').and('not.be.disabled').click();
@@ -67,6 +68,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.selecionarDoisAssentosAleatorios('IDA', { timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click()
     // cy.contains('Cartões de crédito').should('be.visible')
+    cy.get('[alt="loader"]').should('not.exist')
     cy.get('#tab-pix').should('be.visible').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     //  Não finalizar a compra para evitar transações reais
@@ -99,6 +101,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.selecionarDoisAssentosAleatorios('IDA', { timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click()
     // cy.url().should('include', '/pagamento')
+    cy.get('[alt="loader"]').should('not.exist')
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     //  Não finalizar a compra para evitar transações reais
@@ -135,6 +138,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.selecionarAssentoAleatorio1({ timeout: 15000 });
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/pagamento')
+    cy.get('[alt="loader"]').should('not.exist')
     //   cy.get('#tab-pix').click() 
     //   cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })
     // Não finalizar a compra para evitar transações reais
@@ -176,6 +180,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.wait(2000)
     cy.selecionarDoisAssentosAleatorios({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR, { timeout: 90000 }).should('be.visible').click();
+    cy.get('[alt="loader"]').should('not.exist')
     // cy.wait(5000)
     // cy.get('#tab-pix').click()
     // cy.get('.conditions-check', { timeout: 20000 }).click({ force: true })

@@ -8,7 +8,6 @@ describe('Conta GIRO', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.visit('/');
     cy.env(['login', 'senha']).then((env) => {
       cy.visit('/');
       cy.get(loc.HEADER_BOTAO_LOGIN).click()
@@ -39,7 +38,8 @@ describe('Conta GIRO', () => {
     // cy.url().should('include', '/pagamento')
     // cy.wait(10000);
     // cy.url().should('include', '/pagamento')
-    // cy.get('#tab-conta-giro').click()
+    cy.get('[alt="loader"]').should('not.exist')
+    cy.get('#tab-conta-giro').click()
     // cy.get('[data-js="conditions-check"]').click({ force: true })
     // cy.get('.btn-register > [type="button"]').should('be.visible').and('not.be.disabled').click()
     // cy.url().should('include', '/login-wallet')

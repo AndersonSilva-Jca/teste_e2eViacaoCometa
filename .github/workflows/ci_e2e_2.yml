@@ -1,12 +1,14 @@
-name: Monitoramento Contínuo Cypress E2E
-
+name: 02 - Monitoramento Contínuo Cypress E2E
 on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "*/5 * * * *"
+  workflow_run:
+    workflows: ["01 - Monitoramento Contínuo Cypress E2E"] # Deve ser exatamente o name do arquivo 1
+    types:
+      - completed
   workflow_dispatch:
+    
+concurrency:
+  group: github-pages-deploy
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -23,7 +25,7 @@ jobs:
 
       # - name: Limpar Relatórios Antigos
       #   run: |
-      #     rm -rf cypress/reports/
+      #     rm -rf cypress/reportss/
       #     rm -rf cypress/screenshots/
 
       - name: Cypress Run - Testes E2E Viação Cometa
@@ -42,16 +44,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
-      # - name: Merge reports - Smoke Testes
+      # - name: Merge reportss - Smoke Testes
       #   if: always()
-      #   run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/reports.json
+      #   run: npx mochawesome-merge cypress/reportss/*.json > cypress/reportss/reports.json
 
       # - name: Generate HTML reports - Smoke Testes
       #   if: always()
-      #   run: npx marge cypress/reports/reports.json -f index -o cypress/reports
+      #   run: npx marge cypress/reportss/reports.json -f index -o cypress/reportss
 
       # - name: Debug - listar arquivos
-      #   run: ls -R cypress/reports
+      #   run: ls -R cypress/reportss
 
       - name: Debug - listar arquivos
         run: ls -R cypress/reports || true
@@ -59,9 +61,9 @@ jobs:
       # - name: Gerar índice de relatórios
       #   if: always()
       #   run: |
-      #     echo "<h1>Histórico de Execuções</h1>" > cypress/reports/index.html
-      #     for dir in $(ls -d reports/* 2>/dev/null || true); do
-      #       echo "<a href=\"/$dir/index.html\">$dir</a><br>" >> cypress/reports/index.html
+      #     echo "<h1>Histórico de Execuções</h1>" > cypress/reportss/index.html
+      #     for dir in $(ls -d reportss/* 2>/dev/null || true); do
+      #       echo "<a href=\"/$dir/index.html\">$dir</a><br>" >> cypress/reportss/index.html
       #     done
 
       - name: Deploy do Relatório para GitHub Pages
