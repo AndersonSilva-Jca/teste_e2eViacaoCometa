@@ -1,5 +1,7 @@
 /// <reference types='cypress' />
 
+const { faker } = require('@faker-js/faker');
+
 describe('Validar link fale conosco', () => {
  beforeEach(() => {
     cy.clearCookies();  
@@ -9,7 +11,7 @@ describe('Validar link fale conosco', () => {
 it('Deve preencher o formulário de contato', () => {
   cy.get('.header-nav-container > :nth-child(1) > :nth-child(2) > .focusable').click()
   cy.url({timeout: 2000}).should('include', '/fale-conosco')
-  cy.get('#input-name').type('Teste ROBO ODP')
+  cy.get('#input-name').type(faker.person.fullName())
   cy.get('#input-doc').type('38485984854', { log: false })
   cy.get('#input-email').type('teste.robo@odp.com.br')
   cy.get('#input-ddd').type('11')
@@ -34,7 +36,7 @@ it('Deve preencher o formulário de contato', () => {
   cy.get('#input-dest').type('AGUAS DA PRATA - M. DIVISORIO(SP)')
   cy.contains('AGUAS DA PRATA - M. DIVISORIO(SP)').click({ force: true })
   cy.get('#description').type('Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit ame.')
-  cy.get('[for="protocol-file"] > .cmp-text > [style="text-align: left;"]').click() // por algum motivo não possui mais a caixa de upload de arquivo para anexar uma evidência
+  cy.get('[for="protocol-file"] > .cmp-text > [style="text-align: left;"]').click()
   cy.get('[data-js="protocol-file"]').selectFile('cypress/fixtures/documento.pdf', { force: true }) 
   // Não finalizar a solicitação para evitar requisições reais
   // cy.get('#submit-protocol').click()
