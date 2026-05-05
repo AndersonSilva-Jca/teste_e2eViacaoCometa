@@ -7,3 +7,4 @@ cypress/fixtures/login.json
 .env
 # .github/workflows/cypress.yml
 cypress/downloads/00_smoke/
+cypress/e2e/00_smoke/teste_compra.cy.js
