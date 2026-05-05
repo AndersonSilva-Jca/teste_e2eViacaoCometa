@@ -1,10 +1,17 @@
 name: 03 - Monitoramento Contínuo Cypress E2E
 on:
-  workflow_run:
-    workflows: ["02 - Monitoramento Contínuo Cypress E2E"] # Deve ser exatamente o name do arquivo 1
-    types:
-      - completed
+  # push:
+  #   branches:
+  #     - main
+  schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
+# on:
+#   workflow_run:
+#     workflows: ["02 - Monitoramento Contínuo Cypress E2E"] # Deve ser exatamente o name do arquivo 1
+#     types:
+#       - completed
+#   workflow_dispatch:
 
 # concurrency:
 #   group: github-pages-deploy
@@ -19,7 +26,7 @@ jobs:
   cypress-run:
     # Se o workflow anterior falhar, você decide se quer rodar este ou não
     # Se quiser que rode mesmo com falha no anterior, use a condição abaixo:
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do Código

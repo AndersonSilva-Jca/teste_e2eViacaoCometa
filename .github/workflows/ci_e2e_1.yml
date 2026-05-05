@@ -24,12 +24,17 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
+      - name: Rodar Teste Rápido (Push)
+        if: github.event_name == 'push'
+        run: npx cypress run --spec "cypress/e2e/01_autenticacao/01_login.cy.js"
+
       # - name: Limpar Relatórios Antigos
       #   run: |
       #     rm -rf cypress/reports/
       #     rm -rf cypress/screenshots/
 
       - name: Cypress Run - Testes E2E Viação Cometa
+        if: github.event_name == 'schedule'
         uses: cypress-io/github-action@v7
         id: cypress
         continue-on-error: true
