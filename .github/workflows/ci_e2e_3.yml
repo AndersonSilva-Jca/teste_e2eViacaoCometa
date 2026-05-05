@@ -6,9 +6,9 @@ on:
       - completed
   workflow_dispatch:
 
-concurrency:
-  group: github-pages-deploy
-  cancel-in-progress: false
+# concurrency:
+#   group: github-pages-deploy
+#   cancel-in-progress: false
 
 permissions:
   contents: write
