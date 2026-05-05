@@ -56,7 +56,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.wait(15000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(2000)
+    // cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 15000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
     cy.contains('Teste Robo ODP').should('be.visible').click()
@@ -87,9 +87,9 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.contains('IDA', { timeout: 90000 }).should('be.visible');
-    cy.wait(5000)
+    cy.wait(15000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(10000)
+    // cy.wait(10000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
     cy.contains('Teste Menor de Idade ODP').should('be.visible').click()
@@ -122,9 +122,8 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
     cy.wait(25000)
-    cy.contains('ESCOLHER PASSAGENS', { timeout: 90000 }).should('be.visible');
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    cy.wait(15000)
+    // cy.wait(15000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 60000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click({ force: true });
     cy.url({ timeout: 60000 }).should('include', '/poltrona')
@@ -161,7 +160,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     // cy.wait(5000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
-    // cy.wait(30000)
+    cy.wait(30000)
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     // cy.wait(5000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 20000 }).click({ force: true })
