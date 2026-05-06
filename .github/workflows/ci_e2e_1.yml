@@ -13,8 +13,6 @@ on:
 
 permissions:
   contents: write
-#   pages: write
-#   id-token: write
 
 jobs:
   cypress-run:
@@ -27,11 +25,6 @@ jobs:
       - name: Rodar Teste Rápido (Push)
         if: github.event_name == 'push'
         run: npx cypress run --spec "cypress/e2e/01_autenticacao/01_login.cy.js"
-
-      # - name: Limpar Relatórios Antigos
-      #   run: |
-      #     rm -rf cypress/reports/
-      #     rm -rf cypress/screenshots/
 
       - name: Cypress Run - Testes E2E Viação Cometa
         if: github.event_name == 'schedule'
@@ -46,31 +39,11 @@ jobs:
           LOGIN: ${{ secrets.LOGIN }}
           SENHA: ${{ secrets.SENHA }}
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
-          # Token necessário para o Cypress falar com o GitHub
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CYPRESS_INTERNAL_NPM_REGISTRY_DISABLE_SSL_VERIFICATION: "1" # Força o bypass no Cypress
 
-      # - name: Merge reports - Smoke Testes
-      #   if: always()
-      #   run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/reports.json
-
-      # - name: Generate HTML reports - Smoke Testes
-      #   if: always()
-      #   run: npx marge cypress/reports/reports.json -f index -o cypress/reports
-
-      # - name: Debug - listar arquivos
-      #   run: ls -R cypress/reports
-
       - name: Debug - listar arquivos
         run: ls -R cypress/reports || true
-
-      # - name: Gerar índice de relatórios
-      #   if: always()
-      #   run: |
-      #     echo "<h1>Histórico de Execuções</h1>" > cypress/reports/index.html
-      #     for dir in $(ls -d reports/* 2>/dev/null || true); do
-      #       echo "<a href=\"/$dir/index.html\">$dir</a><br>" >> cypress/reports/index.html
-      #     done
 
       - name: Deploy do Relatório para GitHub Pages
         if: always()
