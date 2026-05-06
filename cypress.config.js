@@ -20,8 +20,10 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   viewportHeight: 1080,
   env: {
-    login: process.env.LOGIN,
-    senha: process.env.SENHA,
+      login1: process.env.LOGIN1,
+      senha1: process.env.SENHA1,
+      login: process.env.LOGIN,
+      senha: process.env.SENHA,
     mailUsername: process.env.MAIL_USERNAME,
     mailPassword: process.env.MAIL_PASSWORD
   },

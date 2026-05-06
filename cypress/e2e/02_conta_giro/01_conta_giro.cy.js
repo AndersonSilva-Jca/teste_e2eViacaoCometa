@@ -8,11 +8,11 @@ describe('Conta GIRO', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.env(['login', 'senha']).then((env) => {
+    cy.env(['login1', 'senha1']).then((env) => {
       cy.visit('/');
       cy.get(loc.HEADER_BOTAO_LOGIN).click()
-      cy.get(loc.USUARIO).type(env.login)
-      cy.get(loc.SENHA).type(env.senha, { log: false })
+      cy.get(loc.USUARIO).type(env.login1)
+      cy.get(loc.SENHA).type(env.senha1, { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
       cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
 

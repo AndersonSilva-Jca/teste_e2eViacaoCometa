@@ -8,16 +8,23 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
   beforeEach(() => {
     cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-    cy.env(['login', 'senha']).then((env) => {
-      cy.visit('/');
+    cy.visit('/');
+    // cy.env(['login1', 'senha1']).then((env) => {
+    //   cy.get(loc.HEADER_BOTAO_LOGIN).click()
+    //   cy.get(loc.USUARIO).type(env.login1)
+    //   cy.get(loc.SENHA).type(env.senha1 , { log: false })
+    //   cy.get(loc.BOTAO_LOGIN).click()
+    //   cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
+    // })
+  });
+  it('Fazer busca de destinos IDA com 1 passageiro', () => {
+      cy.env(['login1', 'senha1']).then((env) => {
       cy.get(loc.HEADER_BOTAO_LOGIN).click()
-      cy.get(loc.USUARIO).type(env.login)
-      cy.get(loc.SENHA).type(env.senha, { log: false })
+      cy.get(loc.USUARIO).type(env.login1)
+      cy.get(loc.SENHA).type(env.senha1 , { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
       cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
     })
-  });
-  it('Fazer busca de destinos IDA com 1 passageiro', () => {
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click({ force: true })
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
@@ -44,6 +51,13 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
   })
 
   it('Fazer busca de destinos IDA com 2 passageiros', () => {
+      cy.env(['login', 'senha']).then((env) => {
+      cy.get(loc.HEADER_BOTAO_LOGIN).click()
+      cy.get(loc.USUARIO).type(env.login)
+      cy.get(loc.SENHA).type(env.senha, { log: false })
+      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
+    })
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
@@ -76,6 +90,13 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
   })
 
   it('Fazer busca de destinos IDA com 1 passageiro e 1 criança sem assento', () => {
+      cy.env(['login1', 'senha1']).then((env) => {
+      cy.get(loc.HEADER_BOTAO_LOGIN).click()
+      cy.get(loc.USUARIO).type(env.login1)
+      cy.get(loc.SENHA).type(env.senha1 , { log: false })
+      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
+    })
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').should('exist').invoke('show').click()
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
@@ -109,6 +130,13 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
   })
 
   it('Fazer busca de destinos IDA e Volta com 1 passageiro', () => {
+       cy.env(['login', 'senha']).then((env) => {
+      cy.get(loc.HEADER_BOTAO_LOGIN).click()
+      cy.get(loc.USUARIO).type(env.login)
+      cy.get(loc.SENHA).type(env.senha, { log: false })
+      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
+    })
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click().should('exist').invoke('show')
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
@@ -145,7 +173,13 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
   })
 
   it('Fazer busca de destinos IDA e Volta com 2 passageiros', () => {
-    cy.clearCookies();
+      cy.env(['login1', 'senha1']).then((env) => {
+      cy.get(loc.HEADER_BOTAO_LOGIN).click()
+      cy.get(loc.USUARIO).type(env.login1)
+      cy.get(loc.SENHA).type(env.senha1, { log: false })
+      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
+    })
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click()
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')

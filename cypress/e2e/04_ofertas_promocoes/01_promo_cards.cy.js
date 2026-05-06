@@ -32,9 +32,9 @@ describe('Validar cards de promoção', () => {
   it('Deve validar o link do 2º card de promoção e redirecionar para a página de login', () => {
     cy.get('.aem-Grid > .aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', { timeout: 15000 }).eq(1).click({ force: true });
     cy.selecionarPassagemAleatoria1({ timeout: 15000 })
-    cy.env(['login', 'senha']).then((env) => {
-      cy.get(loc.USUARIO).type(env.login)
-      cy.get(loc.SENHA).type(env.senha, { log: false })
+    cy.env(['login1', 'senha1']).then((env) => {
+      cy.get(loc.USUARIO).type(env.login1)
+      cy.get(loc.SENHA).type(env.senha1, { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
       // cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro')
     })
@@ -66,9 +66,9 @@ describe('Validar cards de promoção', () => {
   it('Deve validar o link do 4º card de promoção e redirecionar para a página de login', () => {
     cy.get('.aem-Grid > .aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', { timeout: 15000 }).eq(3).click({ force: true });
     cy.selecionarPassagemAleatoria1({ timeout: 15000 })
-    cy.env(['login', 'senha']).then((env) => {
-      cy.get(loc.USUARIO).type(env.login)
-      cy.get(loc.SENHA).type(env.senha, { log: false })
+    cy.env(['login1', 'senha1']).then((env) => {
+      cy.get(loc.USUARIO).type(env.login1)
+      cy.get(loc.SENHA).type(env.senha1, { log: false })
       cy.get(loc.BOTAO_LOGIN).click()
       // cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro')
     })
