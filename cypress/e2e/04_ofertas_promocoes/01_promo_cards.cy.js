@@ -9,7 +9,7 @@ describe('Validar cards de promoção', () => {
     cy.visit('/');
   });
 
-  it.only('Deve validar o link do 1º card de promoção e redirecionar para a página de login', () => {
+  it('Deve validar o link do 1º card de promoção e redirecionar para a página de login', () => {
     cy.get('.aem-GridColumn > .promo-card > .promo-card-content > .promo-card-footer > .promo-card-btn', { timeout: 60000 }).eq(0).click({ force: true });
     cy.selecionarPassagemAleatoria1({ timeout: 60000 })
     cy.env(['login', 'senha']).then((env) => {
