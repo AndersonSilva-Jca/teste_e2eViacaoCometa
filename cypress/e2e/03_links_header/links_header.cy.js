@@ -1,5 +1,8 @@
 /// <reference types='cypress' />
 
+const {faker} = require("@faker-js/faker")
+
+
 describe('Validar link informações de viagens', () => {
   beforeEach(() => {
     cy.clearCookies();
