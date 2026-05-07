@@ -24,7 +24,10 @@ jobs:
 
       - name: Rodar Teste Rápido (Push)
         if: github.event_name == 'push'
-        run: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
+        uses: cypress-io/github-action@v7
+        with:
+          command: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
+        # run: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
 
       - name: Cypress Run - Testes E2E UTP
         if: github.event_name == 'schedule'
