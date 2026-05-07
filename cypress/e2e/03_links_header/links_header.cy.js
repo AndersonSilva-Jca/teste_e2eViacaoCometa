@@ -110,4 +110,59 @@ describe('Validar link informações de viagens', () => {
     cy.get('[href="#IDJovem"]').click()
     cy.get('#IDJovem > p').should('contain', 'ID Jovem')
   });
+
+  it('Deve Validar link fale conosco e preencher o formulário de contato', () => {
+    cy.get('.header-nav-container > :nth-child(1) > :nth-child(2) > .focusable').click()
+    cy.url({ timeout: 2000 }).should('include', '/fale-conosco')
+    cy.get('#input-name').type(faker.person.fullName())
+    cy.get('#input-doc').type('38485984854', { log: false })
+    cy.get('#input-email').type('teste.robo@odp.com.br')
+    cy.get('#input-ddd').type('11')
+    cy.get('#input-phone').type('99999-9999', { log: false })
+    cy.get('#btn-contact-us').should('not.be.disabled').click()
+    cy.get('.container-form-protocol-contact-us > .title-form > .aem-Grid > .text > .cmp-text > p').should('contain', 'Faça sua requisição')
+    cy.get(':nth-child(1) > :nth-child(1) > .field > .input-container > .select-custom > .select-selected').click()
+    cy.get(':nth-child(1) > :nth-child(1) > .field > .input-container > .select-custom > .select-items > :nth-child(4) > [href="javascript:void(0)"]').click()
+    cy.get(':nth-child(2) > .field > .input-container > .select-custom > .select-selected').click()
+    cy.get(':nth-child(2) > .field > .input-container > .select-custom > .select-items > :nth-child(2) > [href="javascript:void(0)"]').click()
+    cy.get(':nth-child(3) > .input-container > .field > .select-custom > .select-selected').click()
+    cy.get('.field > .select-custom > .select-items > :nth-child(2) > [href="javascript:void(0)"]').click()
+    cy.get('#input-local').type('Sao Paulo')
+    cy.contains('SAO PAULO ROD TIETE(SP)').click()
+    cy.get('#has-bought').click({ force: true })
+    cy.get('#input-date-buy').click()
+    cy.selecionarDataCompra(1)
+    cy.get('#input-date-trip').click()
+    cy.selecionarDataViagem(6)
+    cy.get('#input-origin').type('AGUAS DA PRATA(SP)')
+    cy.contains('AGUAS DA PRATA(SP)').click({ force: true })
+    cy.get('#input-dest').type('AGUAS DA PRATA - M. DIVISORIO(SP)')
+    cy.contains('AGUAS DA PRATA - M. DIVISORIO(SP)').click({ force: true })
+    cy.get('#description').type('Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit ame.')
+    cy.get('[for="protocol-file"] > .cmp-text > [style="text-align: left;"]').click()
+    cy.get('[data-js="protocol-file"]').selectFile('cypress/fixtures/documento.pdf', { force: true })
+    // Não finalizar a solicitação para evitar requisições reais
+    // cy.get('#submit-protocol').click()
+  })
+  it('Deve redirecionar para a página de gratuidade', () => {
+    cy.get('.header-nav-container > :nth-child(1) > :nth-child(3) > .focusable').invoke('removeAttr', 'target').click();
+    cy.url().should('include', 'https://vendas.jcaholding.com.br/'); //erro
+  })
+  it('Deve redirecionar para a página de nossos destinos', () => {
+    cy.get('.header-nav-container > :nth-child(1) > :nth-child(4) > .focusable').click();
+    cy.url().should('include', '/nossos-destinos');
+  })
+
+  it('Deve redirecionar para a página de pontos de venda', () => {
+    cy.get('.header-nav-container > :nth-child(1) > :nth-child(5) > .focusable').click();
+    cy.url().should('include', '/pontos-de-venda');
+  })
+
+  it('Deve redirecionar para o site Clube Giro com sucesso', () => {
+    cy.get(':nth-child(1) > :nth-child(6) > .focusable').click()
+    cy.url().should('include', '/clubegiro')
+    //   cy.get('a[href="https://www.clubegiro.com.br"]').click()
+    //   cy.url().should('include', 'clubegiro.com.br')
+  })
+
 });

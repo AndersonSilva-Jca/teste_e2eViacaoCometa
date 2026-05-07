@@ -24,7 +24,7 @@ jobs:
 
       - name: Rodar Teste Rápido (Push)
         if: github.event_name == 'push'
-        run: npx cypress run --spec "cypress/e2e/01_autenticacao/01_login.cy.js"
+        run: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
 
       - name: Cypress Run - Testes E2E Viação Cometa
         if: github.event_name == 'schedule'
@@ -32,7 +32,7 @@ jobs:
         id: cypress
         continue-on-error: true
         with:
-          command: npx cypress run --browser electron --spec "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro}/**/*"
+          command: npx cypress run --browser electron --spec "cypress/e2e/{00_smoke,02_conta_giro}/**/*"
           # --spec "cypress/e2e/{05_link_conexao,06_cards_duvidas_frequentes}/**/*"
 
         env:

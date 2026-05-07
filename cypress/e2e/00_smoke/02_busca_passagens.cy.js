@@ -3,7 +3,7 @@
 import loc from '../../support/locators'
 // const { faker } = require('@faker-js/faker');
 
-describe('Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra', () => {
+describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de passagens, selecionar assentos e finalizar compra', () => {
 
   beforeEach(() => {
     cy.clearCookies();
@@ -17,6 +17,7 @@ describe('Fazer busca de destinos, selecionar datas, compra de passagens, seleci
     //   cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
     // })
   });
+
   it('Fazer busca de destinos IDA com 1 passageiro', () => {
       cy.env(['login1', 'senha1']).then((env) => {
       cy.get(loc.HEADER_BOTAO_LOGIN).click()
