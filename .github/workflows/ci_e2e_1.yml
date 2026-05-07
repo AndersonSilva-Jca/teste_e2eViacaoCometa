@@ -26,7 +26,7 @@ jobs:
         if: github.event_name == 'push'
         run: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
 
-      - name: Cypress Run - Testes E2E Viação Cometa
+      - name: Cypress Run - Testes E2E UTP
         if: github.event_name == 'schedule'
         uses: cypress-io/github-action@v7
         id: cypress
@@ -65,12 +65,12 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "✅[ESTÁVEL] Monitoramento Contínuo - Viação Cometa"
+          subject: "✅[ESTÁVEL] Monitoramento Contínuo - UTP"
           to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo E2E"
           body: |
-            Monitoramento Cypress - Viação Cometa
+            Monitoramento Cypress - UTP
 
             O ciclo de monitoramento contínuo foi finalizado com sucesso.
 
@@ -94,7 +94,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "🚨[ALERTA] Monitoramento Contínuo - Viação Cometa"
+          subject: "🚨[ALERTA] Monitoramento Contínuo - UTP"
           to: anderson.ssantos@jcatlm.com.br
           cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo E2E"

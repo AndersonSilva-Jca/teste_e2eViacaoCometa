@@ -1,7 +1,8 @@
-name: Monitoramento Regressão - Viação Cometa
+name: Monitoramento Regressão - UTP
 on:
   schedule:
     - cron: "40 18 * * *"
+    - cron: "40 06 * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,12 +13,12 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
-      - name: Cypress Run - Viação Cometa Regressão
+      - name: Cypress Run - UTP Regressão
         uses: cypress-io/github-action@v7
         id: cypress
         continue-on-error: true
         with:
-          command: npx cypress run --browser electron
+          command: npx cypress run --browser electron --spec "cypress/e2e/{00_smoke,01_autenticacao,02_conta_giro,03_links_header,04_ofertas_promocoes,05_link_conexao,06_cards_duvidas_frequentes,07_links_footer}/**/*"
 
         env:
           LOGIN: ${{ secrets.LOGIN }}
@@ -49,12 +50,12 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "✅ [ESTÁVEL] Monitoramento Regressão - Viação Cometa"
+          subject: "✅ [ESTÁVEL] Monitoramento Regressão - UTP"
           to: anderson.ssantos@jcatlm.com.br
           cc: alfredo.junior@jcatlm.com.br
-          from: "Monitoramento Regressão - Viação Cometa"
+          from: "Monitoramento Regressão - UTP"
           body: |
-            Monitoramento Regressão - Viação Cometa
+            Monitoramento Regressão - UTP
 
             O ciclo de monitoramento contínuo foi finalizado com sucesso.
 
@@ -78,10 +79,10 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "🚨 [ALERTA] Monitoramento Regressão - Viação Cometa"
+          subject: "🚨 [ALERTA] Monitoramento Regressão - UTP"
           to: anderson.ssantos@jcatlm.com.br
           cc: alfredo.junior@jcatlm.com.br
-          from: "Monitoramento Regressão - Viação Cometa"
+          from: "Monitoramento Regressão - UTP"
           body: |
             🚨 RELATÓRIO DE FALHA DETECTADA
 
