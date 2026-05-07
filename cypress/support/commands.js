@@ -251,7 +251,7 @@ Cypress.Commands.add('selecionarPassagemAleatoria1', () => {
   cy.get('li[data-js^="offer-element-"]', { timeout: 90000 }).should('be.visible');
 
   // O "pulo do gato": Esperar um pequeno respiro para o JS da Cometa atachar os eventos nos botões
-  // cy.wait(3000);
+  cy.wait(1000);
 
   // 2. Buscamos as ofertas disponíveis
   cy.get('li[data-js^="offer-element-"]:has(.available)', { timeout: 90000 })
@@ -611,4 +611,60 @@ Cypress.Commands.add('selecionarDataViagem', (range = 5) => {
     const randomIndex = Math.floor(Math.random() * proximosDias.length);
     cy.wrap(proximosDias[randomIndex]).click({ force: true });
   });
+});
+
+
+Cypress.Commands.add('teste', () => {
+  cy.log('⏳ Iniciando busca de passagens...');
+  
+  // 1. Aguarda o cabeçalho da seção aparecer
+  cy.contains('ESCOLHER PASSAGENS', { timeout: 30000 }).should('be.visible');
+
+  // 2. Selecionamos apenas os elementos de oferta que ESTÃO VISÍVEIS (:visible)
+  // Isso evita pegar elementos de versões mobile se estiveres no desktop
+  cy.get('li[data-js^="offer-element-"]:visible', { timeout: 30000 })
+    .should('have.length.at.least', 1)
+    .then(($ofertas) => {
+      
+      // Filtramos as ofertas válidas
+      const ofertasValidas = $ofertas.toArray().filter((el) => {
+        const $el = Cypress.$(el);
+        const textoClasse = $el.find('[data-js^="classtype_"]').text().toUpperCase();
+        
+        // Verifica se é "CAMA" e se o botão de compra existe e NÃO está desativado
+        const isCama = textoClasse.includes('CAMA');
+        const hasBtn = $el.find('button[data-js="buy-ticket"]:not([disabled])').length > 0;
+        const isVisible = $el.is(':visible'); // Garantia extra de visibilidade
+
+        return !isCama && hasBtn && isVisible;
+      });
+
+      const total = ofertasValidas.length;
+      if (total === 0) throw new Error('Nenhuma passagem válida (não-CAMA e disponível) encontrada!');
+
+      // 3. Sorteio aleatório
+      const randomIndex = Math.floor(Math.random() * total);
+      const escolha = ofertasValidas[randomIndex];
+      
+      cy.log(`🎰 Sorteada opção ${randomIndex + 1} de ${total}`);
+
+      // 4. Ação de clicar no botão específico daquela oferta
+      // Usamos .within() para isolar o comando dentro da li sorteada
+      cy.wrap(escolha).within(() => {
+        cy.get('button[data-js="buy-ticket"]')
+          .scrollIntoView({ offset: { top: -150 } })
+          .should('be.visible')
+          .click(); // Removido o force:true para testar a interação real
+      });
+
+      // 5. Lógica do Modal "Fique Atento"
+      cy.wait(2000); 
+      cy.get('body').then(($body) => {
+        const modalBtn = '[data-js="button-agree"]';
+        if ($body.find(modalBtn).length > 0 && $body.find(modalBtn).is(':visible')) {
+          cy.log('⚠️ Confirmando modal informativo...');
+          cy.get(modalBtn).click();
+        }
+      });
+    });
 });
