@@ -117,7 +117,7 @@ describe('Validar link informações de viagens', () => {
   it('Deve Validar link fale conosco e preencher o formulário de contato', () => {
     cy.get('.header-nav-container > :nth-child(1) > :nth-child(2) > .focusable').click()
     cy.url({ timeout: 2000 }).should('include', '/fale-conosco')
-    cy.get('#input-name').type(faker.person.fullName())
+    cy.get('#input-name').type('Teste Automação ODP')
     cy.get('#input-doc').type('38485984854', { log: false })
     cy.get('#input-email').type('teste.robo@odp.com.br')
     cy.get('#input-ddd').type('11')
