@@ -7,10 +7,6 @@ on:
     - cron: "*/5 * * * *"
   workflow_dispatch:
 
-# concurrency:
-#   group: github-pages-deploy
-#   cancel-in-progress: false
-
 permissions:
   contents: write
 
@@ -22,15 +18,7 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
-      - name: Rodar Teste Rápido (Push)
-        if: github.event_name == 'push'
-        uses: cypress-io/github-action@v7
-        with:
-          command: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
-        # run: npx cypress run --spec "cypress/e2e/01_autenticacao/login.cy.js"
-
       - name: Cypress Run - Testes E2E UTP
-        if: github.event_name == 'schedule'
         uses: cypress-io/github-action@v7
         id: cypress
         continue-on-error: true
@@ -82,7 +70,7 @@ jobs:
             🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/01_e2e/index.html
 
             📂 ÁREAS VALIDADAS:
-            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
+            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Não implementado: Cupons, Remarcação, Cancelamento)
             • [01] Autenticação
             • [02] Conta Giro
             • [03/07] Integridade de Links

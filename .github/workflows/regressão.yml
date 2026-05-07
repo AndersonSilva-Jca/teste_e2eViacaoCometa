@@ -64,7 +64,7 @@ jobs:
             🔗 PAINEL EXECUTIVO (HTML): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/reports/${{ github.run_number }}/regressao/index.html
 
             📂 ÁREAS VALIDADAS:
-            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Cupons - não implementado)
+            • [00] Smoke Tests - Críticos (Busca de Destinos, Datas, Passagens, Assentos e finalização de compra) - (Não implementado: Cupons, Remarcação, Cancelamento)
             • [01] Autenticação
             • [02] Conta Giro
             • [03/07] Integridade de Links
