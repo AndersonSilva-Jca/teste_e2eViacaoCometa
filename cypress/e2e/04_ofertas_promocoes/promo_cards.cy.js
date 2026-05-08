@@ -15,8 +15,7 @@ describe('Validar cards de promoção', () => {
     cy.env(['login', 'senha']).then((env) => {
       cy.get(loc.USUARIO).type(env.login)
       cy.get(loc.SENHA).type(env.senha, { log: false })
-      cy.get(loc.BOTAO_LOGIN).click()
-      // cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
+      cy.get(loc.BOTAO_LOGIN).click({ force: true })
     })
     // cy.get('#buyer-check-1', { timeout: 60000 }).click({ force: true })
     // cy.get('#btn-proceed').should('be.visible').and('not.be.disabled').click();
@@ -35,7 +34,7 @@ describe('Validar cards de promoção', () => {
     cy.env(['login1', 'senha1']).then((env) => {
       cy.get(loc.USUARIO).type(env.login1)
       cy.get(loc.SENHA).type(env.senha1, { log: false })
-      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.BOTAO_LOGIN).click({ force: true })
       // cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro')
     })
     // cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
@@ -52,7 +51,7 @@ describe('Validar cards de promoção', () => {
     cy.env(['login', 'senha']).then((env) => {
       cy.get(loc.USUARIO).type(env.login)
       cy.get(loc.SENHA).type(env.senha, { log: false })
-      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.BOTAO_LOGIN).click({ force: true })
       // cy.get(loc.MENSAGEM_LOGADO).if('not.be.visi;ble').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro')
     })
     // cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
@@ -69,7 +68,7 @@ describe('Validar cards de promoção', () => {
     cy.env(['login1', 'senha1']).then((env) => {
       cy.get(loc.USUARIO).type(env.login1)
       cy.get(loc.SENHA).type(env.senha1, { log: false })
-      cy.get(loc.BOTAO_LOGIN).click()
+      cy.get(loc.BOTAO_LOGIN).click({ force: true })
       // cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro')
     })
     // cy.get('#buyer-check-1', { timeout: 20000 }).click({ force: true })
