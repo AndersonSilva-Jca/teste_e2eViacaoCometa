@@ -27,6 +27,7 @@ describe('UTP - Fazer busca de destinos, selecionar datas, compra de passagens, 
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
     cy.wait(5000)
+    cy.fecharModalCupom({timeout: 90000 })
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
@@ -60,12 +61,13 @@ describe('UTP - Fazer busca de destinos, selecionar datas, compra de passagens, 
     cy.get(loc.LOADER).should('not.exist')
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
-    cy.wait(5000)
+    cy.wait(1000)
     cy.teste({ timeout: 90000 })
     cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
+    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarAssentoAleatorio({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').click()
     // cy.get(loc.LOADER).should('not.be.visible')
@@ -94,12 +96,13 @@ describe('UTP - Fazer busca de destinos, selecionar datas, compra de passagens, 
     cy.get(loc.LOADER).should('not.exist')
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
-    cy.wait(5000)
+    cy.wait(1000)
     cy.teste({ timeout: 90000 })
     cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
+    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarAssentoAleatorio({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').click()
     // cy.get(loc.LOADER).should('not.be.visible')
@@ -133,6 +136,8 @@ describe('UTP - Fazer busca de destinos, selecionar datas, compra de passagens, 
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
+    cy.wait(1000)
+    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarAssentoAleatorio({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').click()
     // cy.get(loc.LOADER).should('not.be.visible')

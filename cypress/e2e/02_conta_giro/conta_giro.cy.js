@@ -26,6 +26,7 @@ describe('Conta GIRO', () => {
     cy.get(loc.BUSCAS.DATA_IDA).click()
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
+    cy.fecharModalCupom({ timeout: 90000 })
     cy.wait(5000);
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(2000);

@@ -668,3 +668,11 @@ Cypress.Commands.add('teste', () => {
       });
     });
 });
+
+Cypress.Commands.add('fecharModalCupom', () => {
+   cy.get('#header-navbar > :nth-child(5)').then(($el) => {
+  if ($el.length > 0) {
+    cy.wrap($el).invoke('remove')
+  }
+});
+  });
