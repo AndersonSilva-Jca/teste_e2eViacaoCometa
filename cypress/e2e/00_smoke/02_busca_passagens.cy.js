@@ -9,13 +9,6 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.clearCookies();
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
     cy.visit('/');
-    // cy.env(['login1', 'senha1']).then((env) => {
-    //   cy.get(loc.HEADER_BOTAO_LOGIN).click()
-    //   cy.get(loc.USUARIO).type(env.login1)
-    //   cy.get(loc.SENHA).type(env.senha1 , { log: false })
-    //   cy.get(loc.BOTAO_LOGIN).click()
-    //   cy.get(loc.MENSAGEM_LOGADO).if('not.be.visible').get('.normal').should('contain', 'O email ou senha inseridos não constam em nosso cadastro').else().log('Login realizado com sucesso').should('contain', 'Olá')
-    // })
   });
 
   it('Fazer busca de destinos IDA com 1 passageiro', () => {
@@ -34,14 +27,13 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.get('[alt="loader"]').should('not.exist')
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
-    cy.fecharModalCupom({ timeout: 90000 })
     cy.wait(5000)
-    cy.teste({ timeout: 90000 })
+    cy.fecharModalCupom({ timeout: 90000 })
+    cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').and('not.be.disabled').click();
     cy.contains('Escolha o seu assento', { timeout: 90000 }).should('be.visible');
-    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarAssentoAleatorio({ timeout: 90000 });
     cy.get(loc.BOTAO_AVANCAR).should('be.visible').click()
     // cy.get('[alt="loader"]').should('not.be.visible')
@@ -71,9 +63,9 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.get(loc.BUSCAS.BOTAO_ADICIONAR_PASSAGEIRO).click()
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
+    cy.wait(5000)
     cy.fecharModalCupom({ timeout: 90000 })
-    cy.wait(15000)
-    cy.teste({ timeout: 90000 })
+    cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     // cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 15000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
@@ -112,9 +104,9 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.contains('IDA', { timeout: 90000 }).should('be.visible');
+    cy.wait(5000)
     cy.fecharModalCupom({ timeout: 90000 })
-    cy.wait(15000)
-    cy.teste({ timeout: 90000 })
+    cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     // cy.wait(10000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
     cy.get(loc.NOME_PASSAGEIRO_2).click()
