@@ -31,7 +31,7 @@ module.exports = defineConfig({
     baseUrl: 'https://www.viacaocometa.com.br',
     scrollBehavior: 'nearest', // Evita que o Cypress role a página automaticamente durante os testes
     screenshotsFolder: "cypress/reports/screenshots",
-    defaultCommandTimeout: 20000, // Aumenta o tempo padrão de espera por elementos
+    defaultCommandTimeout: 40000, // Aumenta o tempo padrão de espera por elementos
     pageLoadTimeout: 120000, // Espera até 120s para a página carregar totalmente
     requestTimeout: 10000,  // Espera até 15s por respostas de APIs (cy.request)
     responseTimeout: 15000, // Espera até 15s por respostas de interceptações

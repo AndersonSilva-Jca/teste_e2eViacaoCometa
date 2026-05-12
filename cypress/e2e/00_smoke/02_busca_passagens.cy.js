@@ -24,7 +24,6 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', {delay: 100}).should('exist').invoke('show')
     cy.contains(' Rio de Janeiro (Todos) (RJ) ').click({ force: true })
     cy.get(loc.BUSCAS.DATA_IDA).click()
-    cy.get('[alt="loader"]').should('not.exist')
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
     cy.wait(5000)

@@ -57,7 +57,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "✅[ESTÁVEL] Monitoramento Contínuo - UTP"
-          to: anderson.ssantos@jcatlm.com.br
+          # to: anderson.ssantos@jcatlm.com.br
           # cc: alfredo.junior@jcatlm.com.br
           from: "Monitoramento Contínuo E2E"
           body: |
