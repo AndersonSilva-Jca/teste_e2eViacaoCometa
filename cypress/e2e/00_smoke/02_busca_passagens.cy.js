@@ -27,7 +27,6 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.selecionarDataIda(2)
     cy.get(loc.BUSCAS.BOTAO_BUSCAR, { timeout: 90000 }).should('be.visible').click()
     cy.wait(5000)
-    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
@@ -63,7 +62,6 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.get(loc.BUSCAS.BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS).click()
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.wait(5000)
-    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     // cy.wait(2000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 15000 }).click({ force: true })
@@ -104,7 +102,6 @@ describe('Viação Cometa - Fazer busca de destinos, selecionar datas, compra de
     cy.get(loc.BUSCAS.BOTAO_BUSCAR).click()
     cy.contains('IDA', { timeout: 90000 }).should('be.visible');
     cy.wait(5000)
-    cy.fecharModalCupom({ timeout: 90000 })
     cy.selecionarPassagemAleatoria1({ timeout: 90000 })
     // cy.wait(10000)
     cy.get(loc.CHECK_PASSAGEIRO, { timeout: 90000 }).click({ force: true })
