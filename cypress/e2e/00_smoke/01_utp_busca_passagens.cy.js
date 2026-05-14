@@ -20,7 +20,7 @@ describe('UTP - Fazer busca de destinos, selecionar datas, compra de passagens, 
     })
     cy.get(loc.BUSCAS.DESTINO_IDA).click().type('São Paulo (Todos) (SP)', { delay: 100 }).should('exist').invoke('show')
     cy.contains(' São Paulo (Todos) (SP) ').click({ force: true })
-    cy.get(loc.BUSCAS.DESTINO_VOLTA).click().type('Rio de Janeiro (Todos) (RJ)', { delay: 100 }).should('exist').invoke('show')
+    cy.get(loc.BUSCAS.DESTINO_VOLTA).click().clear().type('Rio de Janeiro (Todos) (RJ)', { delay: 100 }).should('exist').invoke('show')
     cy.contains(' Rio de Janeiro (Todos) (RJ) ').click({ force: true })
     cy.get(loc.BUSCAS.DATA_IDA).click()
     cy.get(loc.LOADER).should('not.exist')
