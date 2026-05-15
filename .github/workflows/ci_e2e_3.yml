@@ -1,10 +1,10 @@
 name: 03 - Monitoramento Contínuo Cypress E2E
 on:
-  push:
-    branches:
-    - main
-  schedule:
-    - cron: "*/9 * * * *"
+  # push:
+  #   branches:
+  #   - main
+  # schedule:
+  #   - cron: "*/9 * * * *"
   workflow_dispatch:
 
 permissions:

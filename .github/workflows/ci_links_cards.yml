@@ -1,8 +1,8 @@
 name: Monitoramento Contínuo Cypress - Cards e Links
 on:
-  push:
-  schedule:
-    - cron: "*/15 * * * *"
+  # push:
+  # schedule:
+  #   - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
