@@ -12,6 +12,8 @@ const loc = {
     BOTAO_AVANCAR: '#btn-proceed',
     NOME_PASSAGEIRO_2: '#input-name-2',
     DATA_ANIVERSARIO_PASSAGEIRO_2: '#input-birth-2',
+    NOME_PASSAGEIRO_3: '#input-name-3',
+    DATA_ANIVERSARIO_PASSAGEIRO_3: '#input-birth-3',
     CLICK_PASSAGEIROS: '.passenger-footer',
 
     BUSCAS: {
@@ -21,6 +23,7 @@ const loc = {
       DATA_VOLTA: '#input-date-return',
       BOTAO_PASSAGEIROS: '#input-passengers',
       BOTAO_ADICIONAR_PASSAGEIRO: '#passenger-quantity-plus-one > .plusone',
+      BOTAO_ADICIONAR_PASSAGEIRO_CRIANCA: '#infant-quantity-plus-one > .plusone',
       BOTAO_FECHAR_QUANTIDADE_PASSAGEIROS: '#close-person-quantity',
       BOTAO_BUSCAR: '#search-button',
   },
